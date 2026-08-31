@@ -40,7 +40,10 @@ except ImportError:
     print("Missing dependency. Run: pip install yfinance pandas numpy")
     sys.exit(1)
 
-WATCHLIST = ["NVDA", "TSLA", "AMZN", "META", "AVGO", "AMD", "MSFT", "GOOGL", "AAPL", "JPM"]
+WATCHLIST = [
+    "NVDA", "TSLA", "AMZN", "META", "AVGO", "AMD", "MSFT", "GOOGL", "AAPL", "JPM",
+    "NFLX", "INTC", "ORCL", "CRM", "DIS", "BAC", "PLTR", "INFY",
+]
 
 TIER_RULES = {
     "high": {

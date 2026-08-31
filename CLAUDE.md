@@ -1,16 +1,25 @@
 # Trading Tracker — Project Context
 
 ## What this project is
-A personal intraday-trading dashboard for a watchlist of 10 US mega-cap stocks
-(NVDA, TSLA, AMZN, META, AVGO, AMD, MSFT, GOOGL, AAPL, JPM). It has two halves:
+A personal intraday-trading dashboard for a watchlist of 18 US-listed stocks
+(NVDA, TSLA, AMZN, META, AVGO, AMD, MSFT, GOOGL, AAPL, JPM, NFLX, INTC, ORCL,
+CRM, DIS, BAC, PLTR, INFY). It has three parts:
 
 1. **Data pipeline** (Python + GitHub Actions) — runs on GitHub's servers on a
-   schedule, fetches recent price data, tiers each stock by volatility, applies
-   a simple rule-based strategy per tier, backtests it, and publishes the
-   results as `results.json` committed back to this repo.
-2. **Web dashboard** (React + Vite) — a standalone website that fetches
-   `results.json` and displays it: watchlist cards, backtest table, a position-size
-   calculator, and a personal trade journal (saved in the browser's localStorage).
+   schedule, fetches recent price data (daily bars, 6mo window), tiers each
+   stock by volatility, applies a simple rule-based strategy per tier,
+   backtests it, and publishes the results — including each ticker's full
+   daily OHLC history — as `results.json` committed back to this repo.
+2. **Web dashboard** (React + Vite) — a standalone website with tabs for the
+   watchlist, price trend charts, the backtest table, a strategy Lab
+   (client-side parameter tuning), a simulated ₹80,000 paper-trading
+   portfolio, a position-size calculator, a real trade journal, a Learn/docs
+   page, and settings (localStorage-backed throughout).
+3. **Live quotes proxy** (Vercel serverless function, `web/api/quote.js`) —
+   server-side fetch of near-real-time prices, since the upstream API blocks
+   direct browser calls (no CORS headers). Only runs where Vercel executes
+   it; the dashboard falls back to the daily `results.json` price everywhere
+   else without erroring.
 
 Repo: https://github.com/sushant-patel/Trading- (public)
 
@@ -31,7 +40,10 @@ Repo: https://github.com/sushant-patel/Trading- (public)
   browser-fetchable without a token).
 - `web/` — the Vite + React dashboard (standalone site, not a Claude artifact).
   - `web/src/App.jsx` — main component: tabs for Watchlist / Trends / Backtest /
-    Lab / Calculator / Journal / Settings.
+    Lab / Portfolio / Calculator / Journal / Learn / Settings. Also owns the
+    live-quote polling loop (30s interval, `web/src/lib/liveQuotes.js`) and
+    the `selectedTicker` state that lets a Watchlist card click jump straight
+    to that ticker in Trends.
   - `web/src/components/InfoTip.jsx` — reusable click-to-open (ⓘ) tooltip used
     throughout the app to explain metrics/fields to someone new to trading.
     Viewport-aware: flips to right-aligned when it would otherwise render off
@@ -41,12 +53,23 @@ Repo: https://github.com/sushant-patel/Trading- (public)
     which was silently inherited into the tooltip text (another real bug).
   - `web/src/components/Charts.jsx` — hand-rolled SVG charts (no charting
     library): `Sparkline` (compact, non-interactive, used on Watchlist cards)
-    and `TrendChart` (full axis labels + hover crosshair/tooltip, used by the
-    Trends tab and the Lab's cumulative-return chart).
+    and `TrendChart` (full axis labels + hover crosshair/tooltip, used by
+    Trends and the Lab's cumulative-return chart). Trends also has a 1M/3M/All
+    timeframe filter that just slices the already-loaded `history` array —
+    no re-fetch needed.
+  - `web/src/components/Portfolio.jsx` — the simulated ₹80,000 paper-trading
+    tab. Opening a position converts an INR amount to USD at the current live
+    FX rate and buys fractional shares at the current price (live quote if
+    available, else the daily `last_close`); closing one realizes P/L back
+    into total capital. Entirely localStorage-backed (`tt_paper_portfolio`),
+    no backend, no real orders anywhere.
+  - `web/src/components/Learn.jsx` — the in-app documentation tab: getting
+    -started steps, a concepts glossary, a per-tab guide, and a limitations
+    list, with an anchor-nav that scrolls to each section.
   - `web/src/lib/backtest.js` — client-side port of `backtest_daily_breakout()`
     from `intraday_screener.py`, used by the Lab tab so strategy params can be
     tuned live against real history with no server round-trip. Verified to
-    match the Python output to 4 decimal places across all 10 tickers. Note:
+    match the Python output to 4 decimal places across all tickers. Note:
     in the original script's own logic, `stop_frac` only affects the `high`
     tier (medium/low hardcode their stop to the day's low) — the Lab disables
     that slider for medium/low so this isn't mistaken for a bug.
@@ -54,6 +77,16 @@ Repo: https://github.com/sushant-patel/Trading- (public)
     6h localStorage cache, falls back to last cached rate if the network call
     fails). Note: `api.frankfurter.app` was tried first and rejected — it
     doesn't send CORS headers, so it silently fails from a browser context.
+  - `web/src/lib/liveQuotes.js` — client-side fetch of `/api/quote`. Returns
+    `null` on any failure (including 404, e.g. plain `vite dev` with no API
+    routes) so the caller can fall back silently instead of erroring.
+  - `web/api/quote.js` — Vercel serverless function. Proxies
+    `query2.finance.yahoo.com`'s chart endpoint server-side (confirmed via
+    curl that it sends no CORS header, so the browser can't call it
+    directly), validates requested symbols against the watchlist (rejects
+    anything else — tested with injection-style input), and returns
+    `{ quotes, fetchedAt }`. Only executes on Vercel; there's no equivalent
+    for local `vite dev`.
   - `web/src/main.jsx` — Vite entry point.
   - `web/index.html`, `web/package.json`, `web/vite.config.js` — standard Vite
     scaffold.
@@ -128,6 +161,19 @@ normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.
       highest-return ticker among those with ≥5 trades (avoids small-sample
       luck), re-ranks itself as `results.json` updates; explicitly labeled
       "not a recommendation"
+- [x] Watchlist expanded 10 → 18 tickers (added NFLX, INTC, ORCL, CRM, DIS,
+      BAC, PLTR, INFY) for more spread across tiers/sectors
+- [x] Watchlist cards are clickable — jumps to Trends with that ticker selected
+- [x] Trends tab: 1M / 3M / All timeframe filter (client-side slice of the
+      already-loaded history, no re-fetch)
+- [x] Live prices: `web/api/quote.js` Vercel serverless proxy + 30s client
+      polling, overlaid on Watchlist and Portfolio with a green live-dot;
+      falls back silently to daily `results.json` prices when unavailable
+      (always the case on local `vite dev`, which has no `/api` routes)
+- [x] Portfolio tab: simulated ₹80,000 paper-trading account — open/close
+      positions, unrealized/realized P/L, persisted in localStorage
+- [x] Learn tab: getting-started steps, concepts glossary, per-tab guide,
+      and a limitations list
 
 ## Next steps (suggested order)
 

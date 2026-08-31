@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import InfoTip from './components/InfoTip.jsx'
 import { Sparkline, TrendChart } from './components/Charts.jsx'
+import Portfolio from './components/Portfolio.jsx'
+import Learn from './components/Learn.jsx'
 import { getUsdInrRate, formatInr } from './lib/currency.js'
 import { runBacktest, TIER_DEFAULTS } from './lib/backtest.js'
+import { fetchLiveQuotes } from './lib/liveQuotes.js'
 
 const DEFAULT_DATA_URL =
   'https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json'
@@ -12,9 +15,10 @@ const STORAGE_KEYS = {
   journal: 'tt_journal_entries',
 }
 
-const TABS = ['Watchlist', 'Trends', 'Backtest', 'Lab', 'Calculator', 'Journal', 'Settings']
+const TABS = ['Watchlist', 'Trends', 'Backtest', 'Lab', 'Portfolio', 'Calculator', 'Journal', 'Learn', 'Settings']
 
 const MIN_TRADES_FOR_RANKING = 5
+const LIVE_QUOTE_POLL_MS = 30000
 
 const TIER_INFO = {
   high: "High volatility tier (avg daily range ≥ 3.5%). Strategy: Opening Range Breakout — enters long when price closes above the prior day's high.",
@@ -66,6 +70,9 @@ export default function App() {
   const [lastFetched, setLastFetched] = useState(null)
   const [journal, setJournal] = useState(loadJournal)
   const [fx, setFx] = useState(null)
+  const [liveQuotes, setLiveQuotes] = useState(null)
+  const [liveAvailable, setLiveAvailable] = useState(null) // null = unknown yet, true/false once known
+  const [selectedTicker, setSelectedTicker] = useState(null)
 
   function refreshFx() {
     getUsdInrRate().then(setFx)
@@ -74,6 +81,36 @@ export default function App() {
   useEffect(() => {
     refreshFx()
   }, [])
+
+  useEffect(() => {
+    if (!data?.tickers?.length || liveAvailable === false) return
+    let cancelled = false
+
+    async function poll() {
+      const symbols = data.tickers.map((t) => t.ticker)
+      const result = await fetchLiveQuotes(symbols)
+      if (cancelled) return
+      if (!result) {
+        setLiveAvailable((prev) => (prev === null ? false : prev))
+        return
+      }
+      setLiveAvailable(true)
+      setLiveQuotes(result.quotes)
+    }
+
+    poll()
+    const interval = setInterval(poll, LIVE_QUOTE_POLL_MS)
+    return () => {
+      cancelled = true
+      clearInterval(interval)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data?.tickers?.length, liveAvailable])
+
+  function goToTicker(ticker) {
+    setSelectedTicker(ticker)
+    setActiveTab('Trends')
+  }
 
   async function fetchData(url) {
     setStatus('loading')
@@ -125,7 +162,7 @@ export default function App() {
         <div>
           <h1>Trading Tracker</h1>
           <div className="subtitle">
-            Watchlist · Backtest · Position Sizing · Journal
+            Screener · Backtest Lab · Paper Trading · Journal
           </div>
         </div>
       </header>
@@ -150,10 +187,15 @@ export default function App() {
         ))}
       </nav>
 
-      {activeTab === 'Watchlist' && <Watchlist data={data} status={status} fx={fx} />}
-      {activeTab === 'Trends' && <Trends data={data} status={status} />}
+      {activeTab === 'Watchlist' && (
+        <Watchlist data={data} status={status} fx={fx} liveQuotes={liveQuotes} onSelectTicker={goToTicker} />
+      )}
+      {activeTab === 'Trends' && (
+        <Trends data={data} status={status} ticker={selectedTicker} onSelectTicker={setSelectedTicker} />
+      )}
       {activeTab === 'Backtest' && <Backtest data={data} status={status} />}
       {activeTab === 'Lab' && <Lab data={data} status={status} />}
+      {activeTab === 'Portfolio' && <Portfolio data={data} status={status} liveQuotes={liveQuotes} fx={fx} />}
       {activeTab === 'Calculator' && <Calculator fx={fx} />}
       {activeTab === 'Journal' && (
         <Journal
@@ -164,6 +206,7 @@ export default function App() {
           fx={fx}
         />
       )}
+      {activeTab === 'Learn' && <Learn />}
       {activeTab === 'Settings' && (
         <Settings
           currentUrl={dataUrl}
@@ -172,6 +215,7 @@ export default function App() {
           errorMsg={errorMsg}
           fx={fx}
           onRefreshFx={refreshFx}
+          liveAvailable={liveAvailable}
         />
       )}
     </div>
@@ -199,7 +243,7 @@ function StatusBar({ status, errorMsg, lastFetched, onRefresh, generatedAt }) {
   )
 }
 
-function Watchlist({ data, status, fx }) {
+function Watchlist({ data, status, fx, liveQuotes, onSelectTicker }) {
   if (status === 'loading' && !data) {
     return <div className="empty-state">Loading watchlist…</div>
   }
@@ -216,8 +260,19 @@ function Watchlist({ data, status, fx }) {
 
   return (
     <div className="grid">
-      {data.tickers.map((t) => (
-        <div className="ticker-card" key={t.ticker}>
+      {data.tickers.map((t) => {
+        const live = liveQuotes?.[t.ticker]
+        const displayPrice = live?.price ?? t.last_close
+        const displayChangePct = live?.changePct ?? t.last_change_pct
+        return (
+        <div
+          className="ticker-card"
+          key={t.ticker}
+          role="button"
+          tabIndex={0}
+          onClick={() => onSelectTicker?.(t.ticker)}
+          onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onSelectTicker?.(t.ticker)}
+        >
           <div className="row1">
             <span className="ticker">{t.ticker}</span>
             <span className={`tier-badge ${t.tier}`}>
@@ -225,11 +280,14 @@ function Watchlist({ data, status, fx }) {
               <InfoTip text={TIER_INFO[t.tier] || 'Volatility tier for this ticker.'} />
             </span>
           </div>
-          <div className="price">${fmt(t.last_close)}</div>
-          {fx?.rate && <div className="price-inr">≈ {inrEquivalent(t.last_close, fx)}</div>}
-          <div className={`change ${t.last_change_pct >= 0 ? 'up' : 'down'}`}>
-            {t.last_change_pct >= 0 ? '+' : ''}
-            {fmt(t.last_change_pct)}%
+          <div className="price">
+            ${fmt(displayPrice)}
+            {live && <span className="live-dot" title="Live price" />}
+          </div>
+          {fx?.rate && <div className="price-inr">≈ {inrEquivalent(displayPrice, fx)}</div>}
+          <div className={`change ${displayChangePct >= 0 ? 'up' : 'down'}`}>
+            {displayChangePct >= 0 ? '+' : ''}
+            {fmt(displayChangePct)}%
           </div>
           {t.history?.length > 1 && (
             <Sparkline
@@ -254,7 +312,8 @@ function Watchlist({ data, status, fx }) {
             </span>
           </div>
         </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
@@ -352,8 +411,14 @@ const CHART_GREEN = '#3ecf8e'
 const CHART_RED = '#f0556b'
 const CHART_BLUE = '#4f8ef7'
 
-function Trends({ data, status }) {
-  const [ticker, setTicker] = useState(null)
+const TIMEFRAMES = [
+  { key: '1m', label: '1M', days: 21 },
+  { key: '3m', label: '3M', days: 63 },
+  { key: 'all', label: 'All', days: null },
+]
+
+function Trends({ data, status, ticker, onSelectTicker }) {
+  const [timeframe, setTimeframe] = useState('all')
 
   if (status === 'loading' && !data) {
     return <div className="empty-state">Loading trends…</div>
@@ -364,7 +429,10 @@ function Trends({ data, status }) {
 
   const tickers = data.tickers
   const selected = tickers.find((t) => t.ticker === ticker) ?? tickers[0]
-  const series = (selected.history ?? []).map((h) => ({ date: h.date, value: h.close }))
+  const tf = TIMEFRAMES.find((t) => t.key === timeframe)
+  const fullHistory = selected.history ?? []
+  const slicedHistory = tf.days ? fullHistory.slice(-tf.days) : fullHistory
+  const series = slicedHistory.map((h) => ({ date: h.date, value: h.close }))
   const first = series[0]?.value
   const last = series[series.length - 1]?.value
   const periodChangePct = first ? ((last - first) / first) * 100 : null
@@ -376,26 +444,39 @@ function Trends({ data, status }) {
           Price Trend
           <InfoTip text="Daily closing price over the data window — the same bars the backtest runs against. Hover the chart for the exact price on any day. Sourced from the daily Action's own data pull, no extra API calls from your browser." />
         </h3>
-        <select className="ticker-select" value={selected.ticker} onChange={(e) => setTicker(e.target.value)}>
-          {tickers.map((t) => (
-            <option key={t.ticker} value={t.ticker}>
-              {t.ticker}
-            </option>
-          ))}
-        </select>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+          <div className="timeframe-row">
+            {TIMEFRAMES.map((t) => (
+              <button
+                key={t.key}
+                className={`timeframe-btn ${timeframe === t.key ? 'active' : ''}`}
+                onClick={() => setTimeframe(t.key)}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <select className="ticker-select" value={selected.ticker} onChange={(e) => onSelectTicker(e.target.value)}>
+            {tickers.map((t) => (
+              <option key={t.ticker} value={t.ticker}>
+                {t.ticker}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="card">
         <div className="trend-summary">
           <div>
             <span className="trend-ticker">{selected.ticker}</span>
             <span className="trend-meta">
-              {data.period} · {series.length} sessions
+              {tf.label} view · {series.length} sessions
             </span>
           </div>
           {periodChangePct !== null && (
             <span className={periodChangePct >= 0 ? 'change up' : 'change down'} style={{ fontSize: 15 }}>
               {periodChangePct >= 0 ? '+' : ''}
-              {fmt(periodChangePct)}% over period
+              {fmt(periodChangePct)}% over {tf.label === 'All' ? 'full period' : tf.label}
             </span>
           )}
         </div>
@@ -834,12 +915,31 @@ function Journal({ entries, onAdd, onDelete, tickers, fx }) {
   )
 }
 
-function Settings({ currentUrl, onSave, status, errorMsg, fx, onRefreshFx }) {
+function Settings({ currentUrl, onSave, status, errorMsg, fx, onRefreshFx, liveAvailable }) {
   const [url, setUrl] = useState(currentUrl)
   const [taxOpen, setTaxOpen] = useState(false)
 
   return (
     <div>
+      <div className="card settings-form" style={{ marginBottom: 16 }}>
+        <h3 className="section-title">
+          Live Prices
+          <InfoTip text="A server-side proxy (only present on the deployed Vercel site, not in local dev) fetches near-real-time quotes every 30 seconds and overlays them on the Watchlist and Portfolio tabs, marked with a green dot. Falls back silently to the daily results.json price if unavailable." />
+        </h3>
+        {liveAvailable === true && (
+          <div className="help-text" style={{ color: 'var(--green)' }}>
+            ● Live quotes active — refreshing every 30s
+          </div>
+        )}
+        {liveAvailable === false && (
+          <div className="help-text">
+            ○ Live quotes unavailable here (normal on <code>npm run dev</code> locally — works once deployed on
+            Vercel). Showing daily prices from results.json instead.
+          </div>
+        )}
+        {liveAvailable === null && <div className="help-text">Checking…</div>}
+      </div>
+
       <div className="card settings-form" style={{ marginBottom: 16 }}>
         <h3 className="section-title">
           Data Source

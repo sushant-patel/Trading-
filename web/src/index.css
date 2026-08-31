@@ -1302,10 +1302,8 @@ tr:last-child td { border-bottom: none; }
 }
 
 .info-tip-popover {
-  position: absolute;
+  position: fixed;
   z-index: 30;
-  top: 20px;
-  left: 0;
   width: 260px;
   background: var(--panel-alt);
   border: 1px solid var(--border);
@@ -1318,11 +1316,6 @@ tr:last-child td { border-bottom: none; }
   line-height: 1.6;
   color: var(--text);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-}
-
-.info-tip-popover.align-right {
-  left: auto;
-  right: 0;
 }
 
 .info-tip-learn-more {

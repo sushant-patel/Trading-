@@ -20,7 +20,7 @@
     },
     "discovered": {
       "label": "Discovered Best",
-      "description": "Always follows whatever the Discover tab's automated random search currently ranks as its single best-ever backtested combination. Replaced (old position closed, new one opened) whenever the search finds something that beats the current holding — a live forward-test of whatever the search turns up, not a fixed rule.",
+      "description": "Always follows whatever the Discover tab's automated search currently ranks as its best out-of-sample validated combination (fit on ~70% of history, confirmed still profitable on the ~30% it never trained on). Replaced whenever the search finds something better. A live forward-test of a combination that has already cleared one honesty check, not just the flashiest training number.",
       "positions": []
     }
   }

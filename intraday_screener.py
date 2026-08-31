@@ -86,6 +86,18 @@ def classify_tier(avg_range_pct: float) -> str:
         return "low"
 
 
+def fetch_usd_inr_rate() -> float:
+    """USD->INR rate via yfinance's FX ticker. Included in results.json so
+    anything reading that file (the dashboard, or a cloud routine with no
+    general internet access — only GitHub itself is reachable there) has a
+    same-day FX rate without needing a separate live API call of its own."""
+    df = yf.Ticker("USDINR=X").history(period="5d", interval="1d")
+    df = df.dropna(subset=["Close"])
+    if df.empty:
+        raise ValueError("No USD/INR rate returned")
+    return round(float(df.iloc[-1]["Close"]), 4)
+
+
 def fetch_history(ticker: str, period: str) -> pd.DataFrame:
     """Daily OHLCV bars for the given period ('2wk', '1mo', etc.)."""
     df = yf.Ticker(ticker).history(period=period, interval="1d")
@@ -245,6 +257,7 @@ def main():
         payload = {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "period": args.period,
+            "usd_inr_rate": fetch_usd_inr_rate(),
             "tickers": [asdict(r) for r in results],
         }
         with open(args.json_out, "w") as f:

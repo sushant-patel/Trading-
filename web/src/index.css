@@ -389,6 +389,11 @@ tr:last-child td { border-bottom: none; }
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
+.info-tip-popover.align-right {
+  left: auto;
+  right: 0;
+}
+
 .price-inr {
   font-size: 12px;
   color: var(--text-dim);

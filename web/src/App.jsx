@@ -231,8 +231,14 @@ function Watchlist({ data, status, fx }) {
               <InfoTip text="Average daily (High−Low)/Close range over the lookback period. This one number decides the tier (and therefore the strategy) above: ≥3.5% = high, 2.5–3.5% = medium, <2.5% = low." />
             </span>
             <span>
-              Win rate <strong>{fmt(t.win_rate, 1)}%</strong>
-              <InfoTip text={`% of backtested trades that closed profitable over "${data.period}". Based on only ${t.trades} trade${t.trades === 1 ? '' : 's'} here — too small a sample to trust as a real predictor, treat it as directional only.`} />
+              Win rate <strong>{t.trades === 0 ? '—' : `${fmt(t.win_rate, 1)}%`}</strong>
+              <InfoTip
+                text={
+                  t.trades === 0
+                    ? "This strategy's entry condition never triggered for this ticker during the current window — no signal, not a bad rating."
+                    : `% of backtested trades that closed profitable over "${data.period}". Based on only ${t.trades} trade${t.trades === 1 ? '' : 's'} here — too small a sample to trust as a real predictor, treat it as directional only.`
+                }
+              />
             </span>
           </div>
         </div>
@@ -249,7 +255,12 @@ function Backtest({ data, status }) {
     return <div className="empty-state">No backtest data available yet.</div>
   }
 
-  const rows = [...data.tickers].sort((a, b) => b.total_return_pct - a.total_return_pct)
+  const rows = [...data.tickers].sort((a, b) => {
+    if (a.trades === 0 && b.trades === 0) return 0
+    if (a.trades === 0) return 1
+    if (b.trades === 0) return -1
+    return b.total_return_pct - a.total_return_pct
+  })
 
   return (
     <div>
@@ -285,10 +296,16 @@ function Backtest({ data, status }) {
               <td style={{ textTransform: 'capitalize' }}>{t.tier}</td>
               <td>{fmt(t.avg_range_pct)}%</td>
               <td>{t.trades}</td>
-              <td>{fmt(t.win_rate, 1)}%</td>
-              <td className={t.total_return_pct >= 0 ? 'change up' : 'change down'}>
-                {t.total_return_pct >= 0 ? '+' : ''}
-                {fmt(t.total_return_pct)}%
+              <td>{t.trades === 0 ? '—' : `${fmt(t.win_rate, 1)}%`}</td>
+              <td className={t.trades === 0 ? '' : t.total_return_pct >= 0 ? 'change up' : 'change down'}>
+                {t.trades === 0 ? (
+                  '—'
+                ) : (
+                  <>
+                    {t.total_return_pct >= 0 ? '+' : ''}
+                    {fmt(t.total_return_pct)}%
+                  </>
+                )}
               </td>
             </tr>
           ))}

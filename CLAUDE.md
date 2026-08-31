@@ -30,12 +30,26 @@ Repo: https://github.com/sushant-patel/Trading- (public)
   (only works because the repo is public — a private repo's raw files aren't
   browser-fetchable without a token).
 - `web/` — the Vite + React dashboard (standalone site, not a Claude artifact).
-  - `web/src/App.jsx` — main component: tabs for Watchlist / Backtest /
-    Calculator / Journal / Settings.
+  - `web/src/App.jsx` — main component: tabs for Watchlist / Trends / Backtest /
+    Lab / Calculator / Journal / Settings.
   - `web/src/components/InfoTip.jsx` — reusable click-to-open (ⓘ) tooltip used
     throughout the app to explain metrics/fields to someone new to trading.
     Viewport-aware: flips to right-aligned when it would otherwise render off
-    the right edge of the screen (was a real bug on the 4th grid column).
+    the right edge of the screen (was a real bug on the 4th grid column). Its
+    popover resets `text-transform`/`letter-spacing` explicitly — it's nested
+    inside elements like `.tier-badge` and table `<th>` that set uppercase,
+    which was silently inherited into the tooltip text (another real bug).
+  - `web/src/components/Charts.jsx` — hand-rolled SVG charts (no charting
+    library): `Sparkline` (compact, non-interactive, used on Watchlist cards)
+    and `TrendChart` (full axis labels + hover crosshair/tooltip, used by the
+    Trends tab and the Lab's cumulative-return chart).
+  - `web/src/lib/backtest.js` — client-side port of `backtest_daily_breakout()`
+    from `intraday_screener.py`, used by the Lab tab so strategy params can be
+    tuned live against real history with no server round-trip. Verified to
+    match the Python output to 4 decimal places across all 10 tickers. Note:
+    in the original script's own logic, `stop_frac` only affects the `high`
+    tier (medium/low hardcode their stop to the day's low) — the Lab disables
+    that slider for medium/low so this isn't mistaken for a bug.
   - `web/src/lib/currency.js` — live USD→INR rate fetch (`open.er-api.com`,
     6h localStorage cache, falls back to last cached rate if the network call
     fails). Note: `api.frankfurter.app` was tried first and rejected — it
@@ -64,11 +78,20 @@ Repo: https://github.com/sushant-patel/Trading- (public)
       "last_change_pct": -4.58,
       "trades": 6,
       "win_rate": 50.0,
-      "total_return_pct": 3.1
+      "total_return_pct": 3.1,
+      "history": [
+        { "date": "2026-03-02", "open": 118.4, "high": 121.2, "low": 117.1, "close": 120.3 }
+      ]
     }
   ]
 }
 ```
+`history` is the full daily-bar series already fetched for the backtest (one
+entry per trading day in the window) — added so the dashboard's Trends chart
+and Lab tab can work entirely off this one file instead of calling a price API
+from the browser. At `--period 6mo` this makes `results.json` ~200KB, still a
+single fast fetch.
+
 The dashboard fetches this from whatever URL is saved in its Settings tab —
 normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json`.
 
@@ -90,20 +113,32 @@ normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.
       (now render "—", sorted to the bottom of the Backtest table)
 - [x] Fixed: InfoTip popovers were clipping off-screen on the right-hand grid
       column — now viewport-aware
-- [ ] Deploy `web/` to Vercel for a permanent public URL (see below)
+- [x] Fixed: InfoTip popover text was rendering in inherited ALL CAPS from
+      ancestor elements (`.tier-badge`, table `th`) — reset explicitly now
+- [x] Deployed to Vercel — live public URL (see top of this file / ask the
+      user, it's per-deployment and not hardcoded here)
+- [x] `history` (full daily OHLC series) added to `results.json` per ticker —
+      reuses data already fetched for the backtest, no new API calls
+- [x] Trends tab — per-ticker price chart with hover crosshair/tooltip
+- [x] Watchlist cards — compact sparkline per ticker (green/red by period direction)
+- [x] Lab tab — client-side backtest tuning (stop distance / target multiple
+      sliders) against real history, recomputes live; verified to match the
+      Python backtest to 4 decimal places
+- [x] Featured Setup panel (on the Backtest tab) — automatically picks the
+      highest-return ticker among those with ≥5 trades (avoids small-sample
+      luck), re-ranks itself as `results.json` updates; explicitly labeled
+      "not a recommendation"
 
 ## Next steps (suggested order)
 
-1. Deploy `web/` to Vercel (free): go to vercel.com → New Project → import
-   the `sushant-patel/Trading-` repo → set root directory to `web` → deploy.
-   Vercel auto-detects Vite. You'll get a public URL you can open on your phone.
-2. Once deployed, every push to `main` (including the daily Action's commits)
-   can optionally trigger a redeploy — Vercel does this automatically by default.
-3. Python is now installed locally (`winget install Python.Python.3.12`, at
+1. Python is now installed locally (`winget install Python.Python.3.12`, at
    `C:\Users\shush\AppData\Local\Programs\Python\Python312\python.exe` — not
    yet on PATH under the `python` alias, Windows' Store alias shadows it) with
    `yfinance`/`pandas`/`numpy` installed, so the screener can be run directly
    instead of only via the Action.
+2. Consider whether `TIER_RULES` (stop_frac/target_mult per tier in
+   `intraday_screener.py`) need retuning given the Backtest finding below —
+   the Lab tab is now the tool for experimenting with that live.
 
 ## Backtest finding (6mo run, 2026-08-31)
 

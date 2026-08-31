@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import InfoTip from './components/InfoTip.jsx'
+import { Sparkline, TrendChart } from './components/Charts.jsx'
 import { getUsdInrRate, formatInr } from './lib/currency.js'
+import { runBacktest, TIER_DEFAULTS } from './lib/backtest.js'
 
 const DEFAULT_DATA_URL =
   'https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json'
@@ -10,7 +12,9 @@ const STORAGE_KEYS = {
   journal: 'tt_journal_entries',
 }
 
-const TABS = ['Watchlist', 'Backtest', 'Calculator', 'Journal', 'Settings']
+const TABS = ['Watchlist', 'Trends', 'Backtest', 'Lab', 'Calculator', 'Journal', 'Settings']
+
+const MIN_TRADES_FOR_RANKING = 5
 
 const TIER_INFO = {
   high: "High volatility tier (avg daily range ≥ 3.5%). Strategy: Opening Range Breakout — enters long when price closes above the prior day's high.",
@@ -147,7 +151,9 @@ export default function App() {
       </nav>
 
       {activeTab === 'Watchlist' && <Watchlist data={data} status={status} fx={fx} />}
+      {activeTab === 'Trends' && <Trends data={data} status={status} />}
       {activeTab === 'Backtest' && <Backtest data={data} status={status} />}
+      {activeTab === 'Lab' && <Lab data={data} status={status} />}
       {activeTab === 'Calculator' && <Calculator fx={fx} />}
       {activeTab === 'Journal' && (
         <Journal
@@ -225,6 +231,12 @@ function Watchlist({ data, status, fx }) {
             {t.last_change_pct >= 0 ? '+' : ''}
             {fmt(t.last_change_pct)}%
           </div>
+          {t.history?.length > 1 && (
+            <Sparkline
+              values={t.history.map((h) => h.close)}
+              color={t.history[t.history.length - 1].close >= t.history[0].close ? 'var(--green)' : 'var(--red)'}
+            />
+          )}
           <div className="meta">
             <span>
               Avg range <strong>{fmt(t.avg_range_pct)}%</strong>
@@ -262,8 +274,28 @@ function Backtest({ data, status }) {
     return b.total_return_pct - a.total_return_pct
   })
 
+  const qualifying = data.tickers.filter((t) => t.trades >= MIN_TRADES_FOR_RANKING)
+  const featured = qualifying.length
+    ? [...qualifying].sort((a, b) => b.total_return_pct - a.total_return_pct)[0]
+    : null
+
   return (
     <div>
+      {featured && (
+        <div className="featured-setup">
+          <div className="kicker">
+            Featured Setup — computed from this data, not a recommendation
+            <InfoTip text={`Picked automatically: the highest backtested return among tickers with at least ${MIN_TRADES_FOR_RANKING} trades this window, so a lucky 1-trade 100% win rate can't win. Re-ranks itself every time results.json updates. This is not investment advice — it's "which rule fired best in this backtest," nothing more.`} />
+          </div>
+          <div className="headline">
+            {featured.ticker} · {TIER_DEFAULTS[featured.tier]?.label ?? featured.tier}
+          </div>
+          <div className="sub">
+            {featured.trades} trades · {fmt(featured.win_rate, 1)}% win rate · {featured.total_return_pct >= 0 ? '+' : ''}
+            {fmt(featured.total_return_pct)}% backtested return over {data.period}
+          </div>
+        </div>
+      )}
       <h3 className="section-title">
         Backtest Results ({data.period})
         <InfoTip text="Each ticker's tier strategy re-run against its own recent price history. This runs on DAILY bars as an approximation — not a true intraday backtest — and ignores fees, slippage, and spread. It's a rough edge check, not a live track record." />
@@ -312,6 +344,217 @@ function Backtest({ data, status }) {
           </tbody>
         </table>
       </div>
+    </div>
+  )
+}
+
+const CHART_GREEN = '#3ecf8e'
+const CHART_RED = '#f0556b'
+const CHART_BLUE = '#4f8ef7'
+
+function Trends({ data, status }) {
+  const [ticker, setTicker] = useState(null)
+
+  if (status === 'loading' && !data) {
+    return <div className="empty-state">Loading trends…</div>
+  }
+  if (!data?.tickers?.length) {
+    return <div className="empty-state">No trend data available yet.</div>
+  }
+
+  const tickers = data.tickers
+  const selected = tickers.find((t) => t.ticker === ticker) ?? tickers[0]
+  const series = (selected.history ?? []).map((h) => ({ date: h.date, value: h.close }))
+  const first = series[0]?.value
+  const last = series[series.length - 1]?.value
+  const periodChangePct = first ? ((last - first) / first) * 100 : null
+
+  return (
+    <div>
+      <div className="trends-header">
+        <h3 className="section-title" style={{ marginBottom: 0 }}>
+          Price Trend
+          <InfoTip text="Daily closing price over the data window — the same bars the backtest runs against. Hover the chart for the exact price on any day. Sourced from the daily Action's own data pull, no extra API calls from your browser." />
+        </h3>
+        <select className="ticker-select" value={selected.ticker} onChange={(e) => setTicker(e.target.value)}>
+          {tickers.map((t) => (
+            <option key={t.ticker} value={t.ticker}>
+              {t.ticker}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="card">
+        <div className="trend-summary">
+          <div>
+            <span className="trend-ticker">{selected.ticker}</span>
+            <span className="trend-meta">
+              {data.period} · {series.length} sessions
+            </span>
+          </div>
+          {periodChangePct !== null && (
+            <span className={periodChangePct >= 0 ? 'change up' : 'change down'} style={{ fontSize: 15 }}>
+              {periodChangePct >= 0 ? '+' : ''}
+              {fmt(periodChangePct)}% over period
+            </span>
+          )}
+        </div>
+        <TrendChart series={series} color={periodChangePct >= 0 ? CHART_GREEN : CHART_RED} />
+      </div>
+    </div>
+  )
+}
+
+function Lab({ data, status }) {
+  const [ticker, setTicker] = useState(null)
+  const [tier, setTier] = useState(null)
+  const [stopFrac, setStopFrac] = useState(null)
+  const [targetMult, setTargetMult] = useState(null)
+
+  if (status === 'loading' && !data) {
+    return <div className="empty-state">Loading…</div>
+  }
+  if (!data?.tickers?.length) {
+    return <div className="empty-state">No data available yet.</div>
+  }
+
+  const tickers = data.tickers
+  const selected = tickers.find((t) => t.ticker === ticker) ?? tickers[0]
+  const activeTier = tier ?? selected.tier
+  const defaults = TIER_DEFAULTS[activeTier]
+  const activeStopFrac = stopFrac ?? defaults.stopFrac
+  const activeTargetMult = targetMult ?? defaults.targetMult
+
+  const live = runBacktest(selected.history, activeTier, { stopFrac: activeStopFrac, targetMult: activeTargetMult })
+  const baseline = runBacktest(selected.history, activeTier, defaults)
+
+  const equitySeries = live.outcomes.reduce((acc, o, i) => {
+    const prevValue = acc.length ? acc[acc.length - 1].value : 0
+    acc.push({ date: `Trade ${i + 1}`, value: prevValue + o })
+    return acc
+  }, [])
+
+  function handleTickerChange(newTicker) {
+    setTicker(newTicker)
+    setTier(null)
+    setStopFrac(null)
+    setTargetMult(null)
+  }
+
+  function handleTierChange(newTier) {
+    setTier(newTier)
+    setStopFrac(null)
+    setTargetMult(null)
+  }
+
+  return (
+    <div>
+      <h3 className="section-title">
+        Strategy Lab
+        <InfoTip text="Tune the same rule the backtest uses and see trades/win-rate/return recompute instantly, entirely in your browser, against the real price history already loaded. Nothing here is sent anywhere — it's just experimentation, not a way to change what the Action publishes." />
+      </h3>
+      <div className="card" style={{ marginBottom: 16 }}>
+        <div className="form-grid" style={{ marginBottom: 4 }}>
+          <div className="field">
+            <label>Ticker</label>
+            <select value={selected.ticker} onChange={(e) => handleTickerChange(e.target.value)}>
+              {tickers.map((t) => (
+                <option key={t.ticker} value={t.ticker}>
+                  {t.ticker}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="field">
+            <label>
+              Strategy
+              <InfoTip text="Which entry rule to test. Doesn't have to match the ticker's own current tier — pick a different one to see how, say, a breakout rule would've done on a low-volatility stock." />
+            </label>
+            <select value={activeTier} onChange={(e) => handleTierChange(e.target.value)}>
+              <option value="high">High — Opening Range Breakout</option>
+              <option value="medium">Medium — VWAP Trend Pullback</option>
+              <option value="low">Low — Range Fade / Mean Reversion</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="slider-row">
+          <div className="slider-label">
+            <span>
+              Stop distance (× prior bar's range) {activeTier !== 'high' && <em className="inactive-note">— only used by High</em>}
+              <InfoTip
+                text={
+                  activeTier === 'high'
+                    ? "How far the stop is placed below entry, as a fraction of the prior day's range. Larger = more room before you're stopped out, but a bigger loss when wrong."
+                    : "This strategy's stop is fixed at the day's low (from the script's own logic) — this slider only changes anything for the High / Opening Range Breakout strategy. Switch Strategy above to High to see it matter."
+                }
+              />
+            </span>
+            <strong>{activeStopFrac.toFixed(2)}</strong>
+          </div>
+          <input
+            type="range"
+            min="0.1"
+            max="0.6"
+            step="0.05"
+            value={activeStopFrac}
+            disabled={activeTier !== 'high'}
+            onChange={(e) => setStopFrac(parseFloat(e.target.value))}
+          />
+        </div>
+        <div className="slider-row">
+          <div className="slider-label">
+            <span>
+              Target multiple (reward : risk)
+              <InfoTip text="Profit target as a multiple of the risk distance. 2.0 means aiming to win twice what you'd lose if stopped out." />
+            </span>
+            <strong>{activeTargetMult.toFixed(1)}×</strong>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="3"
+            step="0.1"
+            value={activeTargetMult}
+            onChange={(e) => setTargetMult(parseFloat(e.target.value))}
+          />
+        </div>
+
+        <div className="lab-results">
+          <div className="lab-stat">
+            <div className="label">Trades</div>
+            <div className="value">{live.trades}</div>
+          </div>
+          <div className="lab-stat">
+            <div className="label">Win Rate</div>
+            <div className="value">{live.trades === 0 ? '—' : `${fmt(live.winRate, 1)}%`}</div>
+          </div>
+          <div className="lab-stat">
+            <div className="label">Total Return</div>
+            <div className={`value ${live.trades === 0 ? '' : live.totalReturn >= 0 ? 'change up' : 'change down'}`}>
+              {live.trades === 0 ? '—' : `${live.totalReturn >= 0 ? '+' : ''}${fmt(live.totalReturn)}%`}
+            </div>
+          </div>
+        </div>
+        <div className="baseline-note">
+          Script default for this strategy (stop {defaults.stopFrac}, target {defaults.targetMult}×): {baseline.trades} trades,{' '}
+          {baseline.trades === 0 ? '—' : `${fmt(baseline.winRate, 1)}% win rate, ${baseline.totalReturn >= 0 ? '+' : ''}${fmt(baseline.totalReturn)}% return`}
+        </div>
+      </div>
+
+      {equitySeries.length > 1 && (
+        <div className="card">
+          <h3 className="section-title">
+            Cumulative Return by Trade
+            <InfoTip text="Running total of each trade's % outcome, in the order they occurred — not a real equity curve (no position sizing or compounding), just a shape for how bumpy the ride was." />
+          </h3>
+          <TrendChart
+            series={equitySeries}
+            color={live.totalReturn >= 0 ? CHART_GREEN : CHART_RED}
+            yFormat={(v) => `${v.toFixed(1)}%`}
+          />
+        </div>
+      )}
     </div>
   )
 }

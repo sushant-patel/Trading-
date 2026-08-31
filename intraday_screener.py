@@ -71,6 +71,7 @@ class TickerResult:
     trades: int
     win_rate: float
     total_return_pct: float
+    history: list
 
 
 def classify_tier(avg_range_pct: float) -> str:
@@ -180,6 +181,19 @@ def analyze(ticker: str, period: str) -> TickerResult:
 
     trades, win_rate, total_return = backtest_daily_breakout(df, tier)
 
+    # Reuse the already-fetched bars for client-side charting/experimentation in
+    # the dashboard, instead of a second round-trip to a price API in the browser.
+    history = [
+        {
+            "date": idx.strftime("%Y-%m-%d"),
+            "open": round(float(row["Open"]), 4),
+            "high": round(float(row["High"]), 4),
+            "low": round(float(row["Low"]), 4),
+            "close": round(float(row["Close"]), 4),
+        }
+        for idx, row in df.iterrows()
+    ]
+
     return TickerResult(
         ticker=ticker,
         avg_range_pct=avg_range_pct,
@@ -189,6 +203,7 @@ def analyze(ticker: str, period: str) -> TickerResult:
         trades=trades,
         win_rate=win_rate,
         total_return_pct=total_return,
+        history=history,
     )
 
 

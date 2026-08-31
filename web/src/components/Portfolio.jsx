@@ -6,12 +6,11 @@ import { computeHypotheticalStopTarget } from '../lib/signals.js'
 import { TIER_DEFAULTS } from '../lib/backtest.js'
 
 const STARTING_CAPITAL_INR = 80000
-const STORAGE_KEY = 'tt_paper_portfolio'
 const NEAR_LEVEL_PCT = 2
 
-function loadPortfolio() {
+function loadPortfolio(storageKey) {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY)
+    const raw = localStorage.getItem(storageKey)
     const parsed = raw ? JSON.parse(raw) : null
     return parsed?.positions ? parsed : { positions: [] }
   } catch {
@@ -19,9 +18,9 @@ function loadPortfolio() {
   }
 }
 
-function savePortfolio(portfolio) {
+function savePortfolio(storageKey, portfolio) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio))
+    localStorage.setItem(storageKey, JSON.stringify(portfolio))
   } catch {
     // localStorage unavailable — portfolio stays in-memory only for this session
   }
@@ -56,8 +55,8 @@ function stopTargetFlag(currentPriceUsd, stopPriceUsd, targetPriceUsd) {
   return null
 }
 
-export default function Portfolio({ data, status, liveQuotes, fx }) {
-  const [portfolio, setPortfolio] = useState(loadPortfolio)
+export default function Portfolio({ data, status, liveQuotes, fx, strategy }) {
+  const [portfolio, setPortfolio] = useState(() => loadPortfolio(strategy.storageKey))
   const [form, setForm] = useState({ ticker: '', amountInr: '', reason: '' })
 
   if (status === 'loading' && !data) {
@@ -67,9 +66,12 @@ export default function Portfolio({ data, status, liveQuotes, fx }) {
     return <div className="empty-state">No data available yet.</div>
   }
 
+  const allowedTickers = strategy.getAllowedTickers(data)
+  const tickerOptions = data.tickers.filter((t) => allowedTickers.includes(t.ticker))
+
   function persist(next) {
     setPortfolio(next)
-    savePortfolio(next)
+    savePortfolio(strategy.storageKey, next)
   }
 
   const openPositions = portfolio.positions.filter((p) => p.status === 'open')
@@ -166,18 +168,19 @@ export default function Portfolio({ data, status, liveQuotes, fx }) {
   }
 
   function handleReset() {
-    if (!window.confirm('Reset the paper portfolio back to ₹80,000? This deletes every open and closed position.')) return
+    if (!window.confirm(`Reset "${strategy.label}" back to ₹80,000? This deletes every open and closed position in this portfolio only.`)) return
     persist({ positions: [] })
   }
 
-  const canOpen = fx?.rate && data.tickers.length > 0
+  const canOpen = fx?.rate && tickerOptions.length > 0
 
   return (
     <div>
       <h3 className="section-title">
-        Paper Portfolio
-        <InfoTip text="Fully simulated — no real money, no real orders, nothing sent to any broker. Allocate part of a virtual ₹80,000, open a position at today's price, then come back in a few days or next week to see what actually happened before risking anything real." learnId="paper-portfolio" />
+        {strategy.label}
+        <InfoTip text={`${strategy.description} Fully simulated — no real money, no real orders, nothing sent to any broker.`} learnId="paper-portfolio" />
       </h3>
+      <p className="basics-body" style={{ marginTop: -8, marginBottom: 16 }}>{strategy.description}</p>
 
       <div className="lab-results" style={{ marginBottom: 16 }}>
         <div className="lab-stat">
@@ -210,9 +213,13 @@ export default function Portfolio({ data, status, liveQuotes, fx }) {
           <div className="form-grid" style={{ marginBottom: 12 }}>
             <div className="field">
               <label>Ticker</label>
-              <select value={form.ticker} onChange={(e) => setForm((f) => ({ ...f, ticker: e.target.value }))}>
+              <select
+                value={form.ticker}
+                onChange={(e) => setForm((f) => ({ ...f, ticker: e.target.value }))}
+                disabled={tickerOptions.length === 0}
+              >
                 <option value="">Select…</option>
-                {data.tickers.map((t) => (
+                {tickerOptions.map((t) => (
                   <option key={t.ticker} value={t.ticker}>
                     {t.ticker} · {t.tier}
                   </option>
@@ -246,6 +253,11 @@ export default function Portfolio({ data, status, liveQuotes, fx }) {
             Open Position
           </button>
         </form>
+        {tickerOptions.length === 0 && strategy.emptyMessage && (
+          <div className="help-text" style={{ marginTop: 10, color: 'var(--amber)' }}>
+            {strategy.emptyMessage}
+          </div>
+        )}
         {availableInr <= 0 && (
           <div className="help-text" style={{ marginTop: 10 }}>
             No capital left to allocate — close a position first, or reset the portfolio below.
@@ -387,7 +399,7 @@ export default function Portfolio({ data, status, liveQuotes, fx }) {
       )}
 
       <button className="btn secondary" onClick={handleReset}>
-        Reset portfolio to ₹80,000
+        Reset "{strategy.label}" to ₹80,000
       </button>
     </div>
   )

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import InfoTip from './components/InfoTip.jsx'
 import { Sparkline, TrendChart, CHART_GREEN, CHART_RED } from './components/Charts.jsx'
-import Portfolio from './components/Portfolio.jsx'
+import Portfolios from './components/Portfolios.jsx'
 import Learn from './components/Learn.jsx'
 import TrendsTab from './components/Trends.jsx'
 import Watch from './components/Watch.jsx'
@@ -9,6 +9,7 @@ import DailyNotes from './components/DailyNotes.jsx'
 import { getUsdInrRate, formatInr } from './lib/currency.js'
 import { runBacktest, TIER_DEFAULTS } from './lib/backtest.js'
 import { fetchLiveQuotes } from './lib/liveQuotes.js'
+import { computeFeaturedSetup, MIN_TRADES_FOR_RANKING } from './lib/featured.js'
 
 const DEFAULT_DATA_URL =
   'https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json'
@@ -32,7 +33,6 @@ const TABS = [
   'Settings',
 ]
 
-const MIN_TRADES_FOR_RANKING = 5
 const LIVE_QUOTE_POLL_MS = 30000
 
 const TIER_INFO = {
@@ -222,7 +222,7 @@ export default function App() {
       {activeTab === 'Watch' && <Watch data={data} status={status} onSelectTicker={goToTicker} />}
       {activeTab === 'Backtest' && <Backtest data={data} status={status} />}
       {activeTab === 'Lab' && <Lab data={data} status={status} />}
-      {activeTab === 'Portfolio' && <Portfolio data={data} status={status} liveQuotes={liveQuotes} fx={fx} />}
+      {activeTab === 'Portfolio' && <Portfolios data={data} status={status} liveQuotes={liveQuotes} fx={fx} />}
       {activeTab === 'Notes' && <DailyNotes />}
       {activeTab === 'Calculator' && <Calculator fx={fx} />}
       {activeTab === 'Journal' && (
@@ -362,10 +362,7 @@ function Backtest({ data, status }) {
     return b.total_return_pct - a.total_return_pct
   })
 
-  const qualifying = data.tickers.filter((t) => t.trades >= MIN_TRADES_FOR_RANKING)
-  const featured = qualifying.length
-    ? [...qualifying].sort((a, b) => b.total_return_pct - a.total_return_pct)[0]
-    : null
+  const featured = computeFeaturedSetup(data.tickers)
 
   return (
     <div>

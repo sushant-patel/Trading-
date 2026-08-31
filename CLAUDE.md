@@ -125,8 +125,27 @@ needs revising.
     when price is near/past either. Closing realizes P/L back into total
     capital; a "Capital Over Time" chart is derived entirely from closed
     positions (starting capital + cumulative realized P/L per close), no
-    separate history log needed. Entirely localStorage-backed
-    (`tt_paper_portfolio`), no backend, no real orders anywhere.
+    separate history log needed. No backend, no real orders anywhere. Now a
+    generic component parameterized by a `strategy` prop (id/label/
+    description/storageKey/getAllowedTickers) rather than a single portfolio
+    — see `Portfolios.jsx` below.
+  - `web/src/components/Portfolios.jsx` + `web/src/lib/portfolioStrategies.js`
+    — three independent simulated ₹80,000 portfolios running side by side
+    (each gets its own full ₹80,000, not a split), so different approaches
+    can be compared over a 1-2 week evaluation window before real money:
+    **Featured Setup Only** (ticker dropdown locked to whatever currently
+    ranks #1 in Featured Setup), **Diversified** (any ticker, no hard
+    constraint — the discipline is spreading across tiers), **High-
+    Conviction Triggers** (ticker dropdown locked to whichever tickers are
+    within 1.5% of their Watch-tab trigger level). Each strategy gets its
+    own localStorage key (`tt_paper_portfolio_<id>`) so they never collide.
+    A "Compare All" view (`lib/portfolioSummary.js`) shows all three side by
+    side without mounting three full `Portfolio` instances.
+  - `web/src/lib/featured.js` — `computeFeaturedSetup()`, the single source
+    of truth for "Featured Setup" ranking (≥5 trades, highest
+    `total_return_pct`), shared by the Backtest tab's callout and the
+    Portfolios tab's "Featured Setup Only" strategy so they can't drift out
+    of sync with each other.
   - `web/src/components/Learn.jsx` — the in-app documentation tab: getting
     -started steps, a concepts glossary (each card has a stable `id` for
     `InfoTip`'s "Learn more" links, and a couple carry verified external
@@ -299,12 +318,12 @@ scheduled process ever starts updating it.
 - [x] Notes tab + `daily_notes.json`: reads an accumulating log, currently
       one manually-seeded real entry (2026-08-31) — see Next steps for what's
       needed to make this actually update daily
-- [ ] Decide + build: multi-portfolio "combinations" for a 1-2 week paper-
-      trading study (user wants to compare approaches before real money) —
-      needs the user's input on structure before building, see Next steps
-- [ ] Decide: whether to set up a scheduled routine so Daily Notes actually
-      updates once a day on its own — a real recurring automated action,
-      wants explicit user confirmation first (see Next steps)
+- [x] Multi-portfolio: 3 independent ₹80,000 portfolios (Featured Setup Only,
+      Diversified, High-Conviction Triggers) for a 1-2 week comparison study
+      before real money — user chose this structure explicitly over a split-
+      budget or single-portfolio alternative
+- [ ] Daily automation: user confirmed they want a scheduled routine so Daily
+      Notes actually updates once a day — not yet set up, see Next steps
 
 ## Next steps (suggested order)
 

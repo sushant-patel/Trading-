@@ -1,0 +1,22 @@
+{
+  "updated_at": "2026-08-31T12:45:00Z",
+  "starting_capital_inr": 80000,
+  "note": "This is a repo-published ledger (same pattern as results.json and daily_notes.json), not local browser state.",
+  "strategies": {
+    "featured": {
+      "label": "Featured Setup Only",
+      "description": "Only the ticker currently ranked #1 by Featured Setup (highest backtested return among tickers with ≥5 trades) is allowed.",
+      "positions": []
+    },
+    "diversified": {
+      "label": "Diversified",
+      "description": "One position per volatility tier (High/Medium/Low), each the best-backtested ticker in that tier among those with ≥5 trades, equal-weighted. Forced one-per-tier even when a tier's best is weak — that's the point of testing diversification as a discipline rather than cherry-picking.",
+      "positions": []
+    },
+    "highconviction": {
+      "label": "High-Conviction Triggers",
+      "description": "Only tickers within 1.5% of their Watch-tab trigger level are eligible; among those, the one with the best backtested track record is picked.",
+      "positions": []
+    }
+  }
+}

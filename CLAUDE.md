@@ -247,8 +247,26 @@ normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.
 `daily_notes.json` (repo root, same public-fetch pattern) is a separate,
 *accumulating* log — `{"entries": [{date, generated_at, author, summary,
 featured, runner_up, watch_highlights, notes}, ...]}` — read by the Notes tab.
-Unlike `results.json`, this one should be appended to, not overwritten, if a
-scheduled process ever starts updating it.
+Unlike `results.json`, this one should be appended to, not overwritten.
+
+`portfolios.json` (repo root, same pattern) is the **authoritative state**
+for the 3 named paper-trading strategies (`featured`/`diversified`/
+`highconviction`) — `{updated_at, starting_capital_inr, note, strategies:
+{<id>: {label, description, positions: [{id, ticker, tier, status,
+openDate, entryPriceUsd, fxRateAtOpen, allocatedInr, shares, reason,
+stopPriceUsd, targetPriceUsd, closeDate?, exitPriceUsd?, fxRateAtClose?,
+realizedPnlInr?}, ...]}}}`. This is a real architecture decision, not an
+incidental one: Portfolio positions used to live in browser localStorage
+(one browser, one user) — but the user explicitly wants Claude to manage
+these 3 portfolios via the scheduled routine, and a scheduled cloud agent
+can't write to a specific person's browser storage. So state moved
+server-side, published here, read by `ManagedPortfolios.jsx` (which
+replaced the old localStorage-based `Portfolios.jsx`/`Portfolio.jsx` for
+the Portfolio tab — those files are still in the tree, unused, in case a
+future *manual* user-driven portfolio feature is wanted again). Whatever
+process manages this file should always read-modify-write (fetch current
+state, only add/close positions, never blindly overwrite) since it's meant
+to accumulate over the whole 1-2 week study.
 
 ## Status / what's done
 

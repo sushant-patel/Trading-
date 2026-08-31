@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import InfoTip from './components/InfoTip.jsx'
 import { Sparkline, TrendChart, CHART_GREEN, CHART_RED } from './components/Charts.jsx'
-import Portfolios from './components/Portfolios.jsx'
+import Portfolios from './components/ManagedPortfolios.jsx'
 import Learn from './components/Learn.jsx'
 import TrendsTab from './components/Trends.jsx'
 import Watch from './components/Watch.jsx'

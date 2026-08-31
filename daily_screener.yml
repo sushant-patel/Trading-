@@ -1,0 +1,55 @@
+# Save this file to: <your-repo>/.github/workflows/daily_screener.yml
+#
+# What it does:
+#   - Runs on GitHub's own servers every weekday, ~30 min before the US market opens
+#     (12:30 UTC = 6:00 AM ET pre-market / 6:00 PM IST). Adjust the cron below if you
+#     want a different time.
+#   - Installs dependencies, runs intraday_screener.py, writes results.json
+#   - Commits results.json back to the repo
+#   - Your PC does not need to be on for any of this — it's all on GitHub's infrastructure, free.
+#
+# One-time setup:
+#   1. Create a new GitHub repo (public is simplest and free).
+#   2. Add intraday_screener.py to the repo root.
+#   3. Add this file at .github/workflows/daily_screener.yml
+#   4. Push. Check the "Actions" tab in your repo to see it run (or trigger manually first
+#      via "Run workflow" to test).
+#   5. Once it runs, your live data will be at:
+#      https://raw.githubusercontent.com/<your-username>/<your-repo>/main/results.json
+#      Paste that URL into the dashboard's "Data source" field.
+
+name: Daily Intraday Screener
+
+on:
+  schedule:
+    - cron: "30 12 * * 1-5"   # 12:30 UTC, Mon-Fri
+  workflow_dispatch: {}        # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  run-screener:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install yfinance pandas numpy
+
+      - name: Run screener
+        run: python intraday_screener.py --period 1mo --json-out results.json
+
+      - name: Commit updated results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results.json
+          git diff --staged --quiet || git commit -m "Update results.json [automated]"
+          git push

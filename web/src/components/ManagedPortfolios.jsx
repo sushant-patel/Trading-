@@ -4,7 +4,7 @@ import { TrendChart, CHART_GREEN, CHART_RED } from './Charts.jsx'
 import { formatInr } from '../lib/currency.js'
 
 const PORTFOLIOS_URL = 'https://raw.githubusercontent.com/sushant-patel/Trading-/main/portfolios.json'
-const STRATEGY_ORDER = ['featured', 'diversified', 'highconviction']
+const STRATEGY_ORDER = ['featured', 'diversified', 'highconviction', 'discovered']
 
 function fmt(n, digits = 2) {
   if (n === null || n === undefined || Number.isNaN(n)) return '—'

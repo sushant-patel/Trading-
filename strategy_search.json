@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-08-31T13:05:00Z",
+  "period": "6mo",
+  "min_trades_floor": 5,
+  "trials_last_run": 500,
+  "trials_total_ever": 500,
+  "leaderboard": [
+    { "ticker": "INTC", "tierRule": "high", "stopFrac": 0.47, "targetMult": 2.9, "trades": 42, "winRate": 35.7, "totalReturn": 45.31 },
+    { "ticker": "ORCL", "tierRule": "medium", "stopFrac": 0.3, "targetMult": 3.0, "trades": 12, "winRate": 50.0, "totalReturn": 28.61 },
+    { "ticker": "AMD", "tierRule": "high", "stopFrac": 0.59, "targetMult": 2.6, "trades": 48, "winRate": 33.3, "totalReturn": 28.18 },
+    { "ticker": "ORCL", "tierRule": "medium", "stopFrac": 0.31, "targetMult": 2.9, "trades": 12, "winRate": 50.0, "totalReturn": 28.05 },
+    { "ticker": "ORCL", "tierRule": "medium", "stopFrac": 0.24, "targetMult": 2.8, "trades": 12, "winRate": 50.0, "totalReturn": 27.49 },
+    { "ticker": "ORCL", "tierRule": "low", "stopFrac": 0.1, "targetMult": 3.0, "trades": 12, "winRate": 50.0, "totalReturn": 27.1 },
+    { "ticker": "ORCL", "tierRule": "medium", "stopFrac": 0.22, "targetMult": 2.6, "trades": 12, "winRate": 50.0, "totalReturn": 26.37 },
+    { "ticker": "ORCL", "tierRule": "medium", "stopFrac": 0.39, "targetMult": 1.8, "trades": 12, "winRate": 50.0, "totalReturn": 26.16 },
+    { "ticker": "AMD", "tierRule": "low", "stopFrac": 0.14, "targetMult": 1.8, "trades": 6, "winRate": 50.0, "totalReturn": 25.36 },
+    { "ticker": "AMD", "tierRule": "low", "stopFrac": 0.58, "targetMult": 1.8, "trades": 6, "winRate": 50.0, "totalReturn": 25.36 }
+  ],
+  "best_ever": { "ticker": "INTC", "tierRule": "high", "stopFrac": 0.47, "targetMult": 2.9, "trades": 42, "winRate": 35.7, "totalReturn": 45.31, "foundOn": "2026-08-31" },
+  "run_history": [
+    { "date": "2026-08-31", "bestReturn": 45.31, "trialsRun": 500 }
+  ]
+}

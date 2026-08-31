@@ -250,23 +250,40 @@ featured, runner_up, watch_highlights, notes}, ...]}` — read by the Notes tab.
 Unlike `results.json`, this one should be appended to, not overwritten.
 
 `portfolios.json` (repo root, same pattern) is the **authoritative state**
-for the 3 named paper-trading strategies (`featured`/`diversified`/
-`highconviction`) — `{updated_at, starting_capital_inr, note, strategies:
-{<id>: {label, description, positions: [{id, ticker, tier, status,
-openDate, entryPriceUsd, fxRateAtOpen, allocatedInr, shares, reason,
+for 4 named paper-trading strategies (`featured`/`diversified`/
+`highconviction`/`discovered`) — `{updated_at, starting_capital_inr, note,
+strategies: {<id>: {label, description, positions: [{id, ticker, tier,
+status, openDate, entryPriceUsd, fxRateAtOpen, allocatedInr, shares, reason,
 stopPriceUsd, targetPriceUsd, closeDate?, exitPriceUsd?, fxRateAtClose?,
 realizedPnlInr?}, ...]}}}`. This is a real architecture decision, not an
 incidental one: Portfolio positions used to live in browser localStorage
 (one browser, one user) — but the user explicitly wants Claude to manage
-these 3 portfolios via the scheduled routine, and a scheduled cloud agent
-can't write to a specific person's browser storage. So state moved
-server-side, published here, read by `ManagedPortfolios.jsx` (which
-replaced the old localStorage-based `Portfolios.jsx`/`Portfolio.jsx` for
-the Portfolio tab — those files are still in the tree, unused, in case a
-future *manual* user-driven portfolio feature is wanted again). Whatever
-process manages this file should always read-modify-write (fetch current
-state, only add/close positions, never blindly overwrite) since it's meant
-to accumulate over the whole 1-2 week study.
+these portfolios via scheduled routines, and a scheduled cloud agent can't
+write to a specific person's browser storage. So state moved server-side,
+published here, read by `ManagedPortfolios.jsx` (which replaced the old
+localStorage-based `Portfolios.jsx`/`Portfolio.jsx` for the Portfolio tab —
+those files are still in the tree, unused, in case a future *manual*
+user-driven portfolio feature is wanted again). Whatever process manages
+this file should always read-modify-write (fetch current state, only add/
+close positions, never blindly overwrite) since it's meant to accumulate
+over the whole study. `discovered` is special: it's meant to always track
+whatever `strategy_search.json`'s `best_ever` currently is — closing and
+reopening when the search finds something new — see below.
+
+`strategy_search.json` (repo root, same pattern) is the automated random
+parameter-search result — `{updated_at, period, min_trades_floor,
+trials_last_run, trials_total_ever, leaderboard: [{ticker, tierRule,
+stopFrac, targetMult, trades, winRate, totalReturn}, ...], best_ever: {...,
+foundOn}, run_history: [{date, bestReturn, trialsRun}, ...]}`. Produced by
+`web/src/lib/strategySearch.js`'s `runRandomSearch()` (ticker × entry rule ×
+stop distance × target multiple, run through the same `backtest.js` engine
+the Lab tab uses), read by the new Discover tab. **This is genuinely prone
+to overfitting/data-dredging** (many random trials against one fixed
+history will surface spuriously good results by chance) — the Discover tab
+says so prominently and the leaderboard's own top results (several near-
+identical ORCL/medium variants clustering with only ~12 trades each) are a
+real, visible example of exactly that, not a hypothetical caveat. Don't
+strip that warning out even if it seems redundant later.
 
 ## Status / what's done
 

@@ -17,6 +17,11 @@
       "label": "High-Conviction Triggers",
       "description": "Only tickers within 1.5% of their Watch-tab trigger level are eligible; among those, the one with the best backtested track record is picked.",
       "positions": []
+    },
+    "discovered": {
+      "label": "Discovered Best",
+      "description": "Always follows whatever the Discover tab's automated random search currently ranks as its single best-ever backtested combination. Replaced (old position closed, new one opened) whenever the search finds something that beats the current holding — a live forward-test of whatever the search turns up, not a fixed rule.",
+      "positions": []
     }
   }
 }

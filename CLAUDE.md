@@ -61,6 +61,30 @@ This is written into `web/src/components/IntradayBasics.jsx` (the Learn tab's
 "Intraday Trading Basics" section) — update both places if anything here
 needs revising.
 
+## Cloud routine network restrictions (discovered 2026-08-31)
+
+Claude Code cloud routines (the `schedule` skill / `RemoteTrigger`) run inside
+a sandbox ("CCR") whose network egress proxy only allows `raw.githubusercontent.com`,
+`github.com`/`api.github.com`, package registries (npm/pypi/crates/Go proxy),
+and `api.anthropic.com`. Every other host — confirmed with both `curl` and the
+`WebFetch` tool against `open.er-api.com` (FX rate) and Yahoo Finance's chart
+endpoints — returns a hard 403 / `EGRESS_BLOCKED`, every time, not a transient
+failure. This is specific to the CCR sandbox: the exact same calls work fine
+from the user's own browser, from a Vercel serverless function
+(`web/api/quote.js`), and from the GitHub Actions runner (`daily_screener.yml`).
+
+This silently broke the portfolio-management routine the first time it ran
+(session `cse_0139CoAf1NEXdosR2biR9EUq`) — it correctly refused to fabricate
+prices and reported the failure via `PushNotification` rather than guessing,
+but no positions got opened. **The fix**: `intraday_screener.py` now fetches
+and publishes a same-day USD→INR rate (`fetch_usd_inr_rate()`, via
+`yf.Ticker("USDINR=X")`) as a top-level `usd_inr_rate` field in `results.json`
+(see Data contract below), and every price a routine needs is already in
+`results.json` as each ticker's `last_close`. **Any future cloud routine for
+this project must get FX rate and prices from `results.json` (fetched via
+`raw.githubusercontent.com`, which works), never by calling a live FX/quote
+API directly** — it will not work, don't spend a run re-discovering this.
+
 ## File map
 
 - `intraday_screener.py` — the analysis script. Run locally with
@@ -229,6 +253,7 @@ needs revising.
 {
   "generated_at": "ISO-8601 timestamp",
   "period": "string, e.g. '1mo'",
+  "usd_inr_rate": 95.152,
   "tickers": [
     {
       "ticker": "NVDA",
@@ -250,7 +275,10 @@ needs revising.
 entry per trading day in the window) — added so the dashboard's Trends chart
 and Lab tab can work entirely off this one file instead of calling a price API
 from the browser. At `--period 6mo` with 18 tickers this makes `results.json`
-~380KB, still a single fast fetch.
+~380KB, still a single fast fetch. `usd_inr_rate` (added 2026-08-31, via
+`yf.Ticker("USDINR=X")`) exists specifically so cloud routines — which can't
+reach a live FX API from their sandbox, see "Cloud routine network
+restrictions" above — have a same-day rate without any external call.
 
 The dashboard fetches this from whatever URL is saved in its Settings tab —
 normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json`.
@@ -282,19 +310,28 @@ whatever `strategy_search.json`'s `best_ever` currently is — closing and
 reopening when the search finds something new — see below.
 
 `strategy_search.json` (repo root, same pattern) is the automated random
-parameter-search result — `{updated_at, period, min_trades_floor,
-trials_last_run, trials_total_ever, leaderboard: [{ticker, tierRule,
-stopFrac, targetMult, trades, winRate, totalReturn}, ...], best_ever: {...,
-foundOn}, run_history: [{date, bestReturn, trialsRun}, ...]}`. Produced by
+parameter-search result — `{updated_at, period, train_fraction,
+min_trades_floor, min_test_trades_floor, trials_last_run, trials_total_ever,
+leaderboard: [{ticker, tierRule, stopFrac, targetMult, trainTrades,
+trainWinRate, trainReturn, testTrades, testWinRate, testReturn, validated},
+...], validated_leaderboard: [...same shape, validated=true only...],
+best_ever: {..., testReturn, foundOn}, run_history: [{date, bestTrainReturn,
+bestValidatedReturn, trialsRun}, ...]}`. Produced by
 `web/src/lib/strategySearch.js`'s `runRandomSearch()` (ticker × entry rule ×
 stop distance × target multiple, run through the same `backtest.js` engine
-the Lab tab uses), read by the new Discover tab. **This is genuinely prone
-to overfitting/data-dredging** (many random trials against one fixed
-history will surface spuriously good results by chance) — the Discover tab
-says so prominently and the leaderboard's own top results (several near-
-identical ORCL/medium variants clustering with only ~12 trades each) are a
-real, visible example of exactly that, not a hypothetical caveat. Don't
-strip that warning out even if it seems redundant later.
+the Lab tab uses), read by the Discover tab. **Out-of-sample validated as of
+2026-08-31**: each ticker's history is chronologically split 70/30
+(`splitHistory()`, `TRAIN_FRACTION`) before a trial runs — parameters are
+fit on the train slice only, then re-checked, unmodified, against the test
+slice it never saw. A result only counts as `validated: true` if it clears
+`MIN_TEST_TRADES_FLOOR` (2) trades on test AND stays profitable there;
+`best_ever`/`validatedLeaderboard()` only ever surface validated results.
+This was added specifically because the leaderboard's own top *training*
+results are a real, visible example of overfitting — e.g. an INTC combo
+with train return +57% collapses to test return -14% (8 trades) — while a
+few results (ORCL medium/high variants, MSFT high) hold up on both sides.
+Don't strip the Discover tab's overfitting callout, and don't let `best_ever`
+regress to tracking unvalidated training performance again.
 
 ## Status / what's done
 
@@ -397,6 +434,28 @@ strip that warning out even if it seems redundant later.
       beginner guide the user provided, with several claims (FINRA's PDT
       replacement transition date, the NRA tax treatment) verified via web
       search before being written in, not taken as given.
+- [x] Calculator and Journal tabs removed from navigation (user: wants
+      automation, not manual entry) — components left in the tree, unused.
+- [x] Discover tab rebuilt with out-of-sample validation (70/30 train/test
+      split per ticker, `validated` flag, separate validated leaderboard) —
+      see the `strategy_search.json` schema section above for the full
+      before/after and the real overfitting example it surfaces.
+- [x] 4th simulated portfolio, `discovered`, added — always tracks
+      `strategy_search.json`'s validated `best_ever` combo.
+- [x] Daily automation expanded: "Trading Tracker - Discover & Manage
+      Portfolios" routine (`trig_01W694o9UA14tJByCF41L5AB`, cron
+      `12 13 * * 1-5`) runs the out-of-sample search, updates
+      `strategy_search.json`, runs stop/target checks on all 4 portfolios,
+      keeps `discovered` in sync with `best_ever`, and — since 2026-08-31 —
+      also self-heals: opens each rule-based portfolio's very first position
+      if it has none yet, rather than depending on a separate one-time
+      trigger. All FX/price needs come from `results.json` (`usd_inr_rate`,
+      `last_close`) per the "Cloud routine network restrictions" section
+      above; a standalone one-time "Open Positions at Market Open" routine
+      (`trig_01VzeFNPUadBGxc1aUGdjUU3`) was tried first, failed on exactly
+      this network restriction, and is now superseded by the self-healing
+      logic in the recurring routine — that one-time trigger is left
+      disabled (`ended_reason: run_once_fired`) rather than deleted.
 
 ## Next steps (suggested order)
 

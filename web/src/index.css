@@ -527,6 +527,235 @@ tr:last-child td { border-bottom: none; }
   border-color: var(--blue);
 }
 
+.progress-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.progress-bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--panel-alt);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-bar-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.accordion-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-item.open {
+  border-color: var(--blue);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.accordion-check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+.accordion-check.checked {
+  background: rgba(62, 207, 142, 0.15);
+  border-color: var(--green);
+}
+
+.accordion-icon {
+  font-size: 16px;
+}
+
+.accordion-title {
+  flex: 1;
+}
+
+.accordion-chevron {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.accordion-body {
+  padding: 4px 16px 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.mini-calc {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+}
+
+.mini-calc-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mini-calc-inputs label {
+  font-size: 11px;
+  color: var(--text-dim);
+  display: block;
+}
+
+.mini-calc-inputs input {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.mini-calc-result {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.mini-calc-shares {
+  color: var(--blue);
+}
+
+.rules-progress {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.rules-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.rule-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--panel-alt);
+  cursor: pointer;
+}
+
+.rule-item.checked {
+  color: var(--text);
+  background: rgba(62, 207, 142, 0.08);
+}
+
+.rule-item input {
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+
+.mistake-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mistake-chip {
+  font-size: 12px;
+  color: var(--red);
+  background: rgba(240, 85, 107, 0.1);
+  border: 1px solid rgba(240, 85, 107, 0.3);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+
+.learning-path {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.path-step {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.path-step-num {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.path-step-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.path-step-items {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
 .basics-intro {
   color: var(--text-dim);
   font-size: 14px;

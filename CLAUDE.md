@@ -181,10 +181,21 @@ needs revising.
     `{ quotes, fetchedAt }`. Only executes on Vercel; there's no equivalent
     for local `vite dev`.
   - `web/src/components/IntradayBasics.jsx` — the Learn tab's "Intraday
-    Trading Basics" section: an illustrated NSE trading-day timeline (plain
-    inline SVG), an intraday-vs-delivery flow comparison, and — most
-    important — a callout that the India-vs-US-stocks trading mechanics
-    differ (see the section above). Verified external reference links only.
+    Trading Basics" section, restructured as a 7-part interactive accordion
+    (What Is Intraday / Account Types / Reading a Chart / Risk Management /
+    A Strategy to Study / Money Reality / Your 4-Week Path) with a
+    "mark as reviewed" checkbox per section, persisted to localStorage
+    (`tt_learn_basics_reviewed`) and shown as a progress bar. Includes several
+    hand-rolled SVG illustrations (NSE timeline, candlesticks, support/
+    resistance), an interactive position-size mini-calculator (live, no
+    persistence, just for building intuition), and a checkable "10 golden
+    rules" list (`tt_learn_rules_checked`). Most important content: the
+    India-vs-US-stocks trading-mechanics callout (see the dedicated section
+    above), the corrected FINRA PDT-replacement details (June 2026 effective,
+    transition through Oct 2027, $2,000 margin minimum), and the NRA tax
+    clarification (Indian residents generally don't owe US capital-gains tax
+    on stock trades, per IRS rules — only dividend withholding applies).
+    Verified external reference links only (FINRA, IRS, RBI, and others).
   - `web/src/components/DailyNotes.jsx` — reads `daily_notes.json` (same
     pattern as `results.json`) and renders it as a dated log. Currently has
     exactly one manually-seeded entry — the tab says so plainly. Turning this
@@ -322,8 +333,24 @@ scheduled process ever starts updating it.
       Diversified, High-Conviction Triggers) for a 1-2 week comparison study
       before real money — user chose this structure explicitly over a split-
       budget or single-portfolio alternative
-- [ ] Daily automation: user confirmed they want a scheduled routine so Daily
-      Notes actually updates once a day — not yet set up, see Next steps
+- [x] Daily automation: set up as a Claude Code scheduled routine (cloud, not
+      a GitHub Action — needed judgment/summarization, not pure computation).
+      Routine "Trading Tracker - Daily Notes", id `trig_01CjgvRHfmg2g3qTSddGie1q`,
+      cron `0 13 * * 1-5` (13:00 UTC / 6:30 PM IST weekdays, ~30min after the
+      existing data-pipeline Action). Required connecting GitHub access for
+      cloud routines specifically (separate from the local git credentials
+      already in use) — user installed the Claude GitHub App to unblock it.
+      Each run: fetch results.json → Featured Setup + runner-up → Watch
+      trigger levels (mirrors lib/signals.js) → grounded summary (explicitly
+      no invented claims, not investment advice) → append-not-overwrite to
+      daily_notes.json, skip if today's entry exists → commit & push.
+- [x] Intraday Trading Basics rebuilt as an interactive accordion with
+      progress tracking, an interactive position-size mini-calculator, and a
+      checkable rules list — see the file map entry above for the full list
+      of what's in each of the 7 sections. Content checked/expanded against a
+      beginner guide the user provided, with several claims (FINRA's PDT
+      replacement transition date, the NRA tax treatment) verified via web
+      search before being written in, not taken as given.
 
 ## Next steps (suggested order)
 

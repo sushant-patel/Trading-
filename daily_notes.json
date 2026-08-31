@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "date": "2026-08-31",
+      "generated_at": "2026-08-31T17:30:00Z",
+      "author": "claude",
+      "summary": "First entry — seeded manually while the watchlist expansion (10→18 tickers) and Watch tab landed. Ongoing daily entries need a scheduled routine, which hasn't been set up yet (pending confirmation).",
+      "featured": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 44.4,
+        "total_return_pct": 19.26
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 16,
+        "win_rate": 50.0,
+        "total_return_pct": 18.49
+      },
+      "watch_highlights": [
+        { "ticker": "AMZN", "tier": "medium", "distance_pct": 0.17, "desc": "pull back to ~20-day average, then close above it" },
+        { "ticker": "NVDA", "tier": "medium", "distance_pct": 0.23, "desc": "pull back to ~20-day average, then close above it" },
+        { "ticker": "META", "tier": "medium", "distance_pct": -0.39, "desc": "pull back to ~20-day average, then close above it" },
+        { "ticker": "INFY", "tier": "medium", "distance_pct": 0.79, "desc": "pull back to ~20-day average, then close above it" },
+        { "ticker": "PLTR", "tier": "high", "distance_pct": 1.12, "desc": "close above today's high" }
+      ],
+      "notes": "ORCL currently has this watchlist's best backtested edge (44.4% win rate over 36 trades, +19.3% cumulative) — a larger sample than most of the others, worth more attention than a quick glance suggests. NVDA is a close second and has more trigger-level activity right now (0.23% from its Medium-tier pullback level). Four of the five closest-to-triggering tickers are all Medium tier (VWAP pullback) at once, which is just where the data happens to sit today, not a signal about Medium tier generally. Semiconductor names (NVDA, AMD) carry real near-term headline risk from reported tariff discussion and post-earnings volatility as of this week — see the chat context from 2026-08-31 for sourced detail. None of this is a recommendation; it's what the current backtest and trigger levels show, nothing more."
+    }
+  ]
+}

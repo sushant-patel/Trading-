@@ -5,6 +5,7 @@ import Portfolio from './components/Portfolio.jsx'
 import Learn from './components/Learn.jsx'
 import TrendsTab from './components/Trends.jsx'
 import Watch from './components/Watch.jsx'
+import DailyNotes from './components/DailyNotes.jsx'
 import { getUsdInrRate, formatInr } from './lib/currency.js'
 import { runBacktest, TIER_DEFAULTS } from './lib/backtest.js'
 import { fetchLiveQuotes } from './lib/liveQuotes.js'
@@ -24,6 +25,7 @@ const TABS = [
   'Backtest',
   'Lab',
   'Portfolio',
+  'Notes',
   'Calculator',
   'Journal',
   'Learn',
@@ -221,6 +223,7 @@ export default function App() {
       {activeTab === 'Backtest' && <Backtest data={data} status={status} />}
       {activeTab === 'Lab' && <Lab data={data} status={status} />}
       {activeTab === 'Portfolio' && <Portfolio data={data} status={status} liveQuotes={liveQuotes} fx={fx} />}
+      {activeTab === 'Notes' && <DailyNotes />}
       {activeTab === 'Calculator' && <Calculator fx={fx} />}
       {activeTab === 'Journal' && (
         <Journal

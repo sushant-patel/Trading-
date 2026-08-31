@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
+import IntradayBasics from './IntradayBasics.jsx'
 
 const SECTIONS = [
+  { id: 'basics', label: 'Intraday Basics' },
   { id: 'start', label: 'Getting Started' },
   { id: 'concepts', label: 'Key Concepts' },
   { id: 'sitemap', label: 'What Each Tab Does' },
@@ -158,6 +160,11 @@ export default function Learn({ focusId }) {
           </button>
         ))}
       </nav>
+
+      <section id="basics" className="learn-section">
+        <h3 className="section-title">Intraday Trading Basics</h3>
+        <IntradayBasics />
+      </section>
 
       <section id="start" className="learn-section">
         <h3 className="section-title">Getting Started</h3>

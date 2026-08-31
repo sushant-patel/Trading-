@@ -11,10 +11,12 @@ CRM, DIS, BAC, PLTR, INFY). It has three parts:
    backtests it, and publishes the results — including each ticker's full
    daily OHLC history — as `results.json` committed back to this repo.
 2. **Web dashboard** (React + Vite) — a standalone website with tabs for the
-   watchlist, price trend charts, the backtest table, a strategy Lab
-   (client-side parameter tuning), a simulated ₹80,000 paper-trading
-   portfolio, a position-size calculator, a real trade journal, a Learn/docs
-   page, and settings (localStorage-backed throughout).
+   watchlist, price trend charts (Single/Grid/Compare), Tomorrow's Watch
+   (trigger levels), the backtest table, a strategy Lab (client-side
+   parameter tuning), a simulated ₹80,000 paper-trading portfolio, a
+   Daily Notes log, a position-size calculator, a real trade journal, a
+   Learn/docs page (including an Intraday Trading Basics section), and
+   settings (localStorage-backed throughout).
 3. **Live quotes proxy** (Vercel serverless function, `web/api/quote.js`) —
    server-side fetch of near-real-time prices, since the upstream API blocks
    direct browser calls (no CORS headers). Only runs where Vercel executes
@@ -22,6 +24,42 @@ CRM, DIS, BAC, PLTR, INFY). It has three parts:
    else without erroring.
 
 Repo: https://github.com/sushant-patel/Trading- (public)
+
+## Important context: intraday trading mechanics (India vs. US stocks)
+
+Researched 2026-08-31, worth re-verifying before relying on it long after —
+tax/regulatory details change with Budgets and rule updates:
+
+- **The whole watchlist is US-listed stocks.** For an Indian resident, that
+  means trading them happens under the RBI's Liberalised Remittance Scheme
+  (LRS) via a platform like INDmoney, Vested, Groww US stocks, or IBKR — not
+  a plain Indian demat/trading account.
+- **No margin/leverage on US stocks from India.** RBI rules explicitly
+  prohibit using LRS-remitted funds for margin or margin calls on overseas
+  exchanges. Every US-stock trade from India is a plain cash trade — the 5x
+  leverage available on Indian NSE/BSE intraday (MIS) orders does not apply
+  here, at all.
+- **Same-day round trips are broker-dependent, not universal.** Some
+  platforms (INDmoney, per their own docs) allow buying and selling the same
+  US stock same-session with proceeds available immediately; others lock
+  sale proceeds until T+2/T+3 settlement and don't practically support it.
+  This should never be assumed — the user needs to confirm with their actual
+  broker.
+- **Indian NSE/BSE intraday (MIS)**, for contrast: 9:15 AM–3:30 PM IST,
+  SEBI mandates a 20% minimum margin (up to 5x leverage), brokers auto-square-
+  off open MIS positions from ~3:15 PM.
+- **US PDT rule**: the $25,000 Pattern Day Trader rule / 3-trades-per-5-days
+  restriction was eliminated by the SEC effective June 4, 2026, replaced by
+  FINRA Rule 4210's proportional-equity framework. Moot for LRS-based Indian
+  investors anyway, since they're on cash accounts, not US margin accounts.
+- **Risk reality**: SEBI reported ~87.7% of individual equity-derivatives
+  (F&O) traders lost money in FY2026 (₹91,685 crore total) — cited in the
+  Learn tab's Intraday Basics section as a sobering, if not directly
+  equivalent, data point (that stat is about F&O, not cash intraday equity).
+
+This is written into `web/src/components/IntradayBasics.jsx` (the Learn tab's
+"Intraday Trading Basics" section) — update both places if anything here
+needs revising.
 
 ## File map
 
@@ -123,6 +161,18 @@ Repo: https://github.com/sushant-patel/Trading- (public)
     anything else — tested with injection-style input), and returns
     `{ quotes, fetchedAt }`. Only executes on Vercel; there's no equivalent
     for local `vite dev`.
+  - `web/src/components/IntradayBasics.jsx` — the Learn tab's "Intraday
+    Trading Basics" section: an illustrated NSE trading-day timeline (plain
+    inline SVG), an intraday-vs-delivery flow comparison, and — most
+    important — a callout that the India-vs-US-stocks trading mechanics
+    differ (see the section above). Verified external reference links only.
+  - `web/src/components/DailyNotes.jsx` — reads `daily_notes.json` (same
+    pattern as `results.json`) and renders it as a dated log. Currently has
+    exactly one manually-seeded entry — the tab says so plainly. Turning this
+    into an actual daily-updating log needs a scheduled routine (e.g. via the
+    `schedule` skill) that hasn't been set up — that's a real recurring
+    automated commitment and should get explicit user confirmation before
+    being wired up, the same way the GitHub Action was.
   - `web/src/main.jsx` — Vite entry point.
   - `web/index.html`, `web/package.json`, `web/vite.config.js` — standard Vite
     scaffold.
@@ -163,6 +213,12 @@ from the browser. At `--period 6mo` with 18 tickers this makes `results.json`
 
 The dashboard fetches this from whatever URL is saved in its Settings tab —
 normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json`.
+
+`daily_notes.json` (repo root, same public-fetch pattern) is a separate,
+*accumulating* log — `{"entries": [{date, generated_at, author, summary,
+featured, runner_up, watch_highlights, notes}, ...]}` — read by the Notes tab.
+Unlike `results.json`, this one should be appended to, not overwritten, if a
+scheduled process ever starts updating it.
 
 ## Status / what's done
 
@@ -236,6 +292,19 @@ normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.
       curve), causing a React duplicate-key warning; also collapsed the
       y-axis to one tick for a perfectly flat series (was showing near-
       duplicate labels off the `range || 1` fallback)
+- [x] Learn: "Intraday Trading Basics" section — illustrated NSE timeline,
+      intraday-vs-delivery comparison, and the India/US-stocks trading-
+      mechanics callout (see the dedicated CLAUDE.md section above); researched
+      via web search (Indian + international sources), not written from memory
+- [x] Notes tab + `daily_notes.json`: reads an accumulating log, currently
+      one manually-seeded real entry (2026-08-31) — see Next steps for what's
+      needed to make this actually update daily
+- [ ] Decide + build: multi-portfolio "combinations" for a 1-2 week paper-
+      trading study (user wants to compare approaches before real money) —
+      needs the user's input on structure before building, see Next steps
+- [ ] Decide: whether to set up a scheduled routine so Daily Notes actually
+      updates once a day on its own — a real recurring automated action,
+      wants explicit user confirmation first (see Next steps)
 
 ## Next steps (suggested order)
 

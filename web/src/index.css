@@ -354,8 +354,13 @@ tr:last-child td { border-bottom: none; }
   border: 1px solid var(--border);
   color: var(--text-dim);
   border-radius: 6px;
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 0 10px;
+  height: 32px;
+  font-size: 13px;
+  line-height: 1;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -508,8 +513,12 @@ tr:last-child td { border-bottom: none; }
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: 0 10px;
+  height: 32px;
   font-size: 13px;
+  line-height: 1;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .trend-summary {

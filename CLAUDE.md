@@ -39,33 +39,63 @@ Repo: https://github.com/sushant-patel/Trading- (public)
   (only works because the repo is public — a private repo's raw files aren't
   browser-fetchable without a token).
 - `web/` — the Vite + React dashboard (standalone site, not a Claude artifact).
-  - `web/src/App.jsx` — main component: tabs for Watchlist / Trends / Backtest /
-    Lab / Portfolio / Calculator / Journal / Learn / Settings. Also owns the
-    live-quote polling loop (30s interval, `web/src/lib/liveQuotes.js`) and
-    the `selectedTicker` state that lets a Watchlist card click jump straight
-    to that ticker in Trends.
+  - `web/src/App.jsx` — main component: tabs for Watchlist / Trends / Watch /
+    Backtest / Lab / Portfolio / Calculator / Journal / Learn / Settings. Owns
+    the live-quote polling loop (30s interval, `web/src/lib/liveQuotes.js`),
+    the `selectedTicker` state that lets a Watchlist card (or a Watch/Grid
+    row) jump straight to that ticker in Trends, and a `window` event listener
+    (`tt:learn-nav`) that switches to Learn and scrolls/highlights a specific
+    concept when an InfoTip's "Learn more" link is clicked.
   - `web/src/components/InfoTip.jsx` — reusable click-to-open (ⓘ) tooltip used
-    throughout the app to explain metrics/fields to someone new to trading.
+    throughout the app, with an optional `learnId` prop that adds a "Learn
+    more →" link jumping into the matching Learn-tab glossary card (dispatched
+    as a `tt:learn-nav` window event rather than threaded as a prop through
+    every parent — InfoTip sits many layers deep in Watchlist/Backtest/Lab/
+    Portfolio/Watch, none of which otherwise need to know navigation exists).
     Viewport-aware: flips to right-aligned when it would otherwise render off
-    the right edge of the screen (was a real bug on the 4th grid column). Its
-    popover resets `text-transform`/`letter-spacing` explicitly — it's nested
-    inside elements like `.tier-badge` and table `<th>` that set uppercase,
-    which was silently inherited into the tooltip text (another real bug).
+    the right edge of the screen. Its popover resets `text-transform`/
+    `letter-spacing` explicitly (nested inside elements like `.tier-badge`
+    that set uppercase, which was silently inherited into the tooltip text).
+    Its buttons call `stopPropagation()` — once Watchlist cards became
+    clickable, clicking the (ⓘ) inside one also fired the card's own
+    navigate-away handler, so the popover could never actually be seen open.
   - `web/src/components/Charts.jsx` — hand-rolled SVG charts (no charting
-    library): `Sparkline` (compact, non-interactive, used on Watchlist cards)
-    and `TrendChart` (full axis labels + hover crosshair/tooltip, used by
-    Trends and the Lab's cumulative-return chart). Trends also has a 1M/3M/All
-    timeframe filter that just slices the already-loaded `history` array —
-    no re-fetch needed.
+    library): `Sparkline` (compact, used on Watchlist cards and the Trends
+    Grid view), `TrendChart` (axis labels + hover crosshair/tooltip; collapses
+    to a single y-axis tick for a perfectly flat series — e.g. an equity curve
+    before any P/L — instead of the `range || 1` fallback producing three
+    near-duplicate labels), and `CompareChart` (multi-series % change overlay,
+    direct end-labels + legend so identity never depends on color alone).
+    Categorical colors come from the dataviz skill's validated dark-mode ramp,
+    capped at `MAX_COMPARE = 6` tickers.
+  - `web/src/components/Trends.jsx` — Single / Grid / Compare views. Grid is
+    all tickers as mini sparkline cards; Compare overlays up to 6, normalized
+    to % change from the timeframe start. Colors are assigned by each
+    ticker's position *within the current selection*, not its fixed index in
+    the full watchlist — indexing by the full list caused an actual bug
+    (`idx % 6` collided every 6 tickers, so NVDA [index 0] and ORCL [index
+    12] rendered as identical blue when selected together).
+  - `web/src/components/Watch.jsx` — "Tomorrow's Watch": every ticker's exact
+    trigger level for the next session and how far away it is, sorted
+    closest-first. Explicitly not a price prediction — see `lib/signals.js`.
   - `web/src/components/Portfolio.jsx` — the simulated ₹80,000 paper-trading
     tab. Opening a position converts an INR amount to USD at the current live
-    FX rate and buys fractional shares at the current price (live quote if
-    available, else the daily `last_close`); closing one realizes P/L back
-    into total capital. Entirely localStorage-backed (`tt_paper_portfolio`),
-    no backend, no real orders anywhere.
+    FX rate, buys fractional shares at the current price (live quote if
+    available, else the daily `last_close`), stores an optional reason/
+    prediction, and auto-computes a hypothetical stop/target from that
+    ticker's tier rule (`lib/signals.js`) — open positions show a status flag
+    when price is near/past either. Closing realizes P/L back into total
+    capital; a "Capital Over Time" chart is derived entirely from closed
+    positions (starting capital + cumulative realized P/L per close), no
+    separate history log needed. Entirely localStorage-backed
+    (`tt_paper_portfolio`), no backend, no real orders anywhere.
   - `web/src/components/Learn.jsx` — the in-app documentation tab: getting
-    -started steps, a concepts glossary, a per-tab guide, and a limitations
-    list, with an anchor-nav that scrolls to each section.
+    -started steps, a concepts glossary (each card has a stable `id` for
+    `InfoTip`'s "Learn more" links, and a couple carry verified external
+    reference links — Wikipedia/SEC/etc., only URLs actually confirmed by a
+    web search, never typed from memory), a per-tab guide, and a limitations
+    list, with an anchor-nav that scrolls to each section. Accepts a
+    `focusId` prop that scrolls to and briefly highlights one concept card.
   - `web/src/lib/backtest.js` — client-side port of `backtest_daily_breakout()`
     from `intraday_screener.py`, used by the Lab tab so strategy params can be
     tuned live against real history with no server round-trip. Verified to
@@ -73,6 +103,12 @@ Repo: https://github.com/sushant-patel/Trading- (public)
     in the original script's own logic, `stop_frac` only affects the `high`
     tier (medium/low hardcode their stop to the day's low) — the Lab disables
     that slider for medium/low so this isn't mistaken for a bug.
+  - `web/src/lib/signals.js` — `computeTriggerLevel()` (powers the Watch tab)
+    and `computeHypotheticalStopTarget()` (powers Portfolio's auto stop/target).
+    Neither predicts direction; both compute exact levels from data already
+    known today, mirroring backtest.js's own per-tier entry math. The Medium
+    tier's trigger level is a stated approximation (today's SMA20, since the
+    real next-session SMA20 depends on that session's own unknown close).
   - `web/src/lib/currency.js` — live USD→INR rate fetch (`open.er-api.com`,
     6h localStorage cache, falls back to last cached rate if the network call
     fails). Note: `api.frankfurter.app` was tried first and rejected — it
@@ -122,8 +158,8 @@ Repo: https://github.com/sushant-patel/Trading- (public)
 `history` is the full daily-bar series already fetched for the backtest (one
 entry per trading day in the window) — added so the dashboard's Trends chart
 and Lab tab can work entirely off this one file instead of calling a price API
-from the browser. At `--period 6mo` this makes `results.json` ~200KB, still a
-single fast fetch.
+from the browser. At `--period 6mo` with 18 tickers this makes `results.json`
+~380KB, still a single fast fetch.
 
 The dashboard fetches this from whatever URL is saved in its Settings tab —
 normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json`.
@@ -174,6 +210,32 @@ normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.
       positions, unrealized/realized P/L, persisted in localStorage
 - [x] Learn tab: getting-started steps, concepts glossary, per-tab guide,
       and a limitations list
+- [x] Alignment fix: Trends' timeframe buttons vs. ticker `<select>` had a
+      persistent 3-4px height mismatch even with identical padding — browsers
+      render `<select>`/`<button>` intrinsic sizing differently; fixed with
+      an explicit `height` on both instead of relying on padding parity
+- [x] Trends: Grid view (all 18 as mini sparkline cards) and Compare view
+      (overlay up to 6, normalized to % change, dataviz-palette colors)
+- [x] Watch tab ("Tomorrow's Watch"): exact trigger level per ticker for the
+      next session, sorted by distance — mechanical, not a prediction
+- [x] Portfolio: reason/prediction field per position, auto-computed
+      stop/target with a near/at status flag, and a Capital Over Time chart
+      derived from closed positions
+- [x] Learn: InfoTip "Learn more →" links jump to the matching glossary card
+      (cross-tab nav via a `tt:learn-nav` window event) and highlight it
+      briefly; a few concepts carry verified external reference links
+- [x] Fixed real bug: Compare-view color assignment indexed by each ticker's
+      fixed position in the full 18-ticker list (`idx % 6`), which collided
+      every 6 tickers — NVDA and ORCL rendered as identical blue when both
+      selected. Now colors by position within the current selection instead
+- [x] Fixed real bug: InfoTip's (ⓘ) button didn't stop event propagation, so
+      clicking it inside a (now-clickable) Watchlist card also fired the
+      card's own navigate-away handler — the popover could never be seen
+- [x] Fixed real bug: `TrendChart`'s x-axis tick calculation could produce
+      duplicate indices with very few data points (e.g. a 2-point equity
+      curve), causing a React duplicate-key warning; also collapsed the
+      y-axis to one tick for a perfectly flat series (was showing near-
+      duplicate labels off the `range || 1` fallback)
 
 ## Next steps (suggested order)
 

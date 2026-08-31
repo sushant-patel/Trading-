@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import InfoTip from './components/InfoTip.jsx'
-import { Sparkline, TrendChart } from './components/Charts.jsx'
+import { Sparkline, TrendChart, CHART_GREEN, CHART_RED } from './components/Charts.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import Learn from './components/Learn.jsx'
+import TrendsTab from './components/Trends.jsx'
+import Watch from './components/Watch.jsx'
 import { getUsdInrRate, formatInr } from './lib/currency.js'
 import { runBacktest, TIER_DEFAULTS } from './lib/backtest.js'
 import { fetchLiveQuotes } from './lib/liveQuotes.js'
@@ -15,7 +17,18 @@ const STORAGE_KEYS = {
   journal: 'tt_journal_entries',
 }
 
-const TABS = ['Watchlist', 'Trends', 'Backtest', 'Lab', 'Portfolio', 'Calculator', 'Journal', 'Learn', 'Settings']
+const TABS = [
+  'Watchlist',
+  'Trends',
+  'Watch',
+  'Backtest',
+  'Lab',
+  'Portfolio',
+  'Calculator',
+  'Journal',
+  'Learn',
+  'Settings',
+]
 
 const MIN_TRADES_FOR_RANKING = 5
 const LIVE_QUOTE_POLL_MS = 30000
@@ -112,6 +125,17 @@ export default function App() {
     setActiveTab('Trends')
   }
 
+  const [learnFocusId, setLearnFocusId] = useState(null)
+
+  useEffect(() => {
+    function handleLearnNav(e) {
+      setLearnFocusId(e.detail)
+      setActiveTab('Learn')
+    }
+    window.addEventListener('tt:learn-nav', handleLearnNav)
+    return () => window.removeEventListener('tt:learn-nav', handleLearnNav)
+  }, [])
+
   async function fetchData(url) {
     setStatus('loading')
     setErrorMsg('')
@@ -191,8 +215,9 @@ export default function App() {
         <Watchlist data={data} status={status} fx={fx} liveQuotes={liveQuotes} onSelectTicker={goToTicker} />
       )}
       {activeTab === 'Trends' && (
-        <Trends data={data} status={status} ticker={selectedTicker} onSelectTicker={setSelectedTicker} />
+        <TrendsTab data={data} status={status} ticker={selectedTicker} onSelectTicker={setSelectedTicker} />
       )}
+      {activeTab === 'Watch' && <Watch data={data} status={status} onSelectTicker={goToTicker} />}
       {activeTab === 'Backtest' && <Backtest data={data} status={status} />}
       {activeTab === 'Lab' && <Lab data={data} status={status} />}
       {activeTab === 'Portfolio' && <Portfolio data={data} status={status} liveQuotes={liveQuotes} fx={fx} />}
@@ -206,7 +231,7 @@ export default function App() {
           fx={fx}
         />
       )}
-      {activeTab === 'Learn' && <Learn />}
+      {activeTab === 'Learn' && <Learn focusId={learnFocusId} />}
       {activeTab === 'Settings' && (
         <Settings
           currentUrl={dataUrl}
@@ -277,7 +302,7 @@ function Watchlist({ data, status, fx, liveQuotes, onSelectTicker }) {
             <span className="ticker">{t.ticker}</span>
             <span className={`tier-badge ${t.tier}`}>
               {t.tier}
-              <InfoTip text={TIER_INFO[t.tier] || 'Volatility tier for this ticker.'} />
+              <InfoTip text={TIER_INFO[t.tier] || 'Volatility tier for this ticker.'} learnId="volatility-tier" />
             </span>
           </div>
           <div className="price">
@@ -298,7 +323,7 @@ function Watchlist({ data, status, fx, liveQuotes, onSelectTicker }) {
           <div className="meta">
             <span>
               Avg range <strong>{fmt(t.avg_range_pct)}%</strong>
-              <InfoTip text="Average daily (High−Low)/Close range over the lookback period. This one number decides the tier (and therefore the strategy) above: ≥3.5% = high, 2.5–3.5% = medium, <2.5% = low." />
+              <InfoTip text="Average daily (High−Low)/Close range over the lookback period. This one number decides the tier (and therefore the strategy) above: ≥3.5% = high, 2.5–3.5% = medium, <2.5% = low." learnId="volatility-tier" />
             </span>
             <span>
               Win rate <strong>{t.trades === 0 ? '—' : `${fmt(t.win_rate, 1)}%`}</strong>
@@ -308,6 +333,7 @@ function Watchlist({ data, status, fx, liveQuotes, onSelectTicker }) {
                     ? "This strategy's entry condition never triggered for this ticker during the current window — no signal, not a bad rating."
                     : `% of backtested trades that closed profitable over "${data.period}". Based on only ${t.trades} trade${t.trades === 1 ? '' : 's'} here — too small a sample to trust as a real predictor, treat it as directional only.`
                 }
+                learnId="win-rate"
               />
             </span>
           </div>
@@ -344,7 +370,10 @@ function Backtest({ data, status }) {
         <div className="featured-setup">
           <div className="kicker">
             Featured Setup — computed from this data, not a recommendation
-            <InfoTip text={`Picked automatically: the highest backtested return among tickers with at least ${MIN_TRADES_FOR_RANKING} trades this window, so a lucky 1-trade 100% win rate can't win. Re-ranks itself every time results.json updates. This is not investment advice — it's "which rule fired best in this backtest," nothing more.`} />
+            <InfoTip
+              text={`Picked automatically: the highest backtested return among tickers with at least ${MIN_TRADES_FOR_RANKING} trades this window, so a lucky 1-trade 100% win rate can't win. Re-ranks itself every time results.json updates. This is not investment advice — it's "which rule fired best in this backtest," nothing more.`}
+              learnId="featured-setup"
+            />
           </div>
           <div className="headline">
             {featured.ticker} · {TIER_DEFAULTS[featured.tier]?.label ?? featured.tier}
@@ -357,7 +386,7 @@ function Backtest({ data, status }) {
       )}
       <h3 className="section-title">
         Backtest Results ({data.period})
-        <InfoTip text="Each ticker's tier strategy re-run against its own recent price history. This runs on DAILY bars as an approximation — not a true intraday backtest — and ignores fees, slippage, and spread. It's a rough edge check, not a live track record." />
+        <InfoTip text="Each ticker's tier strategy re-run against its own recent price history. This runs on DAILY bars as an approximation — not a true intraday backtest — and ignores fees, slippage, and spread. It's a rough edge check, not a live track record." learnId="backtest-vs-live" />
       </h3>
       <div className="card table-wrap">
         <table>
@@ -372,11 +401,11 @@ function Backtest({ data, status }) {
               </th>
               <th>
                 Win Rate
-                <InfoTip text="% of those trades that closed profitable. Small trade counts make this noisy — a longer --period gives a more reliable read." />
+                <InfoTip text="% of those trades that closed profitable. Small trade counts make this noisy — a longer --period gives a more reliable read." learnId="win-rate" />
               </th>
               <th>
                 Total Return
-                <InfoTip text="Sum of % gain/loss across all backtested trades for this ticker. Not compounded, not risk-adjusted, and not a real balance change." />
+                <InfoTip text="Sum of % gain/loss across all backtested trades for this ticker. Not compounded, not risk-adjusted, and not a real balance change." learnId="total-return" />
               </th>
             </tr>
           </thead>
@@ -402,85 +431,6 @@ function Backtest({ data, status }) {
           ))}
           </tbody>
         </table>
-      </div>
-    </div>
-  )
-}
-
-const CHART_GREEN = '#3ecf8e'
-const CHART_RED = '#f0556b'
-const CHART_BLUE = '#4f8ef7'
-
-const TIMEFRAMES = [
-  { key: '1m', label: '1M', days: 21 },
-  { key: '3m', label: '3M', days: 63 },
-  { key: 'all', label: 'All', days: null },
-]
-
-function Trends({ data, status, ticker, onSelectTicker }) {
-  const [timeframe, setTimeframe] = useState('all')
-
-  if (status === 'loading' && !data) {
-    return <div className="empty-state">Loading trends…</div>
-  }
-  if (!data?.tickers?.length) {
-    return <div className="empty-state">No trend data available yet.</div>
-  }
-
-  const tickers = data.tickers
-  const selected = tickers.find((t) => t.ticker === ticker) ?? tickers[0]
-  const tf = TIMEFRAMES.find((t) => t.key === timeframe)
-  const fullHistory = selected.history ?? []
-  const slicedHistory = tf.days ? fullHistory.slice(-tf.days) : fullHistory
-  const series = slicedHistory.map((h) => ({ date: h.date, value: h.close }))
-  const first = series[0]?.value
-  const last = series[series.length - 1]?.value
-  const periodChangePct = first ? ((last - first) / first) * 100 : null
-
-  return (
-    <div>
-      <div className="trends-header">
-        <h3 className="section-title" style={{ marginBottom: 0 }}>
-          Price Trend
-          <InfoTip text="Daily closing price over the data window — the same bars the backtest runs against. Hover the chart for the exact price on any day. Sourced from the daily Action's own data pull, no extra API calls from your browser." />
-        </h3>
-        <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
-          <div className="timeframe-row">
-            {TIMEFRAMES.map((t) => (
-              <button
-                key={t.key}
-                className={`timeframe-btn ${timeframe === t.key ? 'active' : ''}`}
-                onClick={() => setTimeframe(t.key)}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-          <select className="ticker-select" value={selected.ticker} onChange={(e) => onSelectTicker(e.target.value)}>
-            {tickers.map((t) => (
-              <option key={t.ticker} value={t.ticker}>
-                {t.ticker}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <div className="card">
-        <div className="trend-summary">
-          <div>
-            <span className="trend-ticker">{selected.ticker}</span>
-            <span className="trend-meta">
-              {tf.label} view · {series.length} sessions
-            </span>
-          </div>
-          {periodChangePct !== null && (
-            <span className={periodChangePct >= 0 ? 'change up' : 'change down'} style={{ fontSize: 15 }}>
-              {periodChangePct >= 0 ? '+' : ''}
-              {fmt(periodChangePct)}% over {tf.label === 'All' ? 'full period' : tf.label}
-            </span>
-          )}
-        </div>
-        <TrendChart series={series} color={periodChangePct >= 0 ? CHART_GREEN : CHART_RED} />
       </div>
     </div>
   )
@@ -549,7 +499,7 @@ function Lab({ data, status }) {
           <div className="field">
             <label>
               Strategy
-              <InfoTip text="Which entry rule to test. Doesn't have to match the ticker's own current tier — pick a different one to see how, say, a breakout rule would've done on a low-volatility stock." />
+              <InfoTip text="Which entry rule to test. Doesn't have to match the ticker's own current tier — pick a different one to see how, say, a breakout rule would've done on a low-volatility stock." learnId="strategies" />
             </label>
             <select value={activeTier} onChange={(e) => handleTierChange(e.target.value)}>
               <option value="high">High — Opening Range Breakout</option>
@@ -569,6 +519,7 @@ function Lab({ data, status }) {
                     ? "How far the stop is placed below entry, as a fraction of the prior day's range. Larger = more room before you're stopped out, but a bigger loss when wrong."
                     : "This strategy's stop is fixed at the day's low (from the script's own logic) — this slider only changes anything for the High / Opening Range Breakout strategy. Switch Strategy above to High to see it matter."
                 }
+                learnId="stop-target"
               />
             </span>
             <strong>{activeStopFrac.toFixed(2)}</strong>
@@ -689,7 +640,7 @@ function Calculator({ fx }) {
         <div className="field">
           <label>
             Risk per trade (%)
-            <InfoTip text="The max % of your account you're willing to lose if this trade hits its stop. 0.5–1% is a common starting convention so no single loss meaningfully damages the account — that's a general guideline, not personalized advice for your situation." />
+            <InfoTip text="The max % of your account you're willing to lose if this trade hits its stop. 0.5–1% is a common starting convention so no single loss meaningfully damages the account — that's a general guideline, not personalized advice for your situation." learnId="position-sizing" />
           </label>
           <input
             type="number"
@@ -713,7 +664,7 @@ function Calculator({ fx }) {
         <div className="field">
           <label>
             Stop price ($)
-            <InfoTip text="The price at which you'd exit to cap the loss if the trade goes against you. Below entry for a long, above entry for a short." />
+            <InfoTip text="The price at which you'd exit to cap the loss if the trade goes against you. Below entry for a long, above entry for a short." learnId="stop-target" />
           </label>
           <input
             type="number"
@@ -924,7 +875,7 @@ function Settings({ currentUrl, onSave, status, errorMsg, fx, onRefreshFx, liveA
       <div className="card settings-form" style={{ marginBottom: 16 }}>
         <h3 className="section-title">
           Live Prices
-          <InfoTip text="A server-side proxy (only present on the deployed Vercel site, not in local dev) fetches near-real-time quotes every 30 seconds and overlays them on the Watchlist and Portfolio tabs, marked with a green dot. Falls back silently to the daily results.json price if unavailable." />
+          <InfoTip text="A server-side proxy (only present on the deployed Vercel site, not in local dev) fetches near-real-time quotes every 30 seconds and overlays them on the Watchlist and Portfolio tabs, marked with a green dot. Falls back silently to the daily results.json price if unavailable." learnId="live-prices" />
         </h3>
         {liveAvailable === true && (
           <div className="help-text" style={{ color: 'var(--green)' }}>
@@ -968,7 +919,7 @@ function Settings({ currentUrl, onSave, status, errorMsg, fx, onRefreshFx, liveA
       <div className="card settings-form" style={{ marginBottom: 16 }}>
         <h3 className="section-title">
           Currency Conversion
-          <InfoTip text="Live USD→INR mid-market rate from a public FX API, cached for 6 hours. This is NOT the rate your broker will actually give you — real conversions carry a spread/markup, and LRS remittances add TCS on top (see Tax Notes below). Treat these ₹ figures as indicative only." />
+          <InfoTip text="Live USD→INR mid-market rate from a public FX API, cached for 6 hours. This is NOT the rate your broker will actually give you — real conversions carry a spread/markup, and LRS remittances add TCS on top (see Tax Notes below). Treat these ₹ figures as indicative only." learnId="currency-conversion" />
         </h3>
         {fx?.rate ? (
           <div style={{ fontSize: 14 }}>

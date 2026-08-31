@@ -3,7 +3,15 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 const POPOVER_WIDTH = 240
 const VIEWPORT_MARGIN = 12
 
-export default function InfoTip({ text }) {
+// Cross-cutting "jump to Learn tab" action, dispatched as a DOM event rather
+// than threaded as a prop through every parent between here and App — InfoTip
+// is nested many levels deep in Watchlist/Backtest/Lab/Portfolio, and none of
+// those layers otherwise need to know navigation exists.
+export function navigateToLearnConcept(conceptId) {
+  window.dispatchEvent(new CustomEvent('tt:learn-nav', { detail: conceptId }))
+}
+
+export default function InfoTip({ text, learnId }) {
   const [open, setOpen] = useState(false)
   const [alignRight, setAlignRight] = useState(false)
   const ref = useRef(null)
@@ -30,14 +38,32 @@ export default function InfoTip({ text }) {
       <button
         type="button"
         className="info-tip-btn"
-        onClick={() => setOpen((o) => !o)}
+        onClick={(e) => {
+          e.stopPropagation()
+          setOpen((o) => !o)
+        }}
         aria-label="More info"
         aria-expanded={open}
       >
         i
       </button>
       {open && (
-        <span className={`info-tip-popover${alignRight ? ' align-right' : ''}`}>{text}</span>
+        <span className={`info-tip-popover${alignRight ? ' align-right' : ''}`} onClick={(e) => e.stopPropagation()}>
+          {text}
+          {learnId && (
+            <button
+              type="button"
+              className="info-tip-learn-more"
+              onClick={(e) => {
+                e.stopPropagation()
+                navigateToLearnConcept(learnId)
+                setOpen(false)
+              }}
+            >
+              Learn more →
+            </button>
+          )}
+        </span>
       )}
     </span>
   )

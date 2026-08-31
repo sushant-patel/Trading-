@@ -215,7 +215,7 @@ function MiniPositionCalculator() {
         <strong className="mini-calc-shares">{shares.toLocaleString()} shares</strong>
       </div>
       <div className="help-text" style={{ margin: 0 }}>
-        This is the same formula as the Calculator tab — try it here, then go use the real one.
+        Use this same formula with your actual account size and stop before sizing any real trade.
       </div>
     </div>
   )
@@ -327,8 +327,8 @@ const START_STEPS = [
   { title: 'Understand your remittance limits (for US stocks)', body: 'LRS allows up to $250,000/year, but the first ₹10 lakh has no TCS and amounts above that carry 20% TCS (adjustable against your tax bill) — see Tax Notes in Settings.' },
   { title: "Confirm your broker's actual same-day rules", body: "Don't assume — some platforms lock sale proceeds until T+2/T+3 settlement, which blocks same-day round trips entirely. Ask support directly before planning any intraday-style strategy on US stocks." },
   { title: 'Practice for 1-2 weeks with zero real money', body: 'Use the Portfolio tab here with your intended real capital amount, tracking your own reasoning against outcomes, before a single real rupee moves.' },
-  { title: 'Start real money small, sized by risk not by feeling', body: "Use the Calculator's risk % discipline (0.5-1% per trade is a common starting convention) — position size should come from your stop distance, not a round number that feels right." },
-  { title: 'Journal every real trade, win or lose', body: 'The Journal tab is the only place that reflects your actual account. Reviewing it honestly, including losses, is how you actually improve.' },
+  { title: 'Start real money small, sized by risk not by feeling', body: 'Use the risk % discipline above (0.5-1% per trade is a common starting convention) — position size should come from your stop distance, not a round number that feels right.' },
+  { title: 'Keep a written trade log, win or lose', body: 'Whatever record actually reflects your real account. Reviewing it honestly, including losses, is how you actually improve.' },
 ]
 
 // ---------- Accordion shell ----------
@@ -597,7 +597,7 @@ export default function IntradayBasics() {
           </div>
           <p className="help-text" style={{ marginBottom: 16 }}>
             After 50-100 trades, analyze: win rate, average win, average loss, risk:reward, max losing streak,
-            which setups actually work, and which mistakes repeat. The Journal tab here is built for exactly this.
+            which setups actually work, and which mistakes repeat.
           </p>
 
           <h4 className="basics-subhead">10 rules worth internalizing</h4>

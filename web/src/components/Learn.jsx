@@ -27,16 +27,16 @@ const STEPS = [
     body: "Tune stop distance and target multiple for a strategy and watch trades/win-rate/return recompute instantly. This is how you build intuition for why a rule works or doesn't — not by reading about it, but by moving the sliders.",
   },
   {
-    title: 'Size any real trade in the Calculator',
-    body: 'Before risking real money, use the position-size calculator with your actual account size and a risk % you’re comfortable with (0.5-1% per trade is a common starting convention). It tells you exactly how many shares keeps your downside capped.',
+    title: 'Let Discover search for you',
+    body: 'The Discover tab runs an automated random search over strategy parameters on a schedule and keeps a leaderboard — the closest thing here to "build a strategy over the data" without doing it by hand. Read its overfitting warning before trusting any single result.',
   },
   {
-    title: 'Practice first in Paper Portfolio',
-    body: 'Allocate part of a simulated ₹80,000 to a pick, based on whatever caught your eye in Backtest, Trends, or the Lab. Then leave it — check back in a few days or next week and see if you were right, with zero real money at risk.',
+    title: 'Watch the 4 automated Portfolios',
+    body: 'Featured Setup Only, Diversified, High-Conviction Triggers, and Discovered Best all run themselves on a schedule — positions open, get checked against stop/target, and close automatically. Nothing to click; just check back.',
   },
   {
-    title: 'Journal your real trades',
-    body: 'Once you do trade with real money, log it in Journal. It’s the only tab that reflects your actual account — everything else here is analysis or simulation.',
+    title: 'Read Notes for the daily story',
+    body: "A dated log, written automatically each day: what's currently ranked best, what's close to triggering, and anything notable in the data — in plain language.",
   },
   {
     title: 'Check Settings when something looks off',
@@ -78,7 +78,7 @@ const CONCEPTS = [
   {
     id: 'position-sizing',
     term: 'Position Sizing (risk %)',
-    body: 'How much of your account you risk on a single trade if your stop is hit, as a percentage — not how much money you put into the trade. A common starting convention is 0.5-1% per trade, so that even a string of losses doesn’t meaningfully damage the account. The Calculator tab turns this into an actual share count.',
+    body: 'How much of your account you risk on a single trade if your stop is hit, as a percentage — not how much money you put into the trade. A common starting convention is 0.5-1% per trade, so that even a string of losses doesn’t meaningfully damage the account. The mini-calculator in the Risk Management section above turns this into an actual share count.',
     refs: [{ label: 'Position sizing — Strike.money', url: 'https://www.strike.money/stock-market/position-sizing' }],
   },
   {
@@ -119,10 +119,10 @@ const TAB_GUIDE = [
   { name: 'Trends', body: 'Price charts in three views: Single (one ticker, hover for exact values), Grid (all 18 at a glance), Compare (overlay up to 6, normalized to % change).' },
   { name: "Watch", body: "The exact price level that would trigger each ticker's rule tomorrow, and how far away it is — a mechanical readout, not a prediction." },
   { name: 'Backtest', body: 'The full results table for every ticker’s strategy, plus the Featured Setup callout at the top.' },
-  { name: 'Lab', body: 'Tune a strategy’s stop/target live against real history and watch the backtest recompute instantly — no server round-trip.' },
-  { name: 'Portfolio', body: 'The simulated ₹80,000 paper-trading account — open and close positions with a reason attached, track unrealized/realized P/L and a capital-over-time chart.' },
-  { name: 'Calculator', body: 'Position-size math: given account size, risk %, entry, and stop, tells you how many shares to buy.' },
-  { name: 'Journal', body: 'Your own real trade log, typed in by hand, saved only in this browser.' },
+  { name: 'Lab', body: 'Tune a strategy’s stop/target live against real history and watch the backtest recompute instantly — no server round-trip. Manual and exploratory; Discover does this automatically instead, if preferred.' },
+  { name: 'Discover', body: 'An automated random search over strategy parameters, run on a schedule — a ranked leaderboard plus a "best ever found," with a prominent overfitting warning. The closest thing here to "build a strategy over the data" without doing it yourself.' },
+  { name: 'Portfolio', body: '4 independent simulated ₹80,000 accounts, each following a different rule (Featured Setup Only, Diversified, High-Conviction Triggers, Discovered Best) — opened, checked against stop/target, and closed automatically by a scheduled routine. Nothing to click.' },
+  { name: 'Notes', body: 'A dated log written automatically each day: the current best backtested edge, which tickers are closest to triggering, and anything notable — in plain language.' },
   { name: 'Learn', body: 'This page — steps, concepts, and a guide to every tab.' },
   { name: 'Settings', body: 'Live-price status, data source URL, live currency rate, and India tax notes.' },
 ]

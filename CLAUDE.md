@@ -78,12 +78,23 @@ needs revising.
   browser-fetchable without a token).
 - `web/` — the Vite + React dashboard (standalone site, not a Claude artifact).
   - `web/src/App.jsx` — main component: tabs for Watchlist / Trends / Watch /
-    Backtest / Lab / Portfolio / Calculator / Journal / Learn / Settings. Owns
+    Backtest / Lab / Discover / Portfolio / Notes / Learn / Settings. Owns
     the live-quote polling loop (30s interval, `web/src/lib/liveQuotes.js`),
     the `selectedTicker` state that lets a Watchlist card (or a Watch/Grid
     row) jump straight to that ticker in Trends, and a `window` event listener
     (`tt:learn-nav`) that switches to Learn and scrolls/highlights a specific
     concept when an InfoTip's "Learn more" link is clicked.
+    **Calculator and Journal were removed from navigation** (user: "I will
+    not do much there," wants everything automated instead) — their
+    components (`Calculator`, `Journal`) and supporting state
+    (`journal`/`addJournalEntry`/`deleteJournalEntry`/`STORAGE_KEYS.journal`)
+    are still defined in this file, just unreferenced, same pattern as the
+    old localStorage `Portfolio.jsx`/`Portfolios.jsx` — left in case a manual
+    tool is wanted again later, not deleted outright. Every "Calculator tab"/
+    "Journal tab" cross-reference elsewhere (Learn, IntradayBasics, the Tax
+    Notes panel) was also updated when this happened — check for stray
+    mentions of either if either ever comes back, or if another tab is
+    hidden the same way in the future.
   - `web/src/components/InfoTip.jsx` — reusable click-to-open (ⓘ) tooltip used
     throughout the app, with an optional `learnId` prop that adds a "Learn
     more →" link jumping into the matching Learn-tab glossary card (dispatched

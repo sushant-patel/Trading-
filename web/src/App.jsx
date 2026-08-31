@@ -29,8 +29,6 @@ const TABS = [
   'Discover',
   'Portfolio',
   'Notes',
-  'Calculator',
-  'Journal',
   'Learn',
   'Settings',
 ]
@@ -190,7 +188,7 @@ export default function App() {
         <div>
           <h1>Trading Tracker</h1>
           <div className="subtitle">
-            Screener · Backtest Lab · Paper Trading · Journal
+            Screener · Backtest · Discover · Automated Portfolios
           </div>
         </div>
       </header>
@@ -227,16 +225,6 @@ export default function App() {
       {activeTab === 'Discover' && <Discover data={data} status={status} />}
       {activeTab === 'Portfolio' && <Portfolios data={data} status={status} liveQuotes={liveQuotes} fx={fx} />}
       {activeTab === 'Notes' && <DailyNotes />}
-      {activeTab === 'Calculator' && <Calculator fx={fx} />}
-      {activeTab === 'Journal' && (
-        <Journal
-          entries={journal}
-          onAdd={addJournalEntry}
-          onDelete={deleteJournalEntry}
-          tickers={data?.tickers?.map((t) => t.ticker) ?? []}
-          fx={fx}
-        />
-      )}
       {activeTab === 'Learn' && <Learn focusId={learnFocusId} />}
       {activeTab === 'Settings' && (
         <Settings
@@ -967,7 +955,7 @@ function Settings({ currentUrl, onSave, status, errorMsg, fx, onRefreshFx, liveA
             </p>
             <p style={{ marginTop: 10, fontStyle: 'italic' }}>
               This is general, illustrative information, not personalized tax advice, and none of it is computed
-              from your actual trades — the Journal tab doesn't factor holding periods or tax lots. Confirm current
+              from your actual trades — nothing here factors real holding periods or tax lots. Confirm current
               rates with a chartered accountant before relying on this for filing.
             </p>
           </div>

@@ -17,13 +17,14 @@ Repo: https://github.com/sushant-patel/Trading- (public)
 ## File map
 
 - `intraday_screener.py` — the analysis script. Run locally with
-  `python intraday_screener.py --period 1mo --json-out results.json`.
-  Flags: `--period` (yfinance period string), `--tickers` (override watchlist),
-  `--json-out` (write results for the dashboard).
+  `python intraday_screener.py --period 6mo --json-out results.json`.
+  Flags: `--period` (yfinance period string — 1mo gives too few backtested
+  trades to be meaningful, see Backtest finding below), `--tickers` (override
+  watchlist), `--json-out` (write results for the dashboard).
 - `.github/workflows/daily_screener.yml` — GitHub Actions workflow. Runs the
-  script on a cron schedule (currently 12:30 UTC, Mon–Fri) and commits the
-  resulting `results.json` back to the repo. This is what makes the pipeline
-  run without the PC being on. Confirmed working — see Status below.
+  script on a cron schedule (currently 12:30 UTC, Mon–Fri, `--period 6mo`) and
+  commits the resulting `results.json` back to the repo. This is what makes
+  the pipeline run without the PC being on. Confirmed working — see Status below.
 - `results.json` — committed to repo root by the Action. Fetched live by the
   dashboard at `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json`
   (only works because the repo is public — a private repo's raw files aren't
@@ -98,15 +99,35 @@ normally `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.
    Vercel auto-detects Vite. You'll get a public URL you can open on your phone.
 2. Once deployed, every push to `main` (including the daily Action's commits)
    can optionally trigger a redeploy — Vercel does this automatically by default.
-3. To get a statistically meaningful backtest (current runs mostly have 0-5
-   trades per ticker on a 1mo window), re-run locally with a longer period:
-   `python intraday_screener.py --period 3mo --json-out results.json` (or 6mo/1y),
-   or change the Action's `--period` flag if you want that to be the daily default.
+3. Python is now installed locally (`winget install Python.Python.3.12`, at
+   `C:\Users\shush\AppData\Local\Programs\Python\Python312\python.exe` — not
+   yet on PATH under the `python` alias, Windows' Store alias shadows it) with
+   `yfinance`/`pandas`/`numpy` installed, so the screener can be run directly
+   instead of only via the Action.
+
+## Backtest finding (6mo run, 2026-08-31)
+
+Re-running with `--period 6mo` (now the Action's default, was `1mo`) gives a
+real sample size (5-48 trades/ticker vs. 0-5 at 1mo) and it's not flattering:
+**7 of 10 tickers were net negative** — only NVDA (+18.5%), AMD (+12.0%), and
+META (+2.2%) showed positive edge; TSLA was the worst at -8.3% despite the
+most trades (38). Small-sample 1mo win rates (several tickers showing 100%
+on 1-2 trades) were not representative. Worth revisiting `TIER_RULES` in
+`intraday_screener.py` (stop_frac/target_mult per tier) rather than trusting
+the strategy as tuned — this is real signal that the current rules don't have
+a robust edge across the watchlist, not just noise.
 
 ## Known limitations (be upfront about these if asked)
 
 - Backtest in `intraday_screener.py` runs on **daily bars** as an approximation,
   not true intraday ticks — noted in the script's own docstring.
+- Fixed 2026-08-31: `fetch_history()` could return a trailing row with NaN
+  OHLC (yfinance's not-yet-populated current-session bar), which propagated
+  into `last_close`/backtest results and produced invalid `NaN` tokens in
+  `results.json` (would have crashed `JSON.parse` in the dashboard). Now
+  dropped via `dropna()`, and `json.dump(..., allow_nan=False)` is a safety
+  net so any future recurrence fails the Action loudly instead of silently
+  shipping broken JSON.
 - localStorage in the web app is **per-browser**, not synced across devices.
   Making it sync (e.g. phone + PC seeing the same journal) requires a real
   backend/database (Supabase free tier is a reasonable next step) — not built yet.

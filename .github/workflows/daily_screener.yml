@@ -44,7 +44,7 @@ jobs:
         run: pip install yfinance pandas numpy
 
       - name: Run screener
-        run: python intraday_screener.py --period 1mo --json-out results.json
+        run: python intraday_screener.py --period 6mo --json-out results.json
 
       - name: Commit updated results
         run: |

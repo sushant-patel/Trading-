@@ -87,6 +87,12 @@ def fetch_history(ticker: str, period: str) -> pd.DataFrame:
     df = yf.Ticker(ticker).history(period=period, interval="1d")
     if df.empty:
         raise ValueError(f"No data returned for {ticker}")
+    # yfinance can include a trailing row for the current session before it has
+    # OHLC data (e.g. queried before/around market open) — drop any NaN rows so
+    # they don't propagate into last_close/backtest results and break JSON output.
+    df = df.dropna(subset=["Open", "High", "Low", "Close"])
+    if df.empty:
+        raise ValueError(f"No usable (non-NaN) data returned for {ticker}")
     return df
 
 
@@ -224,7 +230,7 @@ def main():
             "tickers": [asdict(r) for r in results],
         }
         with open(args.json_out, "w") as f:
-            json.dump(payload, f, indent=2)
+            json.dump(payload, f, indent=2, allow_nan=False)
         print(f"Wrote {args.json_out}")
 
 

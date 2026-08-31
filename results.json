@@ -1,106 +1,106 @@
 {
-  "generated_at": "2026-08-31T09:25:04.877023+00:00",
-  "period": "1mo",
+  "generated_at": "2026-08-31T10:15:56.755161+00:00",
+  "period": "6mo",
   "tickers": [
     {
       "ticker": "NVDA",
-      "avg_range_pct": 2.7888600938470476,
+      "avg_range_pct": 3.0539790267854174,
       "tier": "medium",
       "last_close": 217.5500030517578,
       "last_change_pct": -4.574959589106331,
-      "trades": 0,
-      "win_rate": 0.0,
-      "total_return_pct": 0.0
+      "trades": 16,
+      "win_rate": 50.0,
+      "total_return_pct": 18.49222045592403
     },
     {
       "ticker": "TSLA",
-      "avg_range_pct": 3.35645264455257,
-      "tier": "medium",
+      "avg_range_pct": 3.7039435704325987,
+      "tier": "high",
       "last_close": 348.75,
       "last_change_pct": -1.707955694679374,
-      "trades": 1,
-      "win_rate": 100.0,
-      "total_return_pct": 2.0079540730169807
+      "trades": 38,
+      "win_rate": 31.57894736842105,
+      "total_return_pct": -8.270585952661852
     },
     {
       "ticker": "AMZN",
-      "avg_range_pct": 2.410813572930253,
-      "tier": "low",
+      "avg_range_pct": 2.5541799340287845,
+      "tier": "medium",
       "last_close": 266.42999267578125,
       "last_change_pct": 3.9686187944259035,
-      "trades": 2,
-      "win_rate": 100.0,
-      "total_return_pct": 1.6610330309500392
+      "trades": 15,
+      "win_rate": 33.33333333333333,
+      "total_return_pct": -4.3418119692382735
     },
     {
       "ticker": "META",
-      "avg_range_pct": 3.130833890096678,
+      "avg_range_pct": 2.9098552574407384,
       "tier": "medium",
       "last_close": 578.02001953125,
       "last_change_pct": 1.2117044722708434,
-      "trades": 3,
-      "win_rate": 33.33333333333333,
-      "total_return_pct": -2.2923017522519675
+      "trades": 7,
+      "win_rate": 42.857142857142854,
+      "total_return_pct": 2.169240165609473
     },
     {
       "ticker": "AVGO",
-      "avg_range_pct": 3.2698666689593368,
+      "avg_range_pct": 3.4879219118604055,
       "tier": "medium",
       "last_close": 368.7900085449219,
       "last_change_pct": -0.7401625495918847,
-      "trades": 0,
-      "win_rate": 0.0,
-      "total_return_pct": 0.0
+      "trades": 17,
+      "win_rate": 35.294117647058826,
+      "total_return_pct": -7.802414938469307
     },
     {
       "ticker": "AMD",
-      "avg_range_pct": 4.491003997644462,
+      "avg_range_pct": 5.107330536376501,
       "tier": "high",
       "last_close": 465.5799865722656,
       "last_change_pct": -2.3265627253790018,
-      "trades": 5,
-      "win_rate": 60.0,
-      "total_return_pct": 4.718958168645805
+      "trades": 48,
+      "win_rate": 39.58333333333333,
+      "total_return_pct": 12.03951985034393
     },
     {
       "ticker": "MSFT",
-      "avg_range_pct": 2.4116685272785636,
+      "avg_range_pct": 2.4592294531306353,
       "tier": "low",
       "last_close": 513.530029296875,
       "last_change_pct": 1.6770347640328835,
-      "trades": 1,
-      "win_rate": 100.0,
-      "total_return_pct": 1.2092299531138233
+      "trades": 5,
+      "win_rate": 40.0,
+      "total_return_pct": -2.373275503182028
     },
     {
       "ticker": "GOOGL",
-      "avg_range_pct": 2.4154959360757338,
+      "avg_range_pct": 2.4950083165539128,
       "tier": "low",
       "last_close": 346.5899963378906,
       "last_change_pct": 1.7437259791090085,
-      "trades": 4,
-      "win_rate": 75.0,
-      "total_return_pct": 1.7427360141544512
+      "trades": 15,
+      "win_rate": 40.0,
+      "total_return_pct": -4.311474384215985
     },
     {
       "ticker": "AAPL",
-      "avg_range_pct": 2.021279094843457,
+      "avg_range_pct": 2.181630737432772,
       "tier": "low",
       "last_close": 319.70001220703125,
       "last_change_pct": 1.6275751329747887,
-      "trades": 0,
-      "win_rate": 0.0,
-      "total_return_pct": 0.0
+      "trades": 8,
+      "win_rate": 37.5,
+      "total_return_pct": -2.9963368427773633
     },
     {
       "ticker": "JPM",
-      "avg_range_pct": 1.6072567409027878,
+      "avg_range_pct": 1.970169392911497,
       "tier": "low",
       "last_close": 357.6199951171875,
       "last_change_pct": 0.9598537306666509,
-      "trades": 1,
-      "win_rate": 100.0,
-      "total_return_pct": 0.44740569761590204
+      "trades": 8,
+      "win_rate": 37.5,
+      "total_return_pct": -9.126754243806499
     }
   ]
 }

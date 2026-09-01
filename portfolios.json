@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-31T13:45:58.000Z",
+  "updated_at": "2026-09-01T13:33:21.000Z",
   "starting_capital_inr": 80000,
   "note": "This is a repo-published ledger (same pattern as results.json and daily_notes.json), not local browser state.",
   "strategies": {
@@ -11,7 +11,7 @@
           "id": "fb4f86ac-82c8-47a1-a2b2-c69d624c50ef",
           "ticker": "ORCL",
           "tier": "high",
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-08-31T13:45:58.000Z",
           "entryPriceUsd": 148.77000427246094,
           "fxRateAtOpen": 95.152,
@@ -19,7 +19,11 @@
           "shares": 5.651408368200182,
           "reason": "Featured Setup: highest backtested return (19.26%) among tickers with >=5 trades as of 2026-08-31.",
           "stopPriceUsd": 148.25900427246094,
-          "targetPriceUsd": 149.68980427246092
+          "targetPriceUsd": 149.68980427246092,
+          "closeDate": "2026-09-01T13:33:21.000Z",
+          "exitPriceUsd": 151.14999389648438,
+          "fxRateAtClose": 95.152,
+          "realizedPnlInr": 1279.8223059345619
         }
       ]
     },
@@ -31,7 +35,7 @@
           "id": "919d277a-e73a-4bc8-9a96-a2e5cbb6e089",
           "ticker": "ORCL",
           "tier": "high",
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-08-31T13:45:58.000Z",
           "entryPriceUsd": 148.77000427246094,
           "fxRateAtOpen": 95.152,
@@ -39,13 +43,17 @@
           "shares": 1.8838030248754094,
           "reason": "Diversified: best backtested high-tier ticker (19.26% return) among those with >=5 trades as of 2026-08-31.",
           "stopPriceUsd": 148.25900427246094,
-          "targetPriceUsd": 149.68980427246092
+          "targetPriceUsd": 149.68980427246092,
+          "closeDate": "2026-09-01T13:33:21.000Z",
+          "exitPriceUsd": 151.14999389648438,
+          "fxRateAtClose": 95.152,
+          "realizedPnlInr": 426.6074886374481
         },
         {
           "id": "552b6bdc-585d-43a2-9698-6ac4a0890681",
           "ticker": "NVDA",
           "tier": "medium",
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-08-31T13:45:58.000Z",
           "entryPriceUsd": 216.8000946044922,
           "fxRateAtOpen": 95.152,
@@ -53,7 +61,11 @@
           "shares": 1.2926810967054925,
           "reason": "Diversified: best backtested medium-tier ticker (18.49% return) among those with >=5 trades as of 2026-08-31.",
           "stopPriceUsd": 216.21,
-          "targetPriceUsd": 217.74424597167967
+          "targetPriceUsd": 217.74424597167967,
+          "closeDate": "2026-09-01T13:33:21.000Z",
+          "exitPriceUsd": 218.81500244140625,
+          "fxRateAtClose": 95.152,
+          "realizedPnlInr": 247.83606513374616
         },
         {
           "id": "3a909f1e-a504-48bf-bb38-11e37c93bfb2",
@@ -79,7 +91,7 @@
           "id": "58ff59bc-06f0-4a7f-9479-ca933abd1bf3",
           "ticker": "ORCL",
           "tier": "high",
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-08-31T13:45:58.000Z",
           "entryPriceUsd": 148.77000427246094,
           "fxRateAtOpen": 95.152,
@@ -87,7 +99,11 @@
           "shares": 5.651408368200182,
           "reason": "High-Conviction Trigger: within 0.92% of its Watch trigger level, highest backtested return (19.26%) among 8 qualifying candidates as of 2026-08-31.",
           "stopPriceUsd": 148.25900427246094,
-          "targetPriceUsd": 149.68980427246092
+          "targetPriceUsd": 149.68980427246092,
+          "closeDate": "2026-09-01T13:33:21.000Z",
+          "exitPriceUsd": 151.14999389648438,
+          "fxRateAtClose": 95.152,
+          "realizedPnlInr": 1279.8223059345619
         }
       ]
     },
@@ -99,7 +115,7 @@
           "id": "69e4c521-12f5-443d-a910-ad38d07751cd",
           "ticker": "ORCL",
           "tier": "medium",
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-08-31T13:45:58.000Z",
           "entryPriceUsd": 148.77000427246094,
           "fxRateAtOpen": 95.152,
@@ -108,6 +124,27 @@
           "reason": "Discover search best-ever (out-of-sample validated): ORCL medium, stop 0.44 / target 3.0x, train 8 trades +8.27%, test 5 trades +34.41%, found 2026-08-31.",
           "stopPriceUsd": 148.68,
           "targetPriceUsd": 149.04001708984373,
+          "tierRule": "medium",
+          "stopFrac": 0.44,
+          "targetMult": 3,
+          "closeDate": "2026-09-01T13:33:21.000Z",
+          "exitPriceUsd": 151.14999389648438,
+          "fxRateAtClose": 95.152,
+          "realizedPnlInr": 1279.8223059345619
+        },
+        {
+          "id": "ead91309-cbb4-4581-ac13-0ef37849016d",
+          "ticker": "ORCL",
+          "tier": "medium",
+          "status": "open",
+          "openDate": "2026-09-01T13:33:21.000Z",
+          "entryPriceUsd": 151.14999389648438,
+          "fxRateAtOpen": 95.152,
+          "allocatedInr": 81279.82,
+          "shares": 5.651408368200182,
+          "reason": "Discover search best-ever (out-of-sample validated): ORCL medium, stop 0.44 / target 3x, train 8 trades +8.27%, test 5 trades +34.41%, found 2026-08-31.",
+          "stopPriceUsd": 147.75,
+          "targetPriceUsd": 161.3499755859375,
           "tierRule": "medium",
           "stopFrac": 0.44,
           "targetMult": 3

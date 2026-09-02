@@ -1,0 +1,48 @@
+# Live-price bridge for the India module's hourly forward-paper-trading
+# routine. Runs on GitHub's own servers (full internet access, unlike the
+# Claude Code cloud-routine sandbox this feeds) every 30 min during NSE
+# market hours, fetching ONE current price for whichever ticker the
+# 'discovered_in' paper portfolio currently holds and publishing it to
+# live_price_in.json. See fetch_live_price_in.py's own docstring for why
+# this exists -- results_in.json only refreshes once/day, so without this
+# an "hourly" check would see the same stale price all session.
+#
+# NSE hours: 9:15 AM-3:30 PM IST = 3:45-10:00 UTC, year-round (IST has no
+# DST). 30-min granularity, single-ticker fetch -- deliberately light on
+# Yahoo's API, not a high-frequency poller.
+
+name: Live Price Bridge (India)
+
+on:
+  schedule:
+    - cron: "15,45 3-9 * * 1-5"   # every 30 min, 3:45-9:45 UTC, Mon-Fri
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-live-price:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install yfinance
+
+      - name: Fetch live price
+        run: python fetch_live_price_in.py
+
+      - name: Commit updated price
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add live_price_in.json
+          git diff --staged --quiet || git commit -m "Update live_price_in.json [automated]"
+          git push

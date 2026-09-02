@@ -1,12 +1,28 @@
 {
-  "updated_at": "2026-09-02T13:59:15.000Z",
+  "updated_at": "2026-09-02T14:05:18.000Z",
   "starting_capital_inr": 80000,
   "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
   "strategies": {
     "discovered_in": {
       "label": "Discovered Best (Nifty 100)",
       "description": "Always follows whatever strategy_search_in.json's automated out-of-sample search currently ranks as its best validated combination (fit on ~70% of history, confirmed still profitable on the ~30% it never trained on). Replaced whenever the search finds something better. A live forward-test of a combination that has already cleared one honesty check, not just the flashiest training number.",
-      "positions": []
+      "positions": [
+        {
+          "id": "37c6904f-8242-4f62-800c-d11f7525cd46",
+          "ticker": "DIVISLAB.NS",
+          "tierRule": "high",
+          "stopFrac": 0.46,
+          "targetMult": 2.5,
+          "status": "open",
+          "openDate": "2026-09-02T14:05:18.000Z",
+          "entryPriceInr": 9220.0,
+          "allocatedInr": 80000,
+          "shares": 8.676789587852495,
+          "stopPriceInr": 9139.27,
+          "targetPriceInr": 9421.824999999999,
+          "reason": "Discovered-best (out-of-sample validated): DIVISLAB.NS high, stop 0.46/target 2.5x, train 21t -4.98%, test 18t +17.46%, found 2026-09-02. Entry price from live_price_in.json (fresh intraday quote, matches best_ever ticker and today's date). News check: no adverse headlines -- Divi's Laboratories posted strong Q1 results (net profit +65.6% YoY) and has been on a positive run; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found."
+        }
+      ]
     }
   }
 }

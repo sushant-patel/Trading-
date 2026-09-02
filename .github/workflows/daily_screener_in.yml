@@ -1,0 +1,47 @@
+# India (Nifty 100) counterpart to daily_screener.yml.
+#
+# What it does:
+#   - Runs on GitHub's own servers every weekday, well before NSE opens
+#     (2:00 UTC = 7:30 AM IST; NSE opens 9:15 AM IST / 3:45 UTC — IST has
+#     no DST, so this offset is stable year-round unlike the US action).
+#   - Installs dependencies, runs intraday_screener_in.py, writes results_in.json
+#   - Commits results_in.json back to the repo
+#
+# Live data will be at:
+#   https://raw.githubusercontent.com/<your-username>/<your-repo>/main/results_in.json
+
+name: Daily Intraday Screener (India)
+
+on:
+  schedule:
+    - cron: "0 2 * * 1-5"   # 2:00 UTC / 7:30 AM IST, Mon-Fri
+  workflow_dispatch: {}       # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  run-screener-in:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install yfinance pandas numpy
+
+      - name: Run screener
+        run: python intraday_screener_in.py --period 6mo --json-out results_in.json
+
+      - name: Commit updated results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results_in.json
+          git diff --staged --quiet || git commit -m "Update results_in.json [automated]"
+          git push

@@ -25,6 +25,49 @@ CRM, DIS, BAC, PLTR, INFY). It has three parts:
 
 Repo: https://github.com/sushant-patel/Trading- (public)
 
+## India (Nifty 100) module — added 2026-09-02
+
+A second, parallel module for real NSE-listed Indian stocks, extending the
+same architecture rather than being a separate project (user's explicit
+choice via `AskUserQuestion`). Genuinely different from the US side in ways
+that shaped the design:
+
+- **Real Indian market, not LRS.** These are tradeable via a normal Indian
+  demat account — no Liberalised Remittance Scheme, no USD→INR conversion
+  anywhere in this module. `entryPriceInr`/`stopPriceInr`/etc., never `Usd`.
+- **Universe**: Nifty 100 (Nifty 50 + Nifty Next 50), 100 `.NS` tickers.
+  Sourced from Wikipedia's NIFTY_50/NIFTY_Next_50 pages and individually
+  verified against real `yfinance` data before being trusted — a first-pass
+  scrape from a secondary aggregator site (smart-investing.in) had visibly
+  wrong/duplicate tickers (e.g. Bajaj Finance mapped to Bajaj Finserv's own
+  symbol `BAJAJFINSV`). Never trust a scraped ticker list without checking
+  it against live data first; this bit once already.
+- **"Real-time" redefined around a real platform limit.** Claude Code
+  scheduled routines cannot fire more than once per hour. So "real-time
+  paper trading" here means: an out-of-sample-validated strategy (same
+  70/30 train/test methodology as the US Discover tab) forward-paper-traded
+  with hourly stop/target checks during NSE hours (9:15 AM–3:30 PM IST),
+  not continuous. This was surfaced to the user explicitly before building,
+  not silently redefined.
+- **The live-price gap.** `results_in.json` only refreshes once/day
+  (pre-market), so without a fix, "hourly" checks would all see the same
+  stale price all session. Cloud routines also can't fetch a live price
+  themselves — confirmed unable to reach `yfinance`/Yahoo endpoints, same
+  restriction as the FX-rate issue on the US side (see "Cloud routine
+  network restrictions" below). Fixed with `fetch_live_price_in.py`, a
+  GitHub Action (unrestricted network) that fetches ONE current price —
+  for whichever ticker is held, or the current `best_ever` candidate if
+  nothing's held yet — and publishes it to `live_price_in.json` for the
+  hourly routine to read.
+- **News/sentiment**: `WebSearch` IS reachable from the CCR sandbox
+  (confirmed by direct test — see "Cloud routine network restrictions"),
+  but `WebFetch` to specific article URLs is NOT (confirmed blocked on
+  moneycontrol.com and economictimes.indiatimes.com). The hourly routine
+  does one `WebSearch` per prospective new position as a soft informational
+  check — it can skip opening on something genuinely severe (trading halt,
+  fraud probe, delisting), but a search failure or ordinary noise never
+  blocks a combination that already cleared out-of-sample validation.
+
 ## Important context: intraday trading mechanics (India vs. US stocks)
 
 Researched 2026-08-31, worth re-verifying before relying on it long after —
@@ -87,11 +130,28 @@ API directly** — it will not work, don't spend a run re-discovering this.
 
 ## File map
 
-- `intraday_screener.py` — the analysis script. Run locally with
+- `screener_core.py` — the shared analysis engine (fetch_history/analyze/
+  backtest_daily_breakout/TickerResult/DEFAULT_TIER_RULES), extracted from
+  `intraday_screener.py` so both the US and India runner scripts share one
+  tested implementation instead of drifting apart. Both `TIER_RULES` and
+  `analyze()`'s tier_rules parameter exist specifically so India can be
+  re-tuned independently of the US watchlist once the Discover search has
+  enough signal, without forking the actual backtest math.
+- `intraday_screener.py` — the US analysis script. Run locally with
   `python intraday_screener.py --period 6mo --json-out results.json`.
   Flags: `--period` (yfinance period string — 1mo gives too few backtested
   trades to be meaningful, see Backtest finding below), `--tickers` (override
   watchlist), `--json-out` (write results for the dashboard).
+- `intraday_screener_in.py` — the India (Nifty 100) counterpart. Run with
+  `python intraday_screener_in.py --period 6mo --json-out results_in.json`.
+  Same flags. `WATCHLIST` here is the verified 100-ticker `.NS` list (see
+  the India module section above for how it was sourced/verified) — don't
+  hand-edit tickers into this list without checking them against live
+  `yfinance` data first.
+- `fetch_live_price_in.py` — the India live-price bridge (see India module
+  section above). Run on a GitHub Actions runner via `live_price_in.yml`,
+  not locally in normal use, though it works locally for testing (reads
+  `portfolio_in.json` and `strategy_search_in.json` from the cwd).
 - `.github/workflows/daily_screener.yml` — GitHub Actions workflow. Runs the
   script on a cron schedule (currently 12:30 UTC, Mon–Fri, `--period 6mo`) and
   commits the resulting `results.json` back to the repo. This is what makes
@@ -100,9 +160,18 @@ API directly** — it will not work, don't spend a run re-discovering this.
   dashboard at `https://raw.githubusercontent.com/sushant-patel/Trading-/main/results.json`
   (only works because the repo is public — a private repo's raw files aren't
   browser-fetchable without a token).
+- `.github/workflows/daily_screener_in.yml` — India counterpart, runs
+  `intraday_screener_in.py --period 6mo --json-out results_in.json` at
+  2:00 UTC / 7:30 AM IST weekdays (well before NSE's 9:15 AM open — IST has
+  no DST, unlike the US action's ET offset, so this stays correct year-round).
+- `.github/workflows/live_price_in.yml` — the India live-price bridge Action,
+  every 30 min during 3:45–9:45 UTC weekdays (see India module section
+  above for why this exists). Single-ticker fetch, deliberately light.
+- `results_in.json` / `strategy_search_in.json` / `portfolio_in.json` /
+  `live_price_in.json` — India counterparts, see Data contract below.
 - `web/` — the Vite + React dashboard (standalone site, not a Claude artifact).
   - `web/src/App.jsx` — main component: tabs for Watchlist / Trends / Watch /
-    Backtest / Lab / Discover / Portfolio / Notes / Learn / Settings. Owns
+    Backtest / Lab / Discover / Portfolio / India / Notes / Learn / Settings. Owns
     the live-quote polling loop (30s interval, `web/src/lib/liveQuotes.js`),
     the `selectedTicker` state that lets a Watchlist card (or a Watch/Grid
     row) jump straight to that ticker in Trends, and a `window` event listener
@@ -238,6 +307,23 @@ API directly** — it will not work, don't spend a run re-discovering this.
     `schedule` skill) that hasn't been set up — that's a real recurring
     automated commitment and should get explicit user confirmation before
     being wired up, the same way the GitHub Action was.
+  - `web/src/components/India.jsx` — the India (Nifty 100) tab, self-
+    contained (fetches its own `results_in.json`/`strategy_search_in.json`/
+    `portfolio_in.json`/`live_price_in.json`, doesn't depend on the US tab's
+    already-loaded `data`). Three internal sub-views (Watchlist/Discover/
+    Portfolio), reusing `lib/strategySearch.js`/`lib/currency.js`'s
+    `formatInr` directly since those are already market-agnostic. Watchlist
+    is a sortable table, not cards — 100 tickers doesn't scale as cards the
+    way 18 does. Discover's `TrainTestTable` is a straight port of the US
+    Discover.jsx's CURRENT pattern (separate Train/Test return columns) —
+    written correctly only on a second pass; the first draft mistakenly
+    copied an OLDER, pre-validation shape of Discover.jsx from earlier
+    session context and silently showed a combo's train return in a column
+    meant to show test return. Caught via Playwright screenshot before
+    commit, not shipped. If Discover.jsx's `TrainTestTable`/`ReturnCell`
+    pattern changes again, update this file's copy too — it's a deliberate
+    duplication (kept self-contained per the India module's design) not an
+    import, so the two won't auto-sync.
   - `web/src/main.jsx` — Vite entry point.
   - `web/index.html`, `web/package.json`, `web/vite.config.js` — standard Vite
     scaffold.
@@ -332,6 +418,44 @@ with train return +57% collapses to test return -14% (8 trades) — while a
 few results (ORCL medium/high variants, MSFT high) hold up on both sides.
 Don't strip the Discover tab's overfitting callout, and don't let `best_ever`
 regress to tracking unvalidated training performance again.
+
+### India (Nifty 100) data files
+
+`results_in.json` (repo root) — same shape as `results.json` plus
+`market: "NSE"` and `currency: "INR"` at the top level, no `usd_inr_rate`
+field (not needed — prices are already INR). 100 tickers, `.NS` suffix.
+Published by `daily_screener_in.yml`. At ~2.2MB (100 tickers × 6mo history,
+vs. `results.json`'s ~380KB for 18) it's noticeably heavier — still a single
+fetch, gzipped by GitHub's raw serving, but worth knowing if load time ever
+becomes a concern.
+
+`strategy_search_in.json` (repo root) — identical schema to
+`strategy_search.json` plus `market`/`currency`, produced by the exact same
+`runRandomSearch()`/`validatedLeaderboard()` (market-agnostic, no changes
+needed) run against `results_in.json`'s tickers instead. Updated daily by
+the "Trading Tracker (India) - Daily Search Refresh" routine
+(`trig_01S4RvSvm3vumfC3zpMdbwAE`, cron `15 2 * * 1-5`, ~15 min after
+`daily_screener_in.yml`).
+
+`portfolio_in.json` (repo root) — single strategy, `discovered_in`
+(`{label, description, positions: [...]}`), no top-level `strategies`
+fan-out like `portfolios.json` since there's only the one India strategy so
+far. Position shape: `{id, ticker, tierRule, stopFrac, targetMult, status,
+openDate, entryPriceInr, allocatedInr, shares, stopPriceInr, targetPriceInr,
+reason, closeDate?, exitPriceInr?, realizedPnlInr?}` — **no FX fields
+anywhere** (`fxRateAtOpen` etc. from `portfolios.json` don't apply here,
+prices are natively INR). Managed by the "Trading Tracker (India) - Hourly
+Forward Paper Trading" routine (`trig_01TmSvG9gq2xs1kAtpMHVvmZ`, cron
+`50 3-9 * * 1-5`, ~5 min after each `live_price_in.yml` fire) — only commits
+when a position actually opens or closes, not every no-op hourly check.
+
+`live_price_in.json` (repo root) — `{ticker, price, fetched_at}` (or
+`ticker: null, price: null` when nothing to price yet). Published every
+30 min during NSE hours by `live_price_in.yml` (a GitHub Action, unrestricted
+network — see India module section above for why this bridge exists at
+all). The hourly routine only trusts this file's price if its `ticker`
+matches what it's checking AND `fetched_at` is today's UTC date; otherwise
+it falls back to `results_in.json`'s `last_close` for that ticker.
 
 ## Status / what's done
 
@@ -456,6 +580,28 @@ regress to tracking unvalidated training performance again.
       this network restriction, and is now superseded by the self-healing
       logic in the recurring routine — that one-time trigger is left
       disabled (`ended_reason: run_once_fired`) rather than deleted.
+- [x] India (Nifty 100) module — added 2026-09-02, see the dedicated
+      CLAUDE.md section near the top for the full design (real NSE
+      data, no LRS/FX, hourly-not-continuous "real-time", the live-
+      price bridge, WebSearch-only news). Concretely: `screener_core.py`
+      extraction, `intraday_screener_in.py` (100 verified tickers),
+      `daily_screener_in.yml`, an out-of-sample search port
+      (`strategy_search_in.json`), `portfolio_in.json` (single
+      `discovered_in` strategy), `fetch_live_price_in.py` +
+      `live_price_in.yml` (the live-price bridge), two new scheduled
+      routines (`trig_01S4RvSvm3vumfC3zpMdbwAE` daily search refresh,
+      `trig_01TmSvG9gq2xs1kAtpMHVvmZ` hourly forward paper trading),
+      and a new India tab in the dashboard (`web/src/components/
+      India.jsx`: Watchlist/Discover/Portfolio sub-views). Verified
+      end-to-end for real: the hourly routine opened its first real
+      position (DIVISLAB.NS, ₹9220 entry) using a live-price-bridge
+      quote, a WebSearch news check, and the actual `signals.js`
+      stop/target formula — confirmed rendering correctly in the
+      dashboard via Playwright screenshots before anything was
+      reported done. TIER_RULES not yet re-tuned for Indian-stock
+      volatility (still the US defaults) — that's what the daily
+      search refresh is for over time, same as the US side's own
+      un-retuned `TIER_RULES` (see Backtest finding below).
 
 ## Next steps (suggested order)
 

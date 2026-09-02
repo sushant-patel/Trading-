@@ -1,0 +1,12 @@
+{
+  "updated_at": "2026-09-02T13:59:15.000Z",
+  "starting_capital_inr": 80000,
+  "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
+  "strategies": {
+    "discovered_in": {
+      "label": "Discovered Best (Nifty 100)",
+      "description": "Always follows whatever strategy_search_in.json's automated out-of-sample search currently ranks as its best validated combination (fit on ~70% of history, confirmed still profitable on the ~30% it never trained on). Replaced whenever the search finds something better. A live forward-test of a combination that has already cleared one honesty check, not just the flashiest training number.",
+      "positions": []
+    }
+  }
+}

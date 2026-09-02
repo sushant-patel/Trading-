@@ -7,6 +7,7 @@ import TrendsTab from './components/Trends.jsx'
 import Watch from './components/Watch.jsx'
 import DailyNotes from './components/DailyNotes.jsx'
 import Discover from './components/Discover.jsx'
+import India from './components/India.jsx'
 import { getUsdInrRate, formatInr } from './lib/currency.js'
 import { runBacktest, TIER_DEFAULTS } from './lib/backtest.js'
 import { fetchLiveQuotes } from './lib/liveQuotes.js'
@@ -28,6 +29,7 @@ const TABS = [
   'Lab',
   'Discover',
   'Portfolio',
+  'India',
   'Notes',
   'Learn',
   'Settings',
@@ -224,6 +226,7 @@ export default function App() {
       {activeTab === 'Lab' && <Lab data={data} status={status} />}
       {activeTab === 'Discover' && <Discover data={data} status={status} />}
       {activeTab === 'Portfolio' && <Portfolios data={data} status={status} liveQuotes={liveQuotes} fx={fx} />}
+      {activeTab === 'India' && <India />}
       {activeTab === 'Notes' && <DailyNotes />}
       {activeTab === 'Learn' && <Learn focusId={learnFocusId} />}
       {activeTab === 'Settings' && (

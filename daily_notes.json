@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-09-03",
+      "generated_at": "2026-09-03T13:26:13Z",
+      "author": "claude",
+      "summary": "ORCL retook the top Featured Setup spot from NVDA with a stronger backtested return (+19.3% vs +16.4%), and five tickers are clustered within 1.5% of their trigger levels, three of them high-tier breakout setups.",
+      "featured": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 44.44444444444444,
+        "total_return_pct": 19.26236497585383
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 18,
+        "win_rate": 44.44444444444444,
+        "total_return_pct": 16.422290167538584
+      },
+      "watch_highlights": [
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.39,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 1.02,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 1.16,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.25,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -1.47,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "ORCL (high tier) currently holds the best backtested edge in the watchlist at +19.3% total return over 36 trades, a sample large enough to be meaningful, though its 44.4% win rate means the edge comes from asymmetric win/loss sizing rather than winning most trades. NVDA (medium tier) is a close runner-up at +16.4% over 18 trades. Five tickers sit within 1.5% of their trigger level today, and high-tier setups dominate that list (INTC, ORCL, and AMD all watching for a close above today's high), with INFY the lone medium-tier pullback setup and GOOGL the lone low-tier setup watching for a dip-and-reclaim of its 10-day low. This is a readout of the backtest and today's trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-09-02",
       "generated_at": "2026-09-02T13:27:54Z",
       "author": "claude",

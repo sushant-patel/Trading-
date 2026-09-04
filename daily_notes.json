@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-09-04",
+      "generated_at": "2026-09-04T13:25:18Z",
+      "author": "claude",
+      "summary": "ORCL's lead over runner-up NVDA for the top Featured Setup spot has narrowed to just 0.03 percentage points, and seven tickers -- five of them high-tier -- are clustered within 1.5% of their trigger levels, with ORCL itself the closest of all.",
+      "featured": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 37,
+        "win_rate": 43.24,
+        "total_return_pct": 19.26
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 17,
+        "win_rate": 52.94,
+        "total_return_pct": 19.23
+      },
+      "watch_highlights": [
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": -0.35,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.47,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.51,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.68,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.18,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -1.35,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "ORCL (high tier) keeps the watchlist's best backtested edge at +19.26% over 37 trades (43.24% win rate), but the gap to runner-up NVDA (medium tier, +19.23% over 17 trades, 52.94% win rate) has narrowed to just 0.03 percentage points, and NVDA still wins more often per trade. Seven tickers are within 1.5% of their trigger level today, and high-tier breakout setups dominate that list -- ORCL, TSLA, AMD, INTC, and CRM are all watching for a close above today's high -- while INFY is the lone medium-tier pullback setup and DIS the lone low-tier setup watching for a dip-and-reclaim of its 10-day low. ORCL itself is the closest of all, sitting just 0.14% from its own trigger level. This is a readout of the backtest and today's trigger levels only -- not investment advice."
+    },
+    {
       "date": "2026-09-03",
       "generated_at": "2026-09-03T13:26:13Z",
       "author": "claude",
@@ -110,7 +175,7 @@
           "desc": "pull back to ~20-day average, then close above it"
         }
       ],
-      "notes": "ORCL (high tier) has the best backtested edge in the watchlist right now, with a 19.3% total return across 36 trades (44.4% win rate), followed by NVDA (medium tier) at 16.4% over 18 trades. 6 ticker(s) are within 1.5% of their trigger level today (3 medium, 2 high, 1 low tier), closest is NVDA at -0.01%. This is not investment advice \u2014 it's a mechanical readout of the backtest and trigger levels, nothing more."
+      "notes": "ORCL (high tier) has the best backtested edge in the watchlist right now, with a 19.3% total return across 36 trades (44.4% win rate), followed by NVDA (medium tier) at 16.4% over 18 trades. 6 ticker(s) are within 1.5% of their trigger level today (3 medium, 2 high, 1 low tier), closest is NVDA at -0.01%. This is not investment advice — it's a mechanical readout of the backtest and trigger levels, nothing more."
     },
     {
       "date": "2026-09-01",
@@ -193,13 +258,13 @@
           "desc": "dip below the 10-day low, then close back above it"
         }
       ],
-      "notes": "ORCL still holds the best backtested edge on the watchlist \u2014 a 44.4% win rate over 36 trades and +19.26% cumulative return, the largest trade sample of any ticker here \u2014 with NVDA a close second at +18.49% over 17 trades (47.1% win rate). Ten of the eighteen tickers are sitting within 1.5% of their trigger level today, an unusually wide cluster spread fairly evenly across all three tiers: high-tier ORCL, PLTR, CRM, and TSLA; medium-tier META, INFY, and NVDA; and low-tier GOOGL, JPM, and BAC, with META, ORCL, and PLTR each within about 0.2% of triggering. This is a readout of the backtest and trigger levels only \u2014 not investment advice."
+      "notes": "ORCL still holds the best backtested edge on the watchlist — a 44.4% win rate over 36 trades and +19.26% cumulative return, the largest trade sample of any ticker here — with NVDA a close second at +18.49% over 17 trades (47.1% win rate). Ten of the eighteen tickers are sitting within 1.5% of their trigger level today, an unusually wide cluster spread fairly evenly across all three tiers: high-tier ORCL, PLTR, CRM, and TSLA; medium-tier META, INFY, and NVDA; and low-tier GOOGL, JPM, and BAC, with META, ORCL, and PLTR each within about 0.2% of triggering. This is a readout of the backtest and trigger levels only — not investment advice."
     },
     {
       "date": "2026-08-31",
       "generated_at": "2026-08-31T17:30:00Z",
       "author": "claude",
-      "summary": "First entry \u2014 seeded manually while the watchlist expansion (10\u219218 tickers) and Watch tab landed. Ongoing daily entries need a scheduled routine, which hasn't been set up yet (pending confirmation).",
+      "summary": "First entry — seeded manually while the watchlist expansion (10→18 tickers) and Watch tab landed. Ongoing daily entries need a scheduled routine, which hasn't been set up yet (pending confirmation).",
       "featured": {
         "ticker": "ORCL",
         "tier": "high",
@@ -246,7 +311,7 @@
           "desc": "close above today's high"
         }
       ],
-      "notes": "ORCL currently has this watchlist's best backtested edge (44.4% win rate over 36 trades, +19.3% cumulative) \u2014 a larger sample than most of the others, worth more attention than a quick glance suggests. NVDA is a close second and has more trigger-level activity right now (0.23% from its Medium-tier pullback level). Four of the five closest-to-triggering tickers are all Medium tier (VWAP pullback) at once, which is just where the data happens to sit today, not a signal about Medium tier generally. Semiconductor names (NVDA, AMD) carry real near-term headline risk from reported tariff discussion and post-earnings volatility as of this week \u2014 see the chat context from 2026-08-31 for sourced detail. None of this is a recommendation; it's what the current backtest and trigger levels show, nothing more."
+      "notes": "ORCL currently has this watchlist's best backtested edge (44.4% win rate over 36 trades, +19.3% cumulative) — a larger sample than most of the others, worth more attention than a quick glance suggests. NVDA is a close second and has more trigger-level activity right now (0.23% from its Medium-tier pullback level). Four of the five closest-to-triggering tickers are all Medium tier (VWAP pullback) at once, which is just where the data happens to sit today, not a signal about Medium tier generally. Semiconductor names (NVDA, AMD) carry real near-term headline risk from reported tariff discussion and post-earnings volatility as of this week — see the chat context from 2026-08-31 for sourced detail. None of this is a recommendation; it's what the current backtest and trigger levels show, nothing more."
     }
   ]
 }

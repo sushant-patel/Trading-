@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T13:27:20.000Z",
+  "updated_at": "2026-09-04T13:25:41.000Z",
   "starting_capital_inr": 80000,
   "note": "This is a repo-published ledger (same pattern as results.json and daily_notes.json), not local browser state.",
   "strategies": {

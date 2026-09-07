@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-09-07",
+      "generated_at": "2026-09-07T13:25:35Z",
+      "author": "claude",
+      "summary": "NVDA holds the top Featured Setup spot with a +20.33% backtested return over 17 trades, and six tickers -- four of them high-tier -- are within 1.5% of their trigger levels, led by NFLX and INTC at just 0.08% away.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 17,
+        "win_rate": 47.06,
+        "total_return_pct": 20.33
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 37,
+        "win_rate": 43.24,
+        "total_return_pct": 18.85
+      },
+      "watch_highlights": [
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": 0.08,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.08,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.29,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -0.32,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 1.32,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.38,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA (medium tier) has the best backtested edge on the watchlist at +20.33% over 17 trades (47.06% win rate), narrowly ahead of runner-up ORCL (high tier, +18.85% over 37 trades, 43.24% win rate). Six tickers sit within 1.5% of their trigger level today, and high-tier breakout setups dominate that list -- INTC, AMD, ORCL, and CRM are all watching for a close above today's high -- while NFLX is the lone medium-tier pullback setup and DIS the lone low-tier setup watching for a dip-and-reclaim of its 10-day low. NFLX and INTC are tied for closest, each just 0.08% from triggering. This is a readout of the backtest and today's trigger levels only -- not investment advice."
+    },
+    {
       "date": "2026-09-04",
       "generated_at": "2026-09-04T13:25:18Z",
       "author": "claude",

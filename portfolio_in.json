@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02T14:05:18.000Z",
+  "updated_at": "2026-09-08T07:52:21.000Z",
   "starting_capital_inr": 80000,
   "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
   "strategies": {
@@ -13,14 +13,32 @@
           "tierRule": "high",
           "stopFrac": 0.46,
           "targetMult": 2.5,
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-09-02T14:05:18.000Z",
           "entryPriceInr": 9220.0,
           "allocatedInr": 80000,
           "shares": 8.676789587852495,
           "stopPriceInr": 9139.27,
           "targetPriceInr": 9421.824999999999,
-          "reason": "Discovered-best (out-of-sample validated): DIVISLAB.NS high, stop 0.46/target 2.5x, train 21t -4.98%, test 18t +17.46%, found 2026-09-02. Entry price from live_price_in.json (fresh intraday quote, matches best_ever ticker and today's date). News check: no adverse headlines -- Divi's Laboratories posted strong Q1 results (net profit +65.6% YoY) and has been on a positive run; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found."
+          "reason": "Discovered-best (out-of-sample validated): DIVISLAB.NS high, stop 0.46/target 2.5x, train 21t -4.98%, test 18t +17.46%, found 2026-09-02. Entry price from live_price_in.json (fresh intraday quote, matches best_ever ticker and today's date). News check: no adverse headlines -- Divi's Laboratories posted strong Q1 results (net profit +65.6% YoY) and has been on a positive run; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found.",
+          "closeDate": "2026-09-08T07:52:21.000Z",
+          "exitPriceInr": 9500.5,
+          "realizedPnlInr": 2433.8394793926273
+        },
+        {
+          "id": "0d3cd82d-7786-493f-8a0b-c4a07944ca97",
+          "ticker": "DIVISLAB.NS",
+          "tierRule": "high",
+          "stopFrac": 0.58,
+          "targetMult": 2.8,
+          "status": "open",
+          "openDate": "2026-09-08T07:52:21.000Z",
+          "entryPriceInr": 9500.5,
+          "allocatedInr": 82433.83947939263,
+          "shares": 8.676789587852495,
+          "stopPriceInr": 9387.11,
+          "targetPriceInr": 9817.991999999998,
+          "reason": "Discovered-best (out-of-sample validated): DIVISLAB.NS high, stop 0.58/target 2.8x, train 21t -7.21%, test 18t +18.81%, found 2026-09-03. Prior discovered_in position (stop 0.46/target 2.5x) hit its target this run and was closed with +INR2433.84 realized P/L, compounded into this allocation. Entry price from results_in.json last_close (live_price_in.json was stale -- fetched 2026-09-07, not today). News check: no adverse headlines -- Divi's Labs continues on a strong run post Q1 results (net profit +65.6% YoY, EBITDA margin 40.8% vs 30.2% YoY), up roughly 22.66% over the last month; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found."
         }
       ]
     }

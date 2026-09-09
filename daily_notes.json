@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-09-09",
+      "generated_at": "2026-09-09T13:23:22Z",
+      "author": "claude",
+      "summary": "ORCL takes the top Featured Setup spot with a +23.78% backtested return over 37 trades, just ahead of runner-up NVDA's +23.57%, and six tickers sit within 1.5% of their trigger levels, led by TSLA at only +0.11% away.",
+      "featured": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 37,
+        "win_rate": 45.95,
+        "total_return_pct": 23.78
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 57.14,
+        "total_return_pct": 23.57
+      },
+      "watch_highlights": [
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.11,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.28,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.5,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -0.77,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.95,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "medium",
+          "distance_pct": 1.47,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "ORCL (high tier) currently has the best backtested edge on the watchlist at +23.78% over 37 trades (45.95% win rate), narrowly ahead of runner-up NVDA (medium tier, +23.57% over 14 trades, 57.14% win rate). Six tickers are within 1.5% of their trigger level today, and high-tier breakout setups make up half that list -- TSLA, INTC, and AMD are all watching for a close above today's high, with TSLA closest overall at just +0.11% away -- while DIS and JPM (low tier) are watching for a dip below their 10-day low followed by a close back above it, and AMZN (medium tier) is watching for a pullback to its 20-day average. This is a readout of the backtest and today's trigger levels only -- not investment advice."
+    },
+    {
       "date": "2026-09-08",
       "generated_at": "2026-09-08T13:22:24Z",
       "author": "claude",

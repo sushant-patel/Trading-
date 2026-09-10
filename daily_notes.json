@@ -1,6 +1,83 @@
 {
   "entries": [
     {
+      "date": "2026-09-10",
+      "generated_at": "2026-09-10T13:21:12Z",
+      "author": "claude",
+      "summary": "NVDA reclaims the top Featured Setup spot from ORCL with a +23.57% backtested return over 14 trades, just ahead of runner-up ORCL's +23.14%, and nine tickers -- half the watchlist -- sit within 1.5% of their trigger levels, led by INTC at only +0.35% away.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 57.14,
+        "total_return_pct": 23.57
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 37,
+        "win_rate": 45.95,
+        "total_return_pct": 23.14
+      },
+      "watch_highlights": [
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.35,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "low",
+          "distance_pct": -0.36,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.59,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.63,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.64,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "MSFT",
+          "tier": "low",
+          "distance_pct": -1.01,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.28,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -1.34,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": -1.47,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "NVDA (medium tier) has reclaimed the watchlist's best backtested edge at +23.57% over 14 trades (57.14% win rate), edging out runner-up ORCL (high tier, +23.14% over 37 trades, 45.95% win rate), which has the far larger trade sample. Nine tickers are within 1.5% of their trigger level today -- an unusually wide cluster covering half the watchlist -- split between high-tier breakout setups (INTC, AMD, PLTR, TSLA, all watching for a close above today's high) and low-tier setups (AMZN, GOOGL, MSFT, DIS, all watching for a dip below their 10-day low followed by a close back above it), with NVDA itself the lone medium-tier pullback setup on the list. INTC is closest overall at just +0.35% away. This is a readout of the backtest and today's trigger levels only -- not investment advice."
+    },
+    {
       "date": "2026-09-09",
       "generated_at": "2026-09-09T13:23:22Z",
       "author": "claude",

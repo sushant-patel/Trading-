@@ -1,6 +1,77 @@
 {
   "entries": [
     {
+      "date": "2026-09-11",
+      "generated_at": "2026-09-11T13:19:39Z",
+      "author": "claude",
+      "summary": "NVDA extends its lead as Featured Setup with a +29.00% backtested return over 15 trades (up from +23.57%/14 yesterday), while runner-up ORCL holds steady at +23.14% over 37 trades, and eight tickers sit within 1.5% of their trigger levels, tilted toward the low tier.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 60.0,
+        "total_return_pct": 29.0
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 37,
+        "win_rate": 45.95,
+        "total_return_pct": 23.14
+      },
+      "watch_highlights": [
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.85,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.9,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": 1.05,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -1.11,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "low",
+          "distance_pct": -1.19,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.2,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "MSFT",
+          "tier": "low",
+          "distance_pct": -1.43,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.47,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA remains the strongest backtested setup on the watchlist, posting a +29.00% return with a 60% win rate over 15 trades in the medium tier, ahead of runner-up ORCL's +23.14% return over 37 trades in the high tier. Eight tickers are within 1.5% of their trigger levels today, led by TSLA (high tier, +0.85% from today's high) and GOOGL (low tier, -0.90% from its 10-day low), with the group tilted slightly toward the low tier (four of the eight highlights). This is a readout of the backtest and trigger levels as of today's data only -- not investment advice."
+    },
+    {
       "date": "2026-09-10",
       "generated_at": "2026-09-10T13:21:12Z",
       "author": "claude",

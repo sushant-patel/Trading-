@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-09-14",
+      "generated_at": "2026-09-14T13:20:24Z",
+      "author": "claude",
+      "summary": "NVDA holds as Featured Setup with a +29.0% backtested return over 15 trades, runner-up ORCL improved to +24.36% over 36 trades, and 5 tickers sit within 1.5% of their trigger levels (tilted toward the high tier), though results.json's data still reflects Friday 2026-09-11's close.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 60.0,
+        "total_return_pct": 29.0
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 47.22,
+        "total_return_pct": 24.36
+      },
+      "watch_highlights": [
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": 0.44,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.61,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.89,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 0.89,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.2,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA remains the strongest backtested setup on the watchlist, posting a +29.0% return with a 60.0% win rate over 15 trades in the medium tier, just ahead of runner-up ORCL's +24.36% return over 36 trades in the high tier. Five tickers are within 1.5% of their trigger levels today, led by NVDA itself (medium tier, +0.44% from its 20-day average) and CRM (high tier, +0.61% from today's high), with the group tilted toward the high tier (three of five highlights) and no low-tier tickers currently close to triggering. Note that results.json's generated_at timestamp is 2026-09-11, so this readout still reflects Friday's session close rather than a fresh Monday update. This is a readout of the backtest and trigger levels as of the latest published data only -- not investment advice."
+    },
+    {
       "date": "2026-09-11",
       "generated_at": "2026-09-11T13:19:39Z",
       "author": "claude",

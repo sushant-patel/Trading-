@@ -1,6 +1,83 @@
 {
   "entries": [
     {
+      "date": "2026-09-15",
+      "generated_at": "2026-09-15T13:15:25Z",
+      "author": "claude",
+      "summary": "NVDA holds as Featured Setup with a +28.47% backtested return over 16 trades, runner-up ORCL steady at +24.36% over 36 trades, and 9 tickers sit within 1.5% of their trigger levels, tilted toward the high tier.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 16,
+        "win_rate": 56.25,
+        "total_return_pct": 28.47
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 47.22,
+        "total_return_pct": 24.36
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.06,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.17,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.34,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.41,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.42,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.44,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.79,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 0.95,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": -1.21,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "NVDA remains the top backtested setup on the watchlist, with a +28.47% total return and 56.25% win rate over 16 trades in the medium tier, just ahead of runner-up ORCL's +24.36% return over 36 trades in the high tier. 9 tickers are within 1.5% of their trigger levels today, tilted heavily toward the high tier (AMD, INTC, CRM, PLTR and ORCL), with AMD closest at just 0.06% from its breakout level. Low-tier BAC and JPM are also flagged, both sitting just below their 10-day lows, while medium-tier INFY and NFLX round out the list near their 20-day averages. This is a readout of the backtest and trigger levels only -- not investment advice."
+    },
+    {
       "date": "2026-09-14",
       "generated_at": "2026-09-14T13:20:24Z",
       "author": "claude",

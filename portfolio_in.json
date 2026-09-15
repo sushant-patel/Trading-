@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T03:51:29.000Z",
+  "updated_at": "2026-09-15T07:51:27.000Z",
   "starting_capital_inr": 80000,
   "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
   "strategies": {
@@ -49,14 +49,17 @@
           "tierRule": "medium",
           "stopFrac": 0.49,
           "targetMult": 3,
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-09-15T03:51:29.000Z",
           "entryPriceInr": 48385.0,
           "allocatedInr": 81271.14967462039,
           "shares": 1.6796765459258116,
           "stopPriceInr": 48080.0,
           "targetPriceInr": 49300.0,
-          "reason": "Discovered-best (out-of-sample validated): BOSCHLTD.NS medium, stop 0.49/target 3.0x, train 13t +18.74%, test 6t +19.07%, found 2026-09-15. Prior discovered_in position (DIVISLAB.NS high, stop 0.58/target 2.8x) was already closed (stop hit, -INR1162.69) before this combo change -- not reopened, since best_ever moved to a different combo. Entry price from results_in.json last_close (live_price_in.json was stale -- fetched 2026-09-14 for DIVISLAB.NS, not today and not this ticker). News check: no adverse headlines -- search returned mostly stale/generic price-history results, no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found for Bosch Ltd today."
+          "reason": "Discovered-best (out-of-sample validated): BOSCHLTD.NS medium, stop 0.49/target 3.0x, train 13t +18.74%, test 6t +19.07%, found 2026-09-15. Prior discovered_in position (DIVISLAB.NS high, stop 0.58/target 2.8x) was already closed (stop hit, -INR1162.69) before this combo change -- not reopened, since best_ever moved to a different combo. Entry price from results_in.json last_close (live_price_in.json was stale -- fetched 2026-09-14 for DIVISLAB.NS, not today and not this ticker). News check: no adverse headlines -- search returned mostly stale/generic price-history results, no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found for Bosch Ltd today.",
+          "closeDate": "2026-09-15T07:51:27.000Z",
+          "exitPriceInr": 47720.0,
+          "realizedPnlInr": -1116.9849030406622
         }
       ]
     }

@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-09-18",
+      "generated_at": "2026-09-18T13:15:56Z",
+      "author": "claude",
+      "summary": "NVDA holds the top backtested edge at +28.47% over 17 trades with ORCL close behind at +24.36% over 37, while today's trigger list is now concentrated in the high tier (4 of 5 tickers).",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 17,
+        "win_rate": 52.94,
+        "total_return_pct": 28.47
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 37,
+        "win_rate": 45.95,
+        "total_return_pct": 24.36
+      },
+      "watch_highlights": [
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": -0.27,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.32,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.57,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 1.28,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.49,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA remains the best backtested setup on the watchlist at +28.47% return and a 52.94% win rate over 17 trades in the medium tier, with ORCL a step behind at +24.36% over 37 trades in the high tier. Five tickers sit within 1.5% of their trigger levels today, and four of them -- INTC, AMD, ORCL and PLTR -- are all high-tier setups watching for a close above today's high, a notable cluster in one tier. NVDA itself is the closest of all, just 0.27% from pulling back to its own 20-day average. This is a readout of the backtest and trigger levels only -- not investment advice."
+    },
+    {
       "date": "2026-09-17",
       "generated_at": "2026-09-17T13:13:24Z",
       "author": "claude",

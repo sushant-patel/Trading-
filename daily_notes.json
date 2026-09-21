@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-09-21",
+      "generated_at": "2026-09-21T13:22:22Z",
+      "author": "claude",
+      "summary": "NVDA holds the top backtested edge at +33.7% over 18 trades with ORCL runner-up at +22.61% over 37, while today's trigger list has 6 tickers within 1.5%, spread across all three tiers and led by DIS at -0.33%.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 18,
+        "win_rate": 61.11,
+        "total_return_pct": 33.7
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 37,
+        "win_rate": 45.95,
+        "total_return_pct": 22.61
+      },
+      "watch_highlights": [
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -0.33,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": -0.6,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -1.16,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 1.27,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.29,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.44,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA remains the best backtested setup on the watchlist at +33.7% return and a 61.11% win rate over 18 trades in the medium tier, with ORCL next at +22.61% over 37 trades in the high tier. Six tickers sit within 1.5% of their trigger levels today, spread across all three tiers (three low, two medium, one high) rather than concentrated in a single one. DIS is closest at just -0.33% from its 10-day-low trigger, followed by NVDA at -0.60% from its own 20-day average, while PLTR is furthest out at 1.44% from closing above today's high. This is a readout of the backtest and trigger levels only \u2014 not investment advice."
+    },
+    {
       "date": "2026-09-18",
       "generated_at": "2026-09-18T13:15:56Z",
       "author": "claude",

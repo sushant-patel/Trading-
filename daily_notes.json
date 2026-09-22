@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-09-22",
+      "generated_at": "2026-09-22T13:15:25Z",
+      "author": "claude",
+      "summary": "NVDA holds the top backtested edge at +38.25% over 17 trades with AMD runner-up at +25.28% over 50, while today's trigger list has 6 tickers within 1.5%, concentrated in the high tier (4 of 6) and led by ORCL at +0.45%.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 17,
+        "win_rate": 70.59,
+        "total_return_pct": 38.25
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 50,
+        "win_rate": 46.0,
+        "total_return_pct": 25.28
+      },
+      "watch_highlights": [
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.45,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": -0.57,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.9,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.01,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.19,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.4,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA remains the best backtested setup on the watchlist at +38.25% return and a 70.59% win rate over 17 trades in the medium tier, with AMD next at +25.28% over 50 trades in the high tier. 6 tickers sit within 1.5% of their trigger levels today, skewed toward the high tier (4 of 6: ORCL, PLTR, TSLA, AMD) versus one medium (AVGO) and one low (BAC). ORCL is closest at +0.45% from its today-high trigger, while BAC is furthest out at -1.4%. This is a readout of the backtest and trigger levels only \u2014 not investment advice."
+    },
+    {
       "date": "2026-09-21",
       "generated_at": "2026-09-21T13:22:22Z",
       "author": "claude",

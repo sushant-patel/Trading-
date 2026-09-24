@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-09-24",
+      "generated_at": "2026-09-24T13:21:10.283870+00:00",
+      "author": "claude",
+      "summary": "NVDA leads the backtest with a 37.1% return, and six tickers are within 1.5% of their trigger level, led by JPM and BAC.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 17,
+        "win_rate": 70.58823529411765,
+        "total_return_pct": 37.1222647897479
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 35,
+        "win_rate": 48.57142857142857,
+        "total_return_pct": 24.47334313807498
+      },
+      "watch_highlights": [
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.29,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.29,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.54,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 0.9,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 1.33,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.35,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA (medium tier) has the strongest backtested edge in the watchlist right now \u2014 a 37.1% total return across 17 trades with a 70.6% win rate \u2014 with ORCL (high tier, 24.5% return over 35 trades) as runner-up. Six tickers are within 1.5% of their trigger level today: JPM and BAC (both low tier) are closest, only 0.29% from a 10-day-low dip-and-reclaim setup, though both carry net-negative backtested returns so far (JPM -11.53%, BAC -6.47%). CRM, AVGO, ORCL, and PLTR round out the watch list, mostly high-tier close-above-today's-high triggers. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-09-22",
       "generated_at": "2026-09-22T13:15:25Z",
       "author": "claude",

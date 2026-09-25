@@ -1,6 +1,89 @@
 {
   "entries": [
     {
+      "date": "2026-09-25",
+      "generated_at": "2026-09-25T13:24:57Z",
+      "author": "claude",
+      "summary": "NVDA holds the top backtested edge again today (39.1% return on 18 trades), and 10 of 18 tickers -- six of them high tier -- are within 1.5% of their trigger level.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 18,
+        "win_rate": 66.67,
+        "total_return_pct": 39.11
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 35,
+        "win_rate": 48.57,
+        "total_return_pct": 24.47
+      },
+      "watch_highlights": [
+        {
+          "ticker": "GOOGL",
+          "tier": "medium",
+          "distance_pct": 0.04,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.52,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.55,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.56,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.58,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.6,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.6,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.67,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": -1.07,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.26,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA remains the strongest backtested setup at +39.1% total return on 18 trades (66.7% win rate), ahead of runner-up ORCL at +24.5% on 35 trades (48.6% win rate). Ten of the 18 tickers are within 1.5% of their trigger level today, with a notable concentration in the high tier (6 of the 10) -- GOOGL is closest of all at just 0.04% from its 20-day average pullback trigger, and NVDA itself shows up 1.07% below its own medium-tier trigger. This is a readout of the backtest and mechanical trigger levels only -- not investment advice."
+    },
+    {
       "date": "2026-09-24",
       "generated_at": "2026-09-24T13:21:10.283870+00:00",
       "author": "claude",

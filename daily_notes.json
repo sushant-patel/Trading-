@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-09-28",
+      "generated_at": "2026-09-28T13:31:34.898499+00:00",
+      "author": "claude",
+      "summary": "NVDA holds the top backtested edge again today, while the trigger watchlist has narrowed to just 4 tickers within 1.5%, spread across all three tiers.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 18,
+        "win_rate": 72.22,
+        "total_return_pct": 39.32
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 35,
+        "win_rate": 48.57,
+        "total_return_pct": 24.47
+      },
+      "watch_highlights": [
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.26,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.28,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 1.32,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.45,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA still has the best backtested edge in the watchlist at +39.32% over 18 trades (72.22% win rate), with ORCL a distant runner-up at +24.47% over 35 trades. Only 4 tickers are within 1.5% of their trigger level today -- PLTR and AMD (high tier, close above today's high), AVGO (medium tier, pull back to the 20-day average), and BAC (low tier, dip below the 10-day low) -- with no single tier dominating the list this time. This is a readout of the backtest and mechanical trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-09-25",
       "generated_at": "2026-09-25T13:24:57Z",
       "author": "claude",

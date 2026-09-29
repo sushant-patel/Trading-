@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-09-29",
+      "generated_at": "2026-09-29T13:26:10.371833+00:00",
+      "author": "claude",
+      "summary": "NVDA keeps the top backtested edge though it softened from yesterday, and the trigger watchlist widened to 5 tickers with a notable low-tier cluster (BAC, JPM, AMZN all near their 10-day lows).",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 16,
+        "win_rate": 68.75,
+        "total_return_pct": 31.77
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 35,
+        "win_rate": 48.57,
+        "total_return_pct": 24.47
+      },
+      "watch_highlights": [
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.22,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.62,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "low",
+          "distance_pct": -0.73,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.2,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.35,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA still holds the best backtested edge in the watchlist at +31.77% over 16 trades (68.75% win rate), though that's down from +39.32% over 18 trades yesterday; ORCL remains the runner-up at +24.47% over 35 trades, unchanged from yesterday's numbers. Five tickers are within 1.5% of their trigger level today, the widest list in recent entries, with a clear low-tier cluster -- BAC, JPM, and AMZN are all sitting just below their 10-day lows (-0.22%, -0.62%, -0.73%) -- alongside CRM and PLTR approaching a close above today's high (+1.20%, +1.35%). This is a readout of the backtest and mechanical trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-09-28",
       "generated_at": "2026-09-28T13:31:34.898499+00:00",
       "author": "claude",

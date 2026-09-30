@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-09-30",
+      "generated_at": "2026-09-30T13:22:04.150831+00:00",
+      "author": "claude",
+      "summary": "NVDA keeps the top backtested edge unchanged from yesterday, while the trigger watchlist widened further to 7 tickers with a pronounced low-tier cluster of five stocks all sitting near their 10-day lows.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 16,
+        "win_rate": 68.75,
+        "total_return_pct": 31.77
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 47.22,
+        "total_return_pct": 24.47
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AAPL",
+          "tier": "low",
+          "distance_pct": -0.26,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 0.29,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.49,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.57,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.95,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "low",
+          "distance_pct": -1.02,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.45,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA still holds the best backtested edge in the watchlist at +31.77% over 16 trades (68.75% win rate), identical to yesterday's numbers, while ORCL remains the runner-up at +24.47% over 36 trades, though its win rate eased to 47.22% from 48.57% as one more trade was recorded. Seven tickers are within 1.5% of their trigger level today, the widest list in recent entries, dominated by a low-tier cluster -- AAPL, BAC, JPM, GOOGL, and AMZN are all sitting between -0.26% and -1.02% of their 10-day lows -- alongside TSLA approaching a close above today's high (+1.45%) and AVGO nearing its 20-day average (+0.29%). This is a readout of the backtest and mechanical trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-09-29",
       "generated_at": "2026-09-29T13:26:10.371833+00:00",
       "author": "claude",

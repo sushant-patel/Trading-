@@ -1,6 +1,77 @@
 {
   "entries": [
     {
+      "date": "2026-10-01",
+      "generated_at": "2026-10-01T13:22:21Z",
+      "author": "claude",
+      "summary": "NVDA leads the backtest at +31.77% return; 8 ticker(s) near trigger levels.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 16,
+        "win_rate": 68.75,
+        "total_return_pct": 31.77
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 47.22,
+        "total_return_pct": 23.43
+      },
+      "watch_highlights": [
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.14,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.17,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.23,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 0.43,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.44,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 1.22,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.32,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.43,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA (medium tier) has the best backtested edge in the watchlist right now, with a total return of +31.77% and a 68.75% win rate over 16 trades, followed by ORCL (high tier) at +23.43% over 36 trades. 8 ticker(s) are within 1.5% of their trigger level today (2 low, 5 high, 1 medium), with JPM the closest at -0.14% away (dip below the 10-day low, then close back above it). This is not investment advice \u2014 it's a readout of the backtest and trigger levels only, nothing more."
+    },
+    {
       "date": "2026-09-30",
       "generated_at": "2026-09-30T13:22:04.150831+00:00",
       "author": "claude",

@@ -1,6 +1,77 @@
 {
   "entries": [
     {
+      "date": "2026-10-02",
+      "generated_at": "2026-10-02T13:24:33Z",
+      "author": "claude",
+      "summary": "NVDA leads the backtest at +27.78% return; 8 ticker(s) near trigger levels.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 66.67,
+        "total_return_pct": 27.78
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 35,
+        "win_rate": 48.57,
+        "total_return_pct": 24.44
+      },
+      "watch_highlights": [
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -0.17,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.47,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.67,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.9,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.95,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.0,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.09,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AAPL",
+          "tier": "low",
+          "distance_pct": -1.19,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA (medium tier) has the best backtested edge in the watchlist right now, with a total return of +27.78% and a 66.67% win rate over 15 trades, followed by ORCL (high tier) at +24.44% over 35 trades. 8 ticker(s) are within 1.5% of their trigger level today (4 low, 4 high), with DIS the closest at -0.17% away (dip below the 10-day low, then close back above it). This is not investment advice \u2014 it's a readout of the backtest and trigger levels only, nothing more."
+    },
+    {
       "date": "2026-10-01",
       "generated_at": "2026-10-01T13:22:21Z",
       "author": "claude",

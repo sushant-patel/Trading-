@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-10-05",
+      "generated_at": "2026-10-05T13:29:56Z",
+      "author": "claude",
+      "summary": "NVDA leads the backtest with a 66.67% win rate and +27.78% return over 15 trades; five tickers spread across all three tiers are within 1.5% of their trigger levels today.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 66.67,
+        "total_return_pct": 27.78
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 47.22,
+        "total_return_pct": 24.44
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 0.12,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.5,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": -0.62,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -1.19,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.33,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA currently has the best backtested edge in the watchlist, a +27.78% total return over 15 trades with a 66.67% win rate, with ORCL close behind at +24.44% over a larger 36-trade sample. Five tickers are within 1.5% of their trigger level today: AVGO and INFY (medium tier, pullback-to-20-day-average triggers), TSLA (high tier, needs a close above today's high), and DIS and BAC (low tier, need a dip-and-reclaim of the 10-day low) \u2014 a fairly even spread across tiers rather than concentrated in one. This is a readout of the backtest and today's trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-10-02",
       "generated_at": "2026-10-02T13:24:33Z",
       "author": "claude",

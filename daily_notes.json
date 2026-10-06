@@ -1,6 +1,47 @@
 {
   "entries": [
     {
+      "date": "2026-10-06",
+      "generated_at": "2026-10-06T13:24:34Z",
+      "author": "claude",
+      "summary": "NVDA leads the backtest with a 66.67% win rate and +27.78% return over 15 trades; AMD and TSLA (high tier) and INFY (medium tier) are within 1.5% of their trigger levels today.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 66.67,
+        "total_return_pct": 27.78
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 50.0,
+        "total_return_pct": 26.62
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.28,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.76,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 1.49,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "Among 17 tickers with at least 5 backtested trades, NVDA (medium tier) holds the best edge at +27.78% total return on 15 trades (66.67% win rate), just ahead of ORCL at +26.62% on 36 trades. Three tickers are within 1.5% of their trigger level today: AMD and TSLA (both high-tier, needing a close above today's high, 0.28% and 0.76% away) and INFY (medium-tier, 1.49% from its 20-day average pullback level) \u2014 today's watch list leans toward high-tier breakout setups rather than low-tier pullbacks. This is a readout of the backtest and today's trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-10-05",
       "generated_at": "2026-10-05T13:29:56Z",
       "author": "claude",

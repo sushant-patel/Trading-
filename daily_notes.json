@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-10-07",
+      "generated_at": "2026-10-07T13:26:06.265699+00:00",
+      "author": "claude",
+      "summary": "NVDA leads the backtest with a 66.67% win rate and +27.78% return over 15 trades; AMD (high tier), TSLA (high tier), ORCL (high tier) and PLTR (high tier) are within 1.5% of their trigger levels today.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 66.67,
+        "total_return_pct": 27.78
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 50.0,
+        "total_return_pct": 26.62
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.79,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.82,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.86,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.09,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA (medium tier) has the best backtested edge today at 27.8% total return over 15 trades (66.7% win rate), followed by ORCL at 26.6% over 36 trades. 4 ticker(s) are within 1.5% of their trigger level, closest being AMD at +0.79%: AMD (high, +0.79%), TSLA (high, +0.82%), ORCL (high, +0.86%), PLTR (high, +1.09%). Notably, 4 of today's watch highlights are high-tier. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-10-06",
       "generated_at": "2026-10-06T13:24:34Z",
       "author": "claude",

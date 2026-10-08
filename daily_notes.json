@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-10-08",
+      "generated_at": "2026-10-08T13:26:03.651Z",
+      "author": "claude",
+      "summary": "NVDA holds the top backtested edge (27.78% return, 15 trades) while 7 tickers \u2014 mostly high-tier breakout names \u2014 sit within 1.5% of their trigger level.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 66.67,
+        "total_return_pct": 27.78
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 50.0,
+        "total_return_pct": 26.62
+      },
+      "watch_highlights": [
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.24,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.36,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.65,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.8,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.95,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -1.39,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.42,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA currently has the best backtested edge, with a 27.78% total return over 15 trades (66.67% win rate) on the medium tier, while ORCL is close behind at 26.62% on a much larger 36-trade sample on the high tier, which is encouraging for robustness. Seven tickers sit within 1.5% of their trigger level today, and the list leans heavily toward high-tier breakout setups (CRM, ORCL, AMD, PLTR, TSLA all near a new-high trigger) plus two low-tier names (BAC, JPM) near their 10-day-low pullback trigger \u2014 no medium-tier tickers are close to triggering right now. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-10-07",
       "generated_at": "2026-10-07T13:26:06.265699+00:00",
       "author": "claude",

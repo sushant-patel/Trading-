@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-10-13",
+      "generated_at": "2026-10-13T13:32:47.898Z",
+      "author": "claude",
+      "summary": "NVDA keeps the top backtested edge (+27.37% over 14 trades, 71% win rate), with six tickers - four of them medium-tier - sitting within 1.5% of a trigger level today.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 71.43,
+        "total_return_pct": 27.37
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 35,
+        "win_rate": 48.57,
+        "total_return_pct": 24.35
+      },
+      "watch_highlights": [
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": -0.22,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 0.25,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": 0.52,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": 0.8,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.21,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.27,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA has the best backtested edge in the watchlist right now, up 27.37% total return with a 71.43% win rate across 14 trades (medium tier); ORCL is close behind at +24.35% over 35 trades (high tier). Six tickers are within 1.5% of their trigger level today, and four of them - INFY, AVGO, NVDA, and NFLX - are medium tier, each sitting near its 20-day average (INFY and AVGO are closest, within about a quarter percent). TSLA and AMD, both high tier, are within roughly 1.2-1.3% of needing a close above today's high to trigger. This is a readout of the backtest and trigger levels only - not investment advice."
+    },
+    {
       "date": "2026-10-12",
       "generated_at": "2026-10-12T13:40:00.000Z",
       "author": "claude",

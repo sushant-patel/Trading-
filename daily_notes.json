@@ -1,6 +1,77 @@
 {
   "entries": [
     {
+      "date": "2026-10-14",
+      "generated_at": "2026-10-14T13:25:04.269Z",
+      "author": "claude",
+      "summary": "NVDA keeps the top backtested edge (+27.37% over 14 trades, 71% win rate), with 8 tickers - all high- or medium-tier, no low-tier names - sitting within 1.5% of a trigger level today.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 71.43,
+        "total_return_pct": 27.37
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 36,
+        "win_rate": 47.22,
+        "total_return_pct": 24.35
+      },
+      "watch_highlights": [
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": -0.08,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "NVDA",
+          "tier": "medium",
+          "distance_pct": 0.26,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.41,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.44,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": -0.48,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.51,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.7,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.35,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA has the best backtested edge in the watchlist right now, up 27.37% total return with a 71.43% win rate across 14 trades (medium tier); ORCL is close behind at +24.35% over 36 trades (high tier). 8 tickers are within 1.5% of their trigger level today (3 medium-tier, 5 high-tier, none low-tier) - NFLX is closest, just 0.08% from its level. This is a readout of the backtest and trigger levels only - not investment advice."
+    },
+    {
       "date": "2026-10-13",
       "generated_at": "2026-10-13T13:32:47.898Z",
       "author": "claude",

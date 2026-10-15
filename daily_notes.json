@@ -1,6 +1,47 @@
 {
   "entries": [
     {
+      "date": "2026-10-15",
+      "generated_at": "2026-10-15T13:22:45.000Z",
+      "author": "claude",
+      "summary": "ORCL takes over the top backtested edge (+16.86% over 35 trades, 46% win rate), with only 3 tickers - no low-tier names - within 1.5% of a trigger level today.",
+      "featured": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 35,
+        "win_rate": 45.71,
+        "total_return_pct": 16.86
+      },
+      "runner_up": {
+        "ticker": "CRM",
+        "tier": "high",
+        "trades": 34,
+        "win_rate": 50.0,
+        "total_return_pct": 15.11
+      },
+      "watch_highlights": [
+        {
+          "ticker": "META",
+          "tier": "medium",
+          "distance_pct": -0.77,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": 0.81,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.15,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "ORCL has the best backtested edge in the watchlist right now, up 16.86% total return with a 45.71% win rate across 35 trades (high tier); CRM is close behind at +15.11% over 34 trades (also high tier). Only 3 tickers are within 1.5% of their trigger level today (2 medium-tier, 1 high-tier, no low-tier names) - META is closest, just -0.77% from its level. This is a readout of the backtest and trigger levels only - not investment advice."
+    },
+    {
       "date": "2026-10-14",
       "generated_at": "2026-10-14T13:25:04.269Z",
       "author": "claude",

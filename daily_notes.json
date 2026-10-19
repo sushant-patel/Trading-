@@ -1,6 +1,47 @@
 {
   "entries": [
     {
+      "date": "2026-10-19",
+      "generated_at": "2026-10-19T13:24:10Z",
+      "author": "claude",
+      "summary": "Watch list narrowed to just three tickers tonight \u2014 none high-tier \u2014 while NVDA (+17.25% over 16 trades) holds the backtest's top spot; results.json still reflects Friday's (2026-10-16) close since today's screener run hadn't posted new data yet.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 16,
+        "win_rate": 56.25,
+        "total_return_pct": 17.25458810007575
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 33,
+        "win_rate": 45.45454545454545,
+        "total_return_pct": 15.199892723950478
+      },
+      "watch_highlights": [
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.58,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": -0.68,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "low",
+          "distance_pct": -1.06,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA continues to hold the strongest backtested edge in the current 6-month window at +17.25% total return over 16 trades (56.25% win rate), with ORCL close behind at +15.2% over 33 trades (45.45% win rate). Tonight's watch list is thin and tilted toward mean-reversion setups: only three tickers sit within 1.5% of their trigger level \u2014 GOOGL and AMZN (both low tier, needing a dip-and-recovery) and NFLX (medium tier, near its 20-day average) \u2014 with no high-tier breakout candidates close to triggering, a change from recent sessions. This readout is based on results.json as of its last refresh (Friday, 2026-10-16 close); today's screener run had not yet posted updated data at the time this note was generated. This is not investment advice \u2014 it's a readout of the backtest and trigger levels, nothing more."
+    },
+    {
       "date": "2026-10-16",
       "generated_at": "2026-10-16T13:15:35Z",
       "author": "claude",

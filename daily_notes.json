@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-10-20",
+      "generated_at": "2026-10-20T13:20:38Z",
+      "author": "claude",
+      "summary": "NVDA leads the backtest at +18.98% return over 15 trades (60% win rate), and today's trigger levels show an unusual concentration of high-tier breakout setups (CRM, TSLA, ORCL, PLTR) all within 1.5% of triggering.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 60.0,
+        "total_return_pct": 18.982983161804142
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 33,
+        "win_rate": 45.45454545454545,
+        "total_return_pct": 15.199892723950478
+      },
+      "watch_highlights": [
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.11,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.37,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": 0.75,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 1.03,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.42,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA currently has the strongest backtested edge in the watchlist, up 18.98% over 15 trades with a 60% win rate, while runner-up ORCL shows a smaller +15.2% return over a larger 33-trade sample and a lower 45.45% win rate. Five tickers sit within 1.5% of their trigger levels today, and four of them \u2014 CRM, TSLA, ORCL, and PLTR \u2014 are high-tier breakout setups watching for a close above today's high, with NFLX the lone medium-tier name near its 20-day average. This is a readout of the backtest and today's trigger levels only \u2014 not investment advice."
+    },
+    {
       "date": "2026-10-19",
       "generated_at": "2026-10-19T13:24:10Z",
       "author": "claude",

@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-19T07:21:52.376296+00:00",
+  "generated_at": "2026-10-20T07:12:53.890437+00:00",
   "period": "6mo",
   "market": "NSE",
   "currency": "INR",
   "tickers": [
     {
       "ticker": "ABB.NS",
-      "avg_range_pct": 2.731210443930609,
+      "avg_range_pct": 2.7290740324646725,
       "tier": "medium",
-      "last_close": 6904.0,
-      "last_change_pct": 1.514483164240553,
+      "last_close": 6801.0,
+      "last_change_pct": -0.22007042253521128,
       "trades": 15,
       "win_rate": 46.666666666666664,
       "total_return_pct": -0.04300977160910824,
@@ -888,22 +888,15 @@
           "high": 6916.0,
           "low": 6663.0,
           "close": 6801.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 6800.0,
-          "high": 6978.0,
-          "low": 6771.0,
-          "close": 6904.0
         }
       ]
     },
     {
       "ticker": "ADANIENSOL.NS",
-      "avg_range_pct": 3.6707192762196392,
+      "avg_range_pct": 3.670934669778159,
       "tier": "high",
-      "last_close": 1369.0,
-      "last_change_pct": 0.22695479394747894,
+      "last_close": 1364.9000244140625,
+      "last_change_pct": -0.07321180043385499,
       "trades": 22,
       "win_rate": 22.727272727272727,
       "total_return_pct": -9.439298645112855,
@@ -1787,17 +1780,17 @@
           "date": "2026-10-19",
           "open": 1368.0,
           "high": 1387.8,
-          "low": 1364.3,
-          "close": 1369.0
+          "low": 1364.0,
+          "close": 1364.9
         }
       ]
     },
     {
       "ticker": "ADANIENT.NS",
-      "avg_range_pct": 2.7664235498461647,
+      "avg_range_pct": 2.7701712606534183,
       "tier": "medium",
-      "last_close": 2674.39990234375,
-      "last_change_pct": -0.6537926321043833,
+      "last_close": 2657.5,
+      "last_change_pct": -1.2815750371471024,
       "trades": 11,
       "win_rate": 27.27272727272727,
       "total_return_pct": -12.367748105073243,
@@ -2681,20 +2674,20 @@
           "date": "2026-10-19",
           "open": 2692.0,
           "high": 2701.7,
-          "low": 2662.3,
-          "close": 2674.3999
+          "low": 2650.0,
+          "close": 2657.5
         }
       ]
     },
     {
       "ticker": "ADANIGREEN.NS",
-      "avg_range_pct": 3.385551309186045,
+      "avg_range_pct": 3.3887058330823003,
       "tier": "medium",
-      "last_close": 1297.9000244140625,
-      "last_change_pct": -0.3148982784898233,
+      "last_close": 1295.199951171875,
+      "last_change_pct": -0.5222771757392473,
       "trades": 14,
       "win_rate": 42.857142857142854,
-      "total_return_pct": 5.505407790895736,
+      "total_return_pct": 5.090812649269573,
       "history": [
         {
           "date": "2026-04-20",
@@ -3575,17 +3568,17 @@
           "date": "2026-10-19",
           "open": 1304.4,
           "high": 1319.2,
-          "low": 1296.1,
-          "close": 1297.9
+          "low": 1291.0,
+          "close": 1295.2
         }
       ]
     },
     {
       "ticker": "ADANIPORTS.NS",
-      "avg_range_pct": 2.277678095652692,
+      "avg_range_pct": 2.277629454611539,
       "tier": "low",
-      "last_close": 1761.0999755859375,
-      "last_change_pct": 0.5882982905276145,
+      "last_close": 1766.0,
+      "last_change_pct": 0.8681717356615845,
       "trades": 6,
       "win_rate": 66.66666666666666,
       "total_return_pct": 5.096494290783054,
@@ -4470,16 +4463,16 @@
           "open": 1763.8,
           "high": 1784.9,
           "low": 1746.0,
-          "close": 1761.1
+          "close": 1766.0
         }
       ]
     },
     {
       "ticker": "ADANIPOWER.NS",
-      "avg_range_pct": 3.1004195645961947,
+      "avg_range_pct": 3.108098382885564,
       "tier": "medium",
-      "last_close": 194.64999389648438,
-      "last_change_pct": -0.6127200253427559,
+      "last_close": 194.0800018310547,
+      "last_change_pct": -0.9037550254276785,
       "trades": 19,
       "win_rate": 36.84210526315789,
       "total_return_pct": -7.99619685796586,
@@ -5363,17 +5356,17 @@
           "date": "2026-10-19",
           "open": 195.0,
           "high": 197.16,
-          "low": 194.5,
-          "close": 194.65
+          "low": 192.63,
+          "close": 194.08
         }
       ]
     },
     {
       "ticker": "AMBUJACEM.NS",
-      "avg_range_pct": 2.37816047237467,
+      "avg_range_pct": 2.382779519624339,
       "tier": "low",
-      "last_close": 362.20001220703125,
-      "last_change_pct": 0.611114501953125,
+      "last_close": 361.8500061035156,
+      "last_change_pct": 0.5138905843098959,
       "trades": 18,
       "win_rate": 22.22222222222222,
       "total_return_pct": -4.84097580601688,
@@ -6257,17 +6250,17 @@
           "date": "2026-10-19",
           "open": 361.0,
           "high": 365.0,
-          "low": 358.8,
-          "close": 362.2
+          "low": 356.7,
+          "close": 361.85
         }
       ]
     },
     {
       "ticker": "APOLLOHOSP.NS",
-      "avg_range_pct": 1.8841338045386578,
+      "avg_range_pct": 1.89226975372702,
       "tier": "low",
-      "last_close": 7747.5,
-      "last_change_pct": -1.8060836501901139,
+      "last_close": 7700.0,
+      "last_change_pct": -2.4081115335868186,
       "trades": 6,
       "win_rate": 16.666666666666664,
       "total_return_pct": -7.077481123215255,
@@ -7151,17 +7144,17 @@
           "date": "2026-10-19",
           "open": 7880.5,
           "high": 7895.0,
-          "low": 7742.5,
-          "close": 7747.5
+          "low": 7664.5,
+          "close": 7700.0
         }
       ]
     },
     {
       "ticker": "ASIANPAINT.NS",
-      "avg_range_pct": 1.9617304616482985,
+      "avg_range_pct": 1.9616927175191612,
       "tier": "low",
-      "last_close": 2321.10009765625,
-      "last_change_pct": -0.4631332878673443,
+      "last_close": 2330.699951171875,
+      "last_change_pct": -0.05145809091843741,
       "trades": 16,
       "win_rate": 25.0,
       "total_return_pct": -6.510530362475945,
@@ -8046,16 +8039,16 @@
           "open": 2331.8999,
           "high": 2336.8,
           "low": 2310.0,
-          "close": 2321.1001
+          "close": 2330.7
         }
       ]
     },
     {
       "ticker": "AXISBANK.NS",
-      "avg_range_pct": 1.8877043841176013,
+      "avg_range_pct": 1.8877023272017757,
       "tier": "low",
-      "last_close": 1235.9000244140625,
-      "last_change_pct": -4.193796557049419,
+      "last_close": 1236.0,
+      "last_change_pct": -4.186046511627907,
       "trades": 14,
       "win_rate": 50.0,
       "total_return_pct": -3.4367869617189997,
@@ -8940,16 +8933,16 @@
           "open": 1264.9,
           "high": 1264.9,
           "low": 1225.3,
-          "close": 1235.9
+          "close": 1236.0
         }
       ]
     },
     {
       "ticker": "BAJAJ-AUTO.NS",
-      "avg_range_pct": 2.088299009517932,
+      "avg_range_pct": 2.0950593722956947,
       "tier": "low",
-      "last_close": 10376.0,
-      "last_change_pct": -0.2787121576165305,
+      "last_close": 10405.0,
+      "last_change_pct": 0.19258545979778527,
       "trades": 11,
       "win_rate": 54.54545454545454,
       "total_return_pct": 10.451020513004263,
@@ -9828,24 +9821,17 @@
           "high": 10474.0,
           "low": 10259.0,
           "close": 10405.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 10405.0,
-          "high": 10499.0,
-          "low": 10370.0,
-          "close": 10376.0
         }
       ]
     },
     {
       "ticker": "BAJAJFINSV.NS",
-      "avg_range_pct": 2.013585764339305,
+      "avg_range_pct": 2.0124249008045165,
       "tier": "low",
-      "last_close": 1700.0999755859375,
-      "last_change_pct": -1.6714878203622034,
-      "trades": 19,
-      "win_rate": 21.052631578947366,
+      "last_close": 1729.0,
+      "last_change_pct": -0.17321016166281755,
+      "trades": 18,
+      "win_rate": 22.22222222222222,
       "total_return_pct": -7.381524784268384,
       "history": [
         {
@@ -10722,32 +10708,25 @@
           "high": 1738.6,
           "low": 1704.0,
           "close": 1729.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 1730.0,
-          "high": 1734.2,
-          "low": 1697.5,
-          "close": 1700.1
         }
       ]
     },
     {
       "ticker": "BAJAJHLDNG.NS",
-      "avg_range_pct": 2.3867781436628515,
+      "avg_range_pct": 2.391175883189152,
       "tier": "low",
-      "last_close": 11268.0,
-      "last_change_pct": 0.6251116270762637,
+      "last_close": 11198.0,
+      "last_change_pct": -0.24053452115812918,
       "trades": 15,
       "win_rate": 53.333333333333336,
       "total_return_pct": -5.500195916963872,
       "history": [
         {
           "date": "2026-04-20",
-          "open": 10213.1741,
-          "high": 10307.4495,
-          "low": 10116.9346,
-          "close": 10201.3896
+          "open": 10213.1731,
+          "high": 10307.4485,
+          "low": 10116.9336,
+          "close": 10201.3887
         },
         {
           "date": "2026-04-21",
@@ -10814,24 +10793,24 @@
         },
         {
           "date": "2026-05-05",
-          "open": 10189.6052,
-          "high": 10309.4136,
-          "low": 10047.21,
-          "close": 10280.9346
+          "open": 10189.6043,
+          "high": 10309.4126,
+          "low": 10047.2091,
+          "close": 10280.9336
         },
         {
           "date": "2026-05-06",
-          "open": 10409.5798,
-          "high": 10605.005,
-          "low": 10325.1247,
-          "close": 10421.3643
+          "open": 10409.5808,
+          "high": 10605.006,
+          "low": 10325.1257,
+          "close": 10421.3652
         },
         {
           "date": "2026-05-07",
-          "open": 10605.9881,
-          "high": 10609.9162,
-          "low": 10352.6228,
-          "close": 10406.6348
+          "open": 10605.9871,
+          "high": 10609.9152,
+          "low": 10352.6218,
+          "close": 10406.6338
         },
         {
           "date": "2026-05-08",
@@ -10877,10 +10856,10 @@
         },
         {
           "date": "2026-05-18",
-          "open": 10065.8684,
-          "high": 10237.7247,
-          "low": 9918.563,
-          "close": 10180.7666
+          "open": 10065.8674,
+          "high": 10237.7237,
+          "low": 9918.5621,
+          "close": 10180.7656
         },
         {
           "date": "2026-05-19",
@@ -10912,10 +10891,10 @@
         },
         {
           "date": "2026-05-25",
-          "open": 10458.6815,
-          "high": 10548.0467,
-          "low": 10345.7474,
-          "close": 10450.8252
+          "open": 10458.6825,
+          "high": 10548.0477,
+          "low": 10345.7483,
+          "close": 10450.8262
         },
         {
           "date": "2026-05-26",
@@ -10982,10 +10961,10 @@
         },
         {
           "date": "2026-06-09",
-          "open": 9759.4722,
-          "high": 10095.3284,
-          "low": 9692.6937,
-          "close": 10068.8135
+          "open": 9759.4731,
+          "high": 10095.3294,
+          "low": 9692.6947,
+          "close": 10068.8145
         },
         {
           "date": "2026-06-10",
@@ -11010,17 +10989,17 @@
         },
         {
           "date": "2026-06-15",
-          "open": 10095.3295,
-          "high": 10362.4432,
-          "low": 10069.7965,
-          "close": 10101.2217
+          "open": 10095.3285,
+          "high": 10362.4422,
+          "low": 10069.7956,
+          "close": 10101.2207
         },
         {
           "date": "2026-06-16",
-          "open": 10164.0723,
-          "high": 10311.3777,
-          "low": 10110.0603,
-          "close": 10276.0244
+          "open": 10164.0713,
+          "high": 10311.3767,
+          "low": 10110.0594,
+          "close": 10276.0234
         },
         {
           "date": "2026-06-17",
@@ -11052,10 +11031,10 @@
         },
         {
           "date": "2026-06-23",
-          "open": 10723.8325,
-          "high": 10797.4852,
-          "low": 10409.581,
-          "close": 10424.3115
+          "open": 10723.8315,
+          "high": 10797.4842,
+          "low": 10409.58,
+          "close": 10424.3105
         },
         {
           "date": "2026-06-24",
@@ -11616,22 +11595,15 @@
           "high": 11292.0,
           "low": 11056.0,
           "close": 11198.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 11198.0,
-          "high": 11310.0,
-          "low": 11103.0,
-          "close": 11268.0
         }
       ]
     },
     {
       "ticker": "BAJFINANCE.NS",
-      "avg_range_pct": 2.2464189308944724,
+      "avg_range_pct": 2.2534655909346117,
       "tier": "low",
-      "last_close": 966.2999877929688,
-      "last_change_pct": -1.6087962718400648,
+      "last_close": 957.3499755859375,
+      "last_change_pct": -2.5201100310825004,
       "trades": 6,
       "win_rate": 16.666666666666664,
       "total_return_pct": -5.485826009928503,
@@ -12515,17 +12487,17 @@
           "date": "2026-10-19",
           "open": 985.0,
           "high": 985.5,
-          "low": 963.9,
-          "close": 966.3
+          "low": 955.6,
+          "close": 957.35
         }
       ]
     },
     {
       "ticker": "BANKBARODA.NS",
-      "avg_range_pct": 2.16345010552443,
+      "avg_range_pct": 2.1633306994063393,
       "tier": "low",
-      "last_close": 237.25,
-      "last_change_pct": 2.973093005633169,
+      "last_close": 238.1999969482422,
+      "last_change_pct": 3.3854180808972805,
       "trades": 15,
       "win_rate": 26.666666666666668,
       "total_return_pct": -7.918639819855758,
@@ -13410,16 +13382,16 @@
           "open": 230.3,
           "high": 238.7,
           "low": 229.75,
-          "close": 237.25
+          "close": 238.2
         }
       ]
     },
     {
       "ticker": "BEL.NS",
-      "avg_range_pct": 1.903922435100114,
+      "avg_range_pct": 1.9065354367104719,
       "tier": "low",
-      "last_close": 376.54998779296875,
-      "last_change_pct": -0.07961212835020201,
+      "last_close": 377.20001220703125,
+      "last_change_pct": 0.09287676737345814,
       "trades": 13,
       "win_rate": 23.076923076923077,
       "total_return_pct": -8.831038623099602,
@@ -14303,17 +14275,17 @@
           "date": "2026-10-19",
           "open": 376.0,
           "high": 380.5,
-          "low": 375.8,
-          "close": 376.55
+          "low": 374.55,
+          "close": 377.2
         }
       ]
     },
     {
       "ticker": "BHARTIARTL.NS",
-      "avg_range_pct": 1.8660404219714142,
+      "avg_range_pct": 1.8716767639324776,
       "tier": "low",
-      "last_close": 1879.4000244140625,
-      "last_change_pct": -1.3438307394192912,
+      "last_close": 1875.199951171875,
+      "last_change_pct": -1.5643070250984252,
       "trades": 11,
       "win_rate": 36.36363636363637,
       "total_return_pct": -0.9006521615426523,
@@ -15197,17 +15169,17 @@
           "date": "2026-10-19",
           "open": 1913.8,
           "high": 1929.6,
-          "low": 1877.1,
-          "close": 1879.4
+          "low": 1863.9,
+          "close": 1875.2
         }
       ]
     },
     {
       "ticker": "BOSCHLTD.NS",
-      "avg_range_pct": 2.4247997250071514,
+      "avg_range_pct": 2.424785721658317,
       "tier": "low",
-      "last_close": 45145.0,
-      "last_change_pct": -0.9108867427568041,
+      "last_close": 45195.0,
+      "last_change_pct": -0.8011413520632134,
       "trades": 7,
       "win_rate": 71.42857142857143,
       "total_return_pct": 13.628309296882101,
@@ -16092,16 +16064,16 @@
           "open": 45400.0,
           "high": 45675.0,
           "low": 44955.0,
-          "close": 45145.0
+          "close": 45195.0
         }
       ]
     },
     {
       "ticker": "BPCL.NS",
-      "avg_range_pct": 2.3387055894871867,
+      "avg_range_pct": 2.3411136556634133,
       "tier": "low",
-      "last_close": 294.45001220703125,
-      "last_change_pct": 0.323683886552385,
+      "last_close": 293.5,
+      "last_change_pct": -0.0681008507722703,
       "trades": 11,
       "win_rate": 54.54545454545454,
       "total_return_pct": 3.8965951914750647,
@@ -16980,24 +16952,17 @@
           "high": 296.85,
           "low": 290.2,
           "close": 293.5
-        },
-        {
-          "date": "2026-10-19",
-          "open": 292.0,
-          "high": 298.0,
-          "low": 292.0,
-          "close": 294.45
         }
       ]
     },
     {
       "ticker": "BRITANNIA.NS",
-      "avg_range_pct": 1.8090599846945892,
+      "avg_range_pct": 1.813542292828413,
       "tier": "low",
-      "last_close": 4735.5,
-      "last_change_pct": -0.5982367758186398,
-      "trades": 16,
-      "win_rate": 31.25,
+      "last_close": 4705.0,
+      "last_change_pct": -1.2384550797649034,
+      "trades": 15,
+      "win_rate": 33.33333333333333,
       "total_return_pct": -3.266671212560369,
       "history": [
         {
@@ -17879,17 +17844,17 @@
           "date": "2026-10-19",
           "open": 4774.0,
           "high": 4787.8999,
-          "low": 4730.1001,
-          "close": 4735.5
+          "low": 4703.8999,
+          "close": 4705.0
         }
       ]
     },
     {
       "ticker": "CANBK.NS",
-      "avg_range_pct": 2.3658222121929335,
+      "avg_range_pct": 2.3595767393556786,
       "tier": "low",
-      "last_close": 122.04000091552734,
-      "last_change_pct": 3.1701749691234946,
+      "last_close": 118.29000091552734,
+      "last_change_pct": 0.998973823008604,
       "trades": 16,
       "win_rate": 37.5,
       "total_return_pct": -1.7102354980338599,
@@ -18768,22 +18733,15 @@
           "high": 119.59,
           "low": 117.15,
           "close": 118.29
-        },
-        {
-          "date": "2026-10-19",
-          "open": 119.2,
-          "high": 122.78,
-          "low": 118.94,
-          "close": 122.04
         }
       ]
     },
     {
       "ticker": "CGPOWER.NS",
-      "avg_range_pct": 2.8348971534620033,
+      "avg_range_pct": 2.836759539284361,
       "tier": "medium",
-      "last_close": 857.0,
-      "last_change_pct": 1.3002364066193852,
+      "last_close": 846.0,
+      "last_change_pct": 3.4229828850855744,
       "trades": 23,
       "win_rate": 34.78260869565217,
       "total_return_pct": 4.049805481882424,
@@ -19662,22 +19620,15 @@
           "high": 858.3,
           "low": 808.55,
           "close": 846.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 850.2,
-          "high": 865.5,
-          "low": 843.2,
-          "close": 857.0
         }
       ]
     },
     {
       "ticker": "CHOLAFIN.NS",
-      "avg_range_pct": 2.644608113468653,
+      "avg_range_pct": 2.6526382401352793,
       "tier": "medium",
-      "last_close": 1565.5,
-      "last_change_pct": -0.5652962573711076,
+      "last_close": 1553.0,
+      "last_change_pct": -1.359249497091875,
       "trades": 9,
       "win_rate": 44.44444444444444,
       "total_return_pct": 10.779174052036602,
@@ -20561,17 +20512,17 @@
           "date": "2026-10-19",
           "open": 1574.4,
           "high": 1590.3,
-          "low": 1563.6,
-          "close": 1565.5
+          "low": 1548.1,
+          "close": 1553.0
         }
       ]
     },
     {
       "ticker": "CIPLA.NS",
-      "avg_range_pct": 1.922111011669297,
+      "avg_range_pct": 1.9223883509585669,
       "tier": "low",
-      "last_close": 1329.0,
-      "last_change_pct": 0.2943192578611265,
+      "last_close": 1324.0999755859375,
+      "last_change_pct": -0.07546600395625368,
       "trades": 11,
       "win_rate": 45.45454545454545,
       "total_return_pct": 3.175421416456955,
@@ -21455,17 +21406,17 @@
           "date": "2026-10-19",
           "open": 1322.0,
           "high": 1339.0,
-          "low": 1322.0,
-          "close": 1329.0
+          "low": 1321.6,
+          "close": 1324.1
         }
       ]
     },
     {
       "ticker": "COALINDIA.NS",
-      "avg_range_pct": 2.0264561827786864,
+      "avg_range_pct": 2.028468175448261,
       "tier": "low",
-      "last_close": 414.25,
-      "last_change_pct": -0.7070978237573341,
+      "last_close": 411.70001220703125,
+      "last_change_pct": -1.3183125213502345,
       "trades": 9,
       "win_rate": 66.66666666666666,
       "total_return_pct": 7.367889589282687,
@@ -21480,7 +21431,7 @@
         {
           "date": "2026-04-21",
           "open": 431.0139,
-          "high": 433.9373,
+          "high": 433.9374,
           "low": 430.6241,
           "close": 431.8422
         },
@@ -21515,7 +21466,7 @@
         {
           "date": "2026-04-28",
           "open": 444.5592,
-          "high": 461.8075,
+          "high": 461.8076,
           "low": 444.5592,
           "close": 455.0836
         },
@@ -21529,8 +21480,8 @@
         {
           "date": "2026-04-30",
           "open": 472.0884,
-          "high": 478.7148,
-          "low": 466.1927,
+          "high": 478.7149,
+          "low": 466.1928,
           "close": 469.1649
         },
         {
@@ -21563,7 +21514,7 @@
         },
         {
           "date": "2026-05-08",
-          "open": 449.4316,
+          "open": 449.4317,
           "high": 451.5268,
           "low": 443.2924,
           "close": 444.7541
@@ -21621,8 +21572,8 @@
           "date": "2026-05-20",
           "open": 444.3643,
           "high": 448.311,
-          "low": 441.1486,
-          "close": 446.9955
+          "low": 441.1485,
+          "close": 446.9954
         },
         {
           "date": "2026-05-21",
@@ -21664,7 +21615,7 @@
           "open": 447.1903,
           "high": 461.905,
           "low": 444.2669,
-          "close": 446.2158
+          "close": 446.2159
         },
         {
           "date": "2026-06-01",
@@ -21731,8 +21682,8 @@
         },
         {
           "date": "2026-06-12",
-          "open": 441.782,
-          "high": 441.782,
+          "open": 441.7819,
+          "high": 441.7819,
           "low": 428.4315,
           "close": 432.1833
         },
@@ -21768,7 +21719,7 @@
           "date": "2026-06-19",
           "open": 440.7587,
           "high": 443.1949,
-          "low": 436.5684,
+          "low": 436.5685,
           "close": 439.7842
         },
         {
@@ -21797,7 +21748,7 @@
           "open": 431.2575,
           "high": 431.5499,
           "low": 420.9767,
-          "close": 424.2899
+          "close": 424.29
         },
         {
           "date": "2026-06-29",
@@ -21881,7 +21832,7 @@
           "open": 418.979,
           "high": 425.3619,
           "low": 417.1275,
-          "close": 419.6125
+          "close": 419.6124
         },
         {
           "date": "2026-07-15",
@@ -21913,10 +21864,10 @@
         },
         {
           "date": "2026-07-21",
-          "open": 418.9791,
+          "open": 418.979,
           "high": 422.1461,
-          "low": 418.1995,
-          "close": 420.2459
+          "low": 418.1994,
+          "close": 420.2458
         },
         {
           "date": "2026-07-22",
@@ -22349,19 +22300,19 @@
           "date": "2026-10-19",
           "open": 417.2,
           "high": 419.8,
-          "low": 412.7,
-          "close": 414.25
+          "low": 411.7,
+          "close": 411.7
         }
       ]
     },
     {
       "ticker": "CUMMINSIND.NS",
-      "avg_range_pct": 2.4266789964985778,
+      "avg_range_pct": 2.4359339739448447,
       "tier": "low",
-      "last_close": 4607.0,
-      "last_change_pct": -0.021701388888888888,
-      "trades": 15,
-      "win_rate": 40.0,
+      "last_close": 4608.0,
+      "last_change_pct": -0.6682474671265359,
+      "trades": 14,
+      "win_rate": 42.857142857142854,
       "total_return_pct": -1.2277391039985823,
       "history": [
         {
@@ -23238,22 +23189,15 @@
           "high": 4662.0,
           "low": 4591.2002,
           "close": 4608.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 4608.0,
-          "high": 4645.3999,
-          "low": 4586.8999,
-          "close": 4607.0
         }
       ]
     },
     {
       "ticker": "DIVISLAB.NS",
-      "avg_range_pct": 2.165375736811534,
+      "avg_range_pct": 2.174688414577861,
       "tier": "low",
-      "last_close": 9173.0,
-      "last_change_pct": 0.31166274809995076,
+      "last_close": 9087.0,
+      "last_change_pct": -0.628793263710427,
       "trades": 4,
       "win_rate": 75.0,
       "total_return_pct": 4.882356623109985,
@@ -24137,20 +24081,20 @@
           "date": "2026-10-19",
           "open": 9191.5,
           "high": 9323.5,
-          "low": 9150.0,
-          "close": 9173.0
+          "low": 9045.0,
+          "close": 9087.0
         }
       ]
     },
     {
       "ticker": "DLF.NS",
-      "avg_range_pct": 2.604582107013582,
+      "avg_range_pct": 2.6077336422191513,
       "tier": "medium",
-      "last_close": 671.75,
-      "last_change_pct": -0.4814814814814815,
+      "last_close": 675.0,
+      "last_change_pct": 0.6711409395973155,
       "trades": 22,
       "win_rate": 36.36363636363637,
-      "total_return_pct": -13.881187375616403,
+      "total_return_pct": -14.408978046706867,
       "history": [
         {
           "date": "2026-04-20",
@@ -25026,22 +24970,15 @@
           "high": 680.85,
           "low": 668.0,
           "close": 675.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 684.0,
-          "high": 685.85,
-          "low": 671.0,
-          "close": 671.75
         }
       ]
     },
     {
       "ticker": "DMART.NS",
-      "avg_range_pct": 2.232987814824532,
+      "avg_range_pct": 2.2366697664515316,
       "tier": "low",
-      "last_close": 3312.699951171875,
-      "last_change_pct": -0.876721987675793,
+      "last_close": 3304.0,
+      "last_change_pct": -1.1370436864153202,
       "trades": 21,
       "win_rate": 28.57142857142857,
       "total_return_pct": -8.094973517481572,
@@ -25925,17 +25862,17 @@
           "date": "2026-10-19",
           "open": 3355.8999,
           "high": 3360.0,
-          "low": 3311.2,
-          "close": 3312.7
+          "low": 3296.0,
+          "close": 3304.0
         }
       ]
     },
     {
       "ticker": "DRREDDY.NS",
-      "avg_range_pct": 2.1784910824782946,
+      "avg_range_pct": 2.1793088532073543,
       "tier": "low",
-      "last_close": 1233.5999755859375,
-      "last_change_pct": 0.04865982043288727,
+      "last_close": 1242.5,
+      "last_change_pct": 0.7704785077047851,
       "trades": 7,
       "win_rate": 42.857142857142854,
       "total_return_pct": 7.440291937337687,
@@ -26818,18 +26755,18 @@
         {
           "date": "2026-10-19",
           "open": 1232.0,
-          "high": 1243.6,
+          "high": 1245.0,
           "low": 1227.0,
-          "close": 1233.6
+          "close": 1242.5
         }
       ]
     },
     {
       "ticker": "EICHERMOT.NS",
-      "avg_range_pct": 1.9978007694341262,
+      "avg_range_pct": 1.9978514062193413,
       "tier": "low",
-      "last_close": 7375.5,
-      "last_change_pct": 1.2492278124785503,
+      "last_close": 7349.0,
+      "last_change_pct": 0.8854416912622691,
       "trades": 9,
       "win_rate": 33.33333333333333,
       "total_return_pct": -1.4682951105216693,
@@ -27714,16 +27651,16 @@
           "open": 7320.0,
           "high": 7438.5,
           "low": 7308.0,
-          "close": 7375.5
+          "close": 7349.0
         }
       ]
     },
     {
       "ticker": "ENRIN.NS",
-      "avg_range_pct": 3.6710332705272233,
+      "avg_range_pct": 3.68508463367614,
       "tier": "high",
-      "last_close": 2862.199951171875,
-      "last_change_pct": -0.9276583187305296,
+      "last_close": 2889.0,
+      "last_change_pct": -2.299628001352722,
       "trades": 26,
       "win_rate": 19.230769230769234,
       "total_return_pct": -16.83846198961029,
@@ -28602,22 +28539,15 @@
           "high": 2983.6001,
           "low": 2883.8,
           "close": 2889.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 2892.6001,
-          "high": 2909.8,
-          "low": 2855.0,
-          "close": 2862.2
         }
       ]
     },
     {
       "ticker": "ETERNAL.NS",
-      "avg_range_pct": 2.7996831716632564,
+      "avg_range_pct": 2.8080891490738185,
       "tier": "medium",
-      "last_close": 323.3500061035156,
-      "last_change_pct": -0.5994410582929857,
+      "last_close": 320.20001220703125,
+      "last_change_pct": -1.5677761381237083,
       "trades": 12,
       "win_rate": 25.0,
       "total_return_pct": -6.849170481611045,
@@ -29501,17 +29431,17 @@
           "date": "2026-10-19",
           "open": 324.85,
           "high": 327.1,
-          "low": 322.85,
-          "close": 323.35
+          "low": 319.5,
+          "close": 320.2
         }
       ]
     },
     {
       "ticker": "GAIL.NS",
-      "avg_range_pct": 2.0945461495988216,
+      "avg_range_pct": 2.0966214085413926,
       "tier": "low",
-      "last_close": 167.1199951171875,
-      "last_change_pct": -0.5829928320910568,
+      "last_close": 167.3000030517578,
+      "last_change_pct": -0.4759089962585559,
       "trades": 12,
       "win_rate": 58.333333333333336,
       "total_return_pct": 1.5275357547989452,
@@ -30395,17 +30325,17 @@
           "date": "2026-10-19",
           "open": 168.51,
           "high": 169.3,
-          "low": 166.94,
-          "close": 167.12
+          "low": 166.5,
+          "close": 167.3
         }
       ]
     },
     {
       "ticker": "GODREJCP.NS",
-      "avg_range_pct": 2.274910700080402,
+      "avg_range_pct": 2.2749252214579374,
       "tier": "low",
-      "last_close": 847.9000244140625,
-      "last_change_pct": -0.8304065012792399,
+      "last_close": 847.0,
+      "last_change_pct": -0.9356725146198831,
       "trades": 13,
       "win_rate": 30.76923076923077,
       "total_return_pct": -1.9624058182102326,
@@ -31290,19 +31220,19 @@
           "open": 858.0,
           "high": 858.0,
           "low": 843.4,
-          "close": 847.9
+          "close": 847.0
         }
       ]
     },
     {
       "ticker": "GRASIM.NS",
-      "avg_range_pct": 1.9841576769678728,
+      "avg_range_pct": 1.986066248759408,
       "tier": "low",
-      "last_close": 2910.199951171875,
-      "last_change_pct": -0.335618110552226,
+      "last_close": 2920.0,
+      "last_change_pct": 1.181610548188314,
       "trades": 6,
       "win_rate": 33.33333333333333,
-      "total_return_pct": -1.622576430735662,
+      "total_return_pct": -1.286958320183436,
       "history": [
         {
           "date": "2026-04-20",
@@ -32178,22 +32108,15 @@
           "high": 2924.6001,
           "low": 2843.3999,
           "close": 2920.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 2920.0,
-          "high": 2954.8,
-          "low": 2904.0,
-          "close": 2910.2
         }
       ]
     },
     {
       "ticker": "HAL.NS",
-      "avg_range_pct": 2.256505005602129,
+      "avg_range_pct": 2.2643939114073652,
       "tier": "low",
-      "last_close": 4959.10009765625,
-      "last_change_pct": -0.5993165432701945,
+      "last_close": 4989.0,
+      "last_change_pct": 1.6089613034623216,
       "trades": 6,
       "win_rate": 83.33333333333334,
       "total_return_pct": 7.307436765153652,
@@ -33072,25 +32995,18 @@
           "high": 4989.0,
           "low": 4906.6001,
           "close": 4989.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 4980.0,
-          "high": 5012.0,
-          "low": 4949.0,
-          "close": 4959.1001
         }
       ]
     },
     {
       "ticker": "HCLTECH.NS",
-      "avg_range_pct": 2.580709180785943,
+      "avg_range_pct": 2.580576762360179,
       "tier": "medium",
-      "last_close": 1372.0999755859375,
-      "last_change_pct": -0.5724655372509058,
+      "last_close": 1379.9000244140625,
+      "last_change_pct": -0.007244607676630435,
       "trades": 7,
       "win_rate": 42.857142857142854,
-      "total_return_pct": 5.096192468934146,
+      "total_return_pct": 5.689667972117745,
       "history": [
         {
           "date": "2026-04-20",
@@ -33972,16 +33888,16 @@
           "open": 1382.1,
           "high": 1399.5,
           "low": 1359.0,
-          "close": 1372.1
+          "close": 1379.9
         }
       ]
     },
     {
       "ticker": "HDFCAMC.NS",
-      "avg_range_pct": 2.4601150012773205,
+      "avg_range_pct": 2.4680069552555834,
       "tier": "low",
-      "last_close": 2374.10009765625,
-      "last_change_pct": -1.0214291254277754,
+      "last_close": 2349.199951171875,
+      "last_change_pct": -2.0595407518179245,
       "trades": 14,
       "win_rate": 42.857142857142854,
       "total_return_pct": -1.5107942466033775,
@@ -34865,17 +34781,17 @@
           "date": "2026-10-19",
           "open": 2374.0,
           "high": 2418.8999,
-          "low": 2365.5,
-          "close": 2374.1001
+          "low": 2342.7,
+          "close": 2349.2
         }
       ]
     },
     {
       "ticker": "HDFCBANK.NS",
-      "avg_range_pct": 1.7530178815177226,
+      "avg_range_pct": 1.7562027980310433,
       "tier": "low",
-      "last_close": 710.7000122070312,
-      "last_change_pct": -2.490219384903611,
+      "last_close": 712.0,
+      "last_change_pct": -2.311857878899078,
       "trades": 15,
       "win_rate": 13.333333333333334,
       "total_return_pct": -8.914632289448495,
@@ -35759,17 +35675,17 @@
           "date": "2026-10-19",
           "open": 733.4,
           "high": 733.4,
-          "low": 710.05,
-          "close": 710.7
+          "low": 707.15,
+          "close": 712.0
         }
       ]
     },
     {
       "ticker": "HDFCLIFE.NS",
-      "avg_range_pct": 2.2269916661832907,
+      "avg_range_pct": 2.226997046466524,
       "tier": "low",
-      "last_close": 545.6500244140625,
-      "last_change_pct": -1.3291095092111211,
+      "last_close": 545.5,
+      "last_change_pct": -1.3562386980108498,
       "trades": 13,
       "win_rate": 46.15384615384615,
       "total_return_pct": 4.25956093639622,
@@ -36654,19 +36570,19 @@
           "open": 553.0,
           "high": 555.75,
           "low": 542.3,
-          "close": 545.65
+          "close": 545.5
         }
       ]
     },
     {
       "ticker": "HINDALCO.NS",
-      "avg_range_pct": 2.2548791997565774,
+      "avg_range_pct": 2.259340958503656,
       "tier": "low",
-      "last_close": 907.4000244140625,
-      "last_change_pct": -0.06607660638078194,
+      "last_close": 908.0,
+      "last_change_pct": 1.5830424344741814,
       "trades": 8,
       "win_rate": 62.5,
-      "total_return_pct": 4.976983049953069,
+      "total_return_pct": 5.044105677052119,
       "history": [
         {
           "date": "2026-04-20",
@@ -37542,25 +37458,18 @@
           "high": 911.85,
           "low": 892.3,
           "close": 908.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 908.5,
-          "high": 916.7,
-          "low": 901.3,
-          "close": 907.4
         }
       ]
     },
     {
       "ticker": "HINDUNILVR.NS",
-      "avg_range_pct": 1.9241495976984058,
+      "avg_range_pct": 1.925478066544693,
       "tier": "low",
-      "last_close": 1853.300048828125,
-      "last_change_pct": -2.1385573426857403,
+      "last_close": 1853.199951171875,
+      "last_change_pct": -2.1438428878155937,
       "trades": 12,
       "win_rate": 16.666666666666664,
-      "total_return_pct": -5.4701049562377335,
+      "total_return_pct": -5.475442074672817,
       "history": [
         {
           "date": "2026-04-20",
@@ -38441,17 +38350,17 @@
           "date": "2026-10-19",
           "open": 1885.0,
           "high": 1889.0,
-          "low": 1851.2,
-          "close": 1853.3
+          "low": 1848.1,
+          "close": 1853.2
         }
       ]
     },
     {
       "ticker": "HINDZINC.NS",
-      "avg_range_pct": 2.511806355600453,
+      "avg_range_pct": 2.5180006320960797,
       "tier": "medium",
-      "last_close": 542.3499755859375,
-      "last_change_pct": 0.4351806640625,
+      "last_close": 538.4000244140625,
+      "last_change_pct": -0.2962917751736111,
       "trades": 10,
       "win_rate": 50.0,
       "total_return_pct": 0.12103408002844468,
@@ -39335,17 +39244,17 @@
           "date": "2026-10-19",
           "open": 545.0,
           "high": 547.4,
-          "low": 540.25,
-          "close": 542.35
+          "low": 536.1,
+          "close": 538.4
         }
       ]
     },
     {
       "ticker": "HYUNDAI.NS",
-      "avg_range_pct": 2.57252008960844,
+      "avg_range_pct": 2.5746284283606586,
       "tier": "medium",
-      "last_close": 1966.5999755859375,
-      "last_change_pct": -1.0266746056397835,
+      "last_close": 1955.0,
+      "last_change_pct": -1.6104680422747861,
       "trades": 18,
       "win_rate": 61.111111111111114,
       "total_return_pct": 9.751880535968281,
@@ -40229,17 +40138,17 @@
           "date": "2026-10-19",
           "open": 1978.0,
           "high": 1985.0,
-          "low": 1952.2,
-          "close": 1966.6
+          "low": 1947.2,
+          "close": 1955.0
         }
       ]
     },
     {
       "ticker": "ICICIBANK.NS",
-      "avg_range_pct": 1.6857997222498737,
+      "avg_range_pct": 1.6866291709290282,
       "tier": "low",
-      "last_close": 1387.0999755859375,
-      "last_change_pct": -0.7086631649293128,
+      "last_close": 1381.0,
+      "last_change_pct": -1.1453113815318539,
       "trades": 10,
       "win_rate": 30.0,
       "total_return_pct": 0.9057325779117797,
@@ -41123,17 +41032,17 @@
           "date": "2026-10-19",
           "open": 1405.0,
           "high": 1411.8,
-          "low": 1379.2,
-          "close": 1387.1
+          "low": 1377.9,
+          "close": 1381.0
         }
       ]
     },
     {
       "ticker": "INDHOTEL.NS",
-      "avg_range_pct": 2.165477211461121,
+      "avg_range_pct": 2.168666753082826,
       "tier": "low",
-      "last_close": 764.0999755859375,
-      "last_change_pct": -1.036135248408588,
+      "last_close": 772.0999755859375,
+      "last_change_pct": 4.133786887085251,
       "trades": 10,
       "win_rate": 50.0,
       "total_return_pct": 1.7993576042752613,
@@ -42012,25 +41921,18 @@
           "high": 776.15,
           "low": 744.35,
           "close": 772.1
-        },
-        {
-          "date": "2026-10-19",
-          "open": 773.15,
-          "high": 775.0,
-          "low": 761.5,
-          "close": 764.1
         }
       ]
     },
     {
       "ticker": "INDIGO.NS",
-      "avg_range_pct": 2.2673575503006815,
+      "avg_range_pct": 2.2673153265710084,
       "tier": "low",
-      "last_close": 4685.5,
-      "last_change_pct": -0.029868407111702112,
+      "last_close": 4700.0,
+      "last_change_pct": 0.2795045324031587,
       "trades": 11,
-      "win_rate": 27.27272727272727,
-      "total_return_pct": -4.6962932400611725,
+      "win_rate": 36.36363636363637,
+      "total_return_pct": -4.386920300546311,
       "history": [
         {
           "date": "2026-04-20",
@@ -42912,16 +42814,16 @@
           "open": 4690.0,
           "high": 4744.2002,
           "low": 4663.3999,
-          "close": 4685.5
+          "close": 4700.0
         }
       ]
     },
     {
       "ticker": "INFY.NS",
-      "avg_range_pct": 2.3697457774183746,
+      "avg_range_pct": 2.37389914358481,
       "tier": "low",
-      "last_close": 1131.449951171875,
-      "last_change_pct": -2.5620049303288814,
+      "last_close": 1130.699951171875,
+      "last_change_pct": -2.6265932899170044,
       "trades": 9,
       "win_rate": 11.11111111111111,
       "total_return_pct": -5.717751538557254,
@@ -43805,20 +43707,20 @@
           "date": "2026-10-19",
           "open": 1156.95,
           "high": 1156.95,
-          "low": 1131.0,
-          "close": 1131.45
+          "low": 1125.1,
+          "close": 1130.7
         }
       ]
     },
     {
       "ticker": "IOC.NS",
-      "avg_range_pct": 1.9166880470516654,
+      "avg_range_pct": 1.9166673685619022,
       "tier": "low",
-      "last_close": 129.9499969482422,
-      "last_change_pct": -0.32981125821924157,
+      "last_close": 130.25,
+      "last_change_pct": -0.09971228558347603,
       "trades": 9,
       "win_rate": 66.66666666666666,
-      "total_return_pct": 3.6248572945909774,
+      "total_return_pct": 3.8596014609399516,
       "history": [
         {
           "date": "2026-04-20",
@@ -44700,16 +44602,16 @@
           "open": 129.9,
           "high": 130.83,
           "low": 129.36,
-          "close": 129.95
+          "close": 130.25
         }
       ]
     },
     {
       "ticker": "IRFC.NS",
-      "avg_range_pct": 1.9380016718118547,
+      "avg_range_pct": 1.9442324826511477,
       "tier": "low",
-      "last_close": 78.66999816894531,
-      "last_change_pct": -1.9688496337130064,
+      "last_close": 78.44000244140625,
+      "last_change_pct": -2.2554486711448596,
       "trades": 12,
       "win_rate": 33.33333333333333,
       "total_return_pct": -5.806050422206987,
@@ -45593,17 +45495,17 @@
           "date": "2026-10-19",
           "open": 80.25,
           "high": 80.6,
-          "low": 78.61,
-          "close": 78.67
+          "low": 78.0,
+          "close": 78.44
         }
       ]
     },
     {
       "ticker": "ITC.NS",
-      "avg_range_pct": 1.7028577310004473,
+      "avg_range_pct": 1.7028692425371363,
       "tier": "low",
-      "last_close": 261.04998779296875,
-      "last_change_pct": -0.9297959039966793,
+      "last_close": 260.79998779296875,
+      "last_change_pct": -1.0246725643382353,
       "trades": 7,
       "win_rate": 42.857142857142854,
       "total_return_pct": -1.920087307234068,
@@ -46488,16 +46390,16 @@
           "open": 262.7,
           "high": 263.9,
           "low": 259.95,
-          "close": 261.05
+          "close": 260.8
         }
       ]
     },
     {
       "ticker": "JINDALSTEL.NS",
-      "avg_range_pct": 2.4798753594911576,
+      "avg_range_pct": 2.4807905400070043,
       "tier": "low",
-      "last_close": 1047.0999755859375,
-      "last_change_pct": 0.18178573505788997,
+      "last_close": 1041.800048828125,
+      "last_change_pct": -0.32528726584210416,
       "trades": 12,
       "win_rate": 41.66666666666667,
       "total_return_pct": -8.395467742631935,
@@ -47381,17 +47283,17 @@
           "date": "2026-10-19",
           "open": 1042.0,
           "high": 1053.8,
-          "low": 1033.8,
-          "close": 1047.1
+          "low": 1032.7,
+          "close": 1041.8
         }
       ]
     },
     {
       "ticker": "JIOFIN.NS",
-      "avg_range_pct": 2.143368209361585,
+      "avg_range_pct": 2.1482471358991053,
       "tier": "low",
-      "last_close": 214.39999389648438,
-      "last_change_pct": -0.8554941519147399,
+      "last_close": 214.0,
+      "last_change_pct": -1.0404624277456647,
       "trades": 14,
       "win_rate": 35.714285714285715,
       "total_return_pct": -6.152465362938955,
@@ -48275,17 +48177,17 @@
           "date": "2026-10-19",
           "open": 216.4,
           "high": 217.29,
-          "low": 214.32,
-          "close": 214.4
+          "low": 213.01,
+          "close": 214.0
         }
       ]
     },
     {
       "ticker": "JSWSTEEL.NS",
-      "avg_range_pct": 2.015454531502739,
+      "avg_range_pct": 2.0154785437879017,
       "tier": "low",
-      "last_close": 1242.5999755859375,
-      "last_change_pct": 2.162289377785673,
+      "last_close": 1241.300048828125,
+      "last_change_pct": 2.055413877857432,
       "trades": 8,
       "win_rate": 50.0,
       "total_return_pct": 4.804586733810835,
@@ -49170,16 +49072,16 @@
           "open": 1216.3,
           "high": 1247.2,
           "low": 1211.3,
-          "close": 1242.6
+          "close": 1241.3
         }
       ]
     },
     {
       "ticker": "KOTAKBANK.NS",
-      "avg_range_pct": 1.999287127354634,
+      "avg_range_pct": 2.0017890777109693,
       "tier": "low",
-      "last_close": 441.95001220703125,
-      "last_change_pct": -1.218145231069023,
+      "last_close": 442.29998779296875,
+      "last_change_pct": -1.1399209148616174,
       "trades": 11,
       "win_rate": 36.36363636363637,
       "total_return_pct": 3.5010134634659535,
@@ -50063,17 +49965,17 @@
           "date": "2026-10-19",
           "open": 440.5,
           "high": 447.15,
-          "low": 440.0,
-          "close": 441.95
+          "low": 438.6,
+          "close": 442.3
         }
       ]
     },
     {
       "ticker": "LODHA.NS",
-      "avg_range_pct": 3.400435150693308,
+      "avg_range_pct": 3.4069786525367576,
       "tier": "medium",
-      "last_close": 1036.300048828125,
-      "last_change_pct": -2.115793272584508,
+      "last_close": 1030.0,
+      "last_change_pct": -2.710867336879257,
       "trades": 14,
       "win_rate": 35.714285714285715,
       "total_return_pct": -4.346802248753818,
@@ -50957,20 +50859,20 @@
           "date": "2026-10-19",
           "open": 1067.0,
           "high": 1067.6,
-          "low": 1036.0,
-          "close": 1036.3
+          "low": 1027.7,
+          "close": 1030.0
         }
       ]
     },
     {
       "ticker": "LT.NS",
-      "avg_range_pct": 1.6593480231555462,
+      "avg_range_pct": 1.6593159609936763,
       "tier": "low",
-      "last_close": 3652.199951171875,
-      "last_change_pct": 0.6920088456297072,
+      "last_close": 3661.89990234375,
+      "last_change_pct": 0.9594387734153476,
       "trades": 12,
       "win_rate": 25.0,
-      "total_return_pct": -7.550835922026638,
+      "total_return_pct": -7.286891672451809,
       "history": [
         {
           "date": "2026-04-20",
@@ -51852,19 +51754,19 @@
           "open": 3649.0,
           "high": 3687.7,
           "low": 3632.0,
-          "close": 3652.2
+          "close": 3661.8999
         }
       ]
     },
     {
       "ticker": "LTM.NS",
-      "avg_range_pct": 2.9842371482982784,
+      "avg_range_pct": 2.9674185487071316,
       "tier": "medium",
-      "last_close": 4297.60009765625,
-      "last_change_pct": -2.1047813745728927,
+      "last_close": 4390.0,
+      "last_change_pct": 3.659976387249114,
       "trades": 7,
       "win_rate": 28.57142857142857,
-      "total_return_pct": -5.090281729021182,
+      "total_return_pct": -2.8981132273901036,
       "history": [
         {
           "date": "2026-04-20",
@@ -52740,22 +52642,15 @@
           "high": 4419.5,
           "low": 4211.1001,
           "close": 4390.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 4228.0,
-          "high": 4360.6001,
-          "low": 4142.0,
-          "close": 4297.6001
         }
       ]
     },
     {
       "ticker": "M&M.NS",
-      "avg_range_pct": 2.2228031367807577,
+      "avg_range_pct": 2.2227300972935957,
       "tier": "low",
-      "last_close": 2892.39990234375,
-      "last_change_pct": -0.9757266922132938,
+      "last_close": 2907.0,
+      "last_change_pct": -0.47587739424403497,
       "trades": 12,
       "win_rate": 16.666666666666664,
       "total_return_pct": -4.104546546441576,
@@ -53640,16 +53535,16 @@
           "open": 2930.0,
           "high": 2938.6001,
           "low": 2885.6001,
-          "close": 2892.3999
+          "close": 2907.0
         }
       ]
     },
     {
       "ticker": "MARUTI.NS",
-      "avg_range_pct": 1.9964331663500108,
+      "avg_range_pct": 1.9972154600345542,
       "tier": "low",
-      "last_close": 11535.0,
-      "last_change_pct": 0.400382975019584,
+      "last_close": 11475.0,
+      "last_change_pct": -0.1218556880494386,
       "trades": 20,
       "win_rate": 30.0,
       "total_return_pct": -4.641343008108899,
@@ -54533,17 +54428,17 @@
           "date": "2026-10-19",
           "open": 11510.0,
           "high": 11702.0,
-          "low": 11450.0,
-          "close": 11535.0
+          "low": 11440.0,
+          "close": 11475.0
         }
       ]
     },
     {
       "ticker": "MAXHEALTH.NS",
-      "avg_range_pct": 2.64466160732672,
+      "avg_range_pct": 2.6553133070094317,
       "tier": "medium",
-      "last_close": 839.9500122070312,
-      "last_change_pct": -0.7151285807291667,
+      "last_close": 830.0,
+      "last_change_pct": -1.8912529550827424,
       "trades": 14,
       "win_rate": 28.57142857142857,
       "total_return_pct": -6.0547513761858065,
@@ -55427,17 +55322,17 @@
           "date": "2026-10-19",
           "open": 848.05,
           "high": 855.55,
-          "low": 839.55,
-          "close": 839.95
+          "low": 828.6,
+          "close": 830.0
         }
       ]
     },
     {
       "ticker": "MAZDOCK.NS",
-      "avg_range_pct": 2.531056284099972,
+      "avg_range_pct": 2.535626476950548,
       "tier": "medium",
-      "last_close": 2066.699951171875,
-      "last_change_pct": -1.2093713588969885,
+      "last_close": 2052.0,
+      "last_change_pct": -1.9120458891013385,
       "trades": 7,
       "win_rate": 57.14285714285714,
       "total_return_pct": 5.472809498006739,
@@ -56321,20 +56216,20 @@
           "date": "2026-10-19",
           "open": 2090.0,
           "high": 2092.0,
-          "low": 2061.6001,
-          "close": 2066.7
+          "low": 2050.0,
+          "close": 2052.0
         }
       ]
     },
     {
       "ticker": "MOTHERSON.NS",
-      "avg_range_pct": 2.888919454834402,
+      "avg_range_pct": 2.8918255028504363,
       "tier": "medium",
-      "last_close": 158.6300048828125,
-      "last_change_pct": -0.8562469482421875,
+      "last_close": 158.14999389648438,
+      "last_change_pct": -1.1562538146972656,
       "trades": 20,
       "win_rate": 35.0,
-      "total_return_pct": -8.171605769519461,
+      "total_return_pct": -8.47161263597454,
       "history": [
         {
           "date": "2026-04-20",
@@ -57215,17 +57110,17 @@
           "date": "2026-10-19",
           "open": 160.39,
           "high": 161.22,
-          "low": 158.22,
-          "close": 158.63
+          "low": 157.65,
+          "close": 158.15
         }
       ]
     },
     {
       "ticker": "MUTHOOTFIN.NS",
-      "avg_range_pct": 2.545433865841619,
+      "avg_range_pct": 2.554430825430421,
       "tier": "medium",
-      "last_close": 2583.5,
-      "last_change_pct": -0.5696050706230045,
+      "last_close": 2566.0,
+      "last_change_pct": -1.2431223577389703,
       "trades": 12,
       "win_rate": 8.333333333333332,
       "total_return_pct": -17.820229779251832,
@@ -58109,17 +58004,17 @@
           "date": "2026-10-19",
           "open": 2612.3,
           "high": 2623.3999,
-          "low": 2580.8,
-          "close": 2583.5
+          "low": 2552.0,
+          "close": 2566.0
         }
       ]
     },
     {
       "ticker": "NESTLEIND.NS",
-      "avg_range_pct": 2.2640981783587315,
+      "avg_range_pct": 2.269653327732024,
       "tier": "low",
-      "last_close": 1249.5999755859375,
-      "last_change_pct": -1.25642231640162,
+      "last_close": 1242.699951171875,
+      "last_change_pct": -1.8016632815586724,
       "trades": 16,
       "win_rate": 31.25,
       "total_return_pct": -7.789798048517297,
@@ -59003,17 +58898,17 @@
           "date": "2026-10-19",
           "open": 1264.5,
           "high": 1264.9,
-          "low": 1247.1,
-          "close": 1249.6
+          "low": 1238.5,
+          "close": 1242.7
         }
       ]
     },
     {
       "ticker": "NTPC.NS",
-      "avg_range_pct": 1.889151180139917,
+      "avg_range_pct": 1.8966955037185613,
       "tier": "low",
-      "last_close": 311.1499938964844,
-      "last_change_pct": -1.2692368959124456,
+      "last_close": 309.0,
+      "last_change_pct": -1.9514497907635784,
       "trades": 15,
       "win_rate": 46.666666666666664,
       "total_return_pct": 0.14350479266355265,
@@ -59897,17 +59792,17 @@
           "date": "2026-10-19",
           "open": 313.2,
           "high": 316.4,
-          "low": 311.0,
-          "close": 311.15
+          "low": 308.1,
+          "close": 309.0
         }
       ]
     },
     {
       "ticker": "ONGC.NS",
-      "avg_range_pct": 1.9504834686720223,
+      "avg_range_pct": 1.9504075629767974,
       "tier": "low",
-      "last_close": 223.52000427246094,
-      "last_change_pct": 0.6846866092166385,
+      "last_close": 225.0,
+      "last_change_pct": 1.3513513513513513,
       "trades": 14,
       "win_rate": 50.0,
       "total_return_pct": 1.6565857241566833,
@@ -60792,19 +60687,19 @@
           "open": 223.0,
           "high": 226.25,
           "low": 223.0,
-          "close": 223.52
+          "close": 225.0
         }
       ]
     },
     {
       "ticker": "PFC.NS",
-      "avg_range_pct": 2.273453264637541,
+      "avg_range_pct": 2.27908355496084,
       "tier": "low",
-      "last_close": 332.95001220703125,
-      "last_change_pct": -0.09001884260127532,
+      "last_close": 332.3999938964844,
+      "last_change_pct": -0.255065597454051,
       "trades": 11,
       "win_rate": 36.36363636363637,
-      "total_return_pct": -2.0691509004050235,
+      "total_return_pct": -2.0691509004050324,
       "history": [
         {
           "date": "2026-04-20",
@@ -60838,7 +60733,7 @@
           "date": "2026-04-24",
           "open": 460.2158,
           "high": 461.784,
-          "low": 453.1099,
+          "low": 453.11,
           "close": 460.0198
         },
         {
@@ -60860,7 +60755,7 @@
           "open": 467.5177,
           "high": 468.3998,
           "low": 452.7179,
-          "close": 455.5113
+          "close": 455.5112
         },
         {
           "date": "2026-04-30",
@@ -60880,7 +60775,7 @@
           "date": "2026-05-05",
           "open": 439.3393,
           "high": 451.1007,
-          "low": 435.1737,
+          "low": 435.1738,
           "close": 447.8173
         },
         {
@@ -60893,16 +60788,16 @@
         {
           "date": "2026-05-07",
           "open": 455.2172,
-          "high": 458.1086,
+          "high": 458.1085,
           "low": 446.9352,
-          "close": 448.4544
+          "close": 448.4543
         },
         {
           "date": "2026-05-08",
-          "open": 448.8954,
-          "high": 457.9615,
+          "open": 448.8955,
+          "high": 457.9616,
           "low": 446.4941,
-          "close": 452.1788
+          "close": 452.1789
         },
         {
           "date": "2026-05-11",
@@ -60951,7 +60846,7 @@
           "open": 421.158,
           "high": 425.8136,
           "low": 417.6296,
-          "close": 423.0202
+          "close": 423.0203
         },
         {
           "date": "2026-05-20",
@@ -60984,7 +60879,7 @@
         {
           "date": "2026-05-26",
           "open": 431.5473,
-          "high": 432.1353,
+          "high": 432.1354,
           "low": 421.9911,
           "close": 425.0785
         },
@@ -61011,7 +60906,7 @@
         },
         {
           "date": "2026-06-02",
-          "open": 407.8284,
+          "open": 407.8283,
           "high": 409.6906,
           "low": 401.6046,
           "close": 404.839
@@ -61032,10 +60927,10 @@
         },
         {
           "date": "2026-06-05",
-          "open": 416.6984,
+          "open": 416.6985,
           "high": 429.7831,
-          "low": 416.6984,
-          "close": 423.1672
+          "low": 416.6985,
+          "close": 423.1673
         },
         {
           "date": "2026-06-08",
@@ -61046,7 +60941,7 @@
         },
         {
           "date": "2026-06-09",
-          "open": 421.746,
+          "open": 421.7461,
           "high": 429.293,
           "low": 421.158,
           "close": 426.9407
@@ -61076,7 +60971,7 @@
           "date": "2026-06-15",
           "open": 418.0216,
           "high": 425.0785,
-          "low": 414.7872,
+          "low": 414.7873,
           "close": 416.0614
         },
         {
@@ -61089,16 +60984,16 @@
         {
           "date": "2026-06-17",
           "open": 420.4719,
-          "high": 424.8824,
-          "low": 416.6494,
-          "close": 423.1672
+          "high": 424.8825,
+          "low": 416.6495,
+          "close": 423.1673
         },
         {
           "date": "2026-06-18",
           "open": 423.5103,
-          "high": 427.9698,
-          "low": 414.2481,
-          "close": 420.7659
+          "high": 427.9699,
+          "low": 414.2482,
+          "close": 420.766
         },
         {
           "date": "2026-06-19",
@@ -61119,7 +61014,7 @@
           "open": 434.1936,
           "high": 434.1936,
           "low": 421.109,
-          "close": 422.3342
+          "close": 422.3341
         },
         {
           "date": "2026-06-24",
@@ -61202,7 +61097,7 @@
           "date": "2026-07-10",
           "open": 398.2232,
           "high": 401.6536,
-          "low": 396.165,
+          "low": 396.1649,
           "close": 398.4192
         },
         {
@@ -61250,7 +61145,7 @@
         {
           "date": "2026-07-21",
           "open": 406.6522,
-          "high": 410.0336,
+          "high": 410.0337,
           "low": 401.8986,
           "close": 406.6032
         },
@@ -61264,8 +61159,8 @@
         {
           "date": "2026-07-23",
           "open": 401.8496,
-          "high": 405.4271,
-          "low": 398.9093,
+          "high": 405.427,
+          "low": 398.9092,
           "close": 401.8986
         },
         {
@@ -61299,8 +61194,8 @@
         {
           "date": "2026-07-30",
           "open": 418.6097,
-          "high": 420.57,
-          "low": 414.9833,
+          "high": 420.5699,
+          "low": 414.9832,
           "close": 417.7766
         },
         {
@@ -61685,17 +61580,17 @@
           "date": "2026-10-19",
           "open": 334.2,
           "high": 337.55,
-          "low": 332.65,
-          "close": 332.95
+          "low": 330.3,
+          "close": 332.4
         }
       ]
     },
     {
       "ticker": "PIDILITIND.NS",
-      "avg_range_pct": 1.927610266747436,
+      "avg_range_pct": 1.9303113618790126,
       "tier": "low",
-      "last_close": 1484.300048828125,
-      "last_change_pct": -1.231035360587471,
+      "last_close": 1502.800048828125,
+      "last_change_pct": -0.14617615759966776,
       "trades": 12,
       "win_rate": 25.0,
       "total_return_pct": -10.96125202295936,
@@ -62574,22 +62469,15 @@
           "high": 1514.0,
           "low": 1490.1,
           "close": 1502.8
-        },
-        {
-          "date": "2026-10-19",
-          "open": 1505.0,
-          "high": 1506.0,
-          "low": 1482.4,
-          "close": 1484.3
         }
       ]
     },
     {
       "ticker": "PNB.NS",
-      "avg_range_pct": 2.114870989072377,
+      "avg_range_pct": 2.1148821376658753,
       "tier": "low",
-      "last_close": 121.94000244140625,
-      "last_change_pct": 4.849526433063316,
+      "last_close": 121.9000015258789,
+      "last_change_pct": 4.815131837639666,
       "trades": 2,
       "win_rate": 50.0,
       "total_return_pct": 0.9470187808390262,
@@ -63474,16 +63362,16 @@
           "open": 120.87,
           "high": 125.22,
           "low": 120.0,
-          "close": 121.94
+          "close": 121.9
         }
       ]
     },
     {
       "ticker": "POWERGRID.NS",
-      "avg_range_pct": 1.8704070194166704,
+      "avg_range_pct": 1.8731249587345034,
       "tier": "low",
-      "last_close": 250.89999389648438,
-      "last_change_pct": 0.17967536583168078,
+      "last_close": 250.35000610351562,
+      "last_change_pct": -0.039924474324200744,
       "trades": 12,
       "win_rate": 25.0,
       "total_return_pct": -5.894274689033822,
@@ -64367,20 +64255,20 @@
           "date": "2026-10-19",
           "open": 250.0,
           "high": 253.35,
-          "low": 250.0,
-          "close": 250.9
+          "low": 249.15,
+          "close": 250.35
         }
       ]
     },
     {
       "ticker": "RECLTD.NS",
-      "avg_range_pct": 2.2470880436308183,
+      "avg_range_pct": 2.257844268827665,
       "tier": "low",
-      "last_close": 306.29998779296875,
-      "last_change_pct": -0.48732945402484035,
+      "last_close": 302.3500061035156,
+      "last_change_pct": -1.7706244007777125,
       "trades": 15,
       "win_rate": 13.333333333333334,
-      "total_return_pct": -12.848459400153454,
+      "total_return_pct": -12.848450591572988,
       "history": [
         {
           "date": "2026-04-20",
@@ -64405,17 +64293,17 @@
         },
         {
           "date": "2026-04-23",
-          "open": 375.8324,
+          "open": 375.8325,
           "high": 380.0155,
           "low": 369.927,
-          "close": 370.5175
+          "close": 370.5176
         },
         {
           "date": "2026-04-24",
           "open": 371.0589,
           "high": 372.7813,
-          "low": 363.2341,
-          "close": 368.1061
+          "low": 363.2342,
+          "close": 368.1062
         },
         {
           "date": "2026-04-27",
@@ -64440,15 +64328,15 @@
         },
         {
           "date": "2026-04-30",
-          "open": 355.4094,
-          "high": 355.4094,
-          "low": 347.191,
+          "open": 355.4095,
+          "high": 355.4095,
+          "low": 347.1911,
           "close": 348.7166
         },
         {
           "date": "2026-05-04",
           "open": 350.3898,
-          "high": 355.4586,
+          "high": 355.4587,
           "low": 345.8623,
           "close": 347.9292
         },
@@ -64462,9 +64350,9 @@
         {
           "date": "2026-05-06",
           "open": 353.2441,
-          "high": 355.4094,
+          "high": 355.4095,
           "low": 346.3052,
-          "close": 353.4409
+          "close": 353.441
         },
         {
           "date": "2026-05-07",
@@ -64476,8 +64364,8 @@
         {
           "date": "2026-05-08",
           "open": 354.0807,
-          "high": 357.87,
-          "low": 350.5374,
+          "high": 357.8701,
+          "low": 350.5375,
           "close": 353.7362
         },
         {
@@ -64490,15 +64378,15 @@
         {
           "date": "2026-05-12",
           "open": 344.632,
-          "high": 348.0768,
+          "high": 348.0769,
           "low": 338.136,
           "close": 338.9234
         },
         {
           "date": "2026-05-13",
           "open": 340.0061,
-          "high": 345.567,
-          "low": 336.6104,
+          "high": 345.5671,
+          "low": 336.6105,
           "close": 341.0887
         },
         {
@@ -64531,8 +64419,8 @@
         },
         {
           "date": "2026-05-20",
-          "open": 328.1459,
-          "high": 329.7207,
+          "open": 328.146,
+          "high": 329.7208,
           "low": 322.9787,
           "close": 327.7523
         },
@@ -64552,9 +64440,9 @@
         },
         {
           "date": "2026-05-25",
-          "open": 334.642,
-          "high": 339.5632,
-          "low": 334.642,
+          "open": 334.6419,
+          "high": 339.5631,
+          "low": 334.6419,
           "close": 336.8073
         },
         {
@@ -64580,7 +64468,7 @@
         },
         {
           "date": "2026-06-01",
-          "open": 334.2975,
+          "open": 334.2974,
           "high": 334.4943,
           "low": 325.7838,
           "close": 326.1775
@@ -64610,7 +64498,7 @@
           "date": "2026-06-05",
           "open": 331.4924,
           "high": 341.3348,
-          "low": 330.9018,
+          "low": 330.9019,
           "close": 338.4805
         },
         {
@@ -64623,13 +64511,13 @@
         {
           "date": "2026-06-09",
           "open": 338.825,
-          "high": 347.2402,
+          "high": 347.2403,
           "low": 338.0376,
           "close": 346.5513
         },
         {
           "date": "2026-06-10",
-          "open": 346.4528,
+          "open": 346.4529,
           "high": 349.2087,
           "low": 342.319,
           "close": 343.3033
@@ -64637,21 +64525,21 @@
         {
           "date": "2026-06-11",
           "open": 343.008,
-          "high": 344.0414,
-          "low": 330.4097,
+          "high": 344.0415,
+          "low": 330.4098,
           "close": 331.5416
         },
         {
           "date": "2026-06-12",
-          "open": 335.8723,
-          "high": 343.2541,
+          "open": 335.8722,
+          "high": 343.254,
           "low": 334.5435,
           "close": 342.5651
         },
         {
           "date": "2026-06-15",
           "open": 348.1261,
-          "high": 348.8642,
+          "high": 348.8643,
           "low": 344.9765,
           "close": 346.3052
         },
@@ -64659,8 +64547,8 @@
           "date": "2026-06-16",
           "open": 347.4371,
           "high": 353.0965,
-          "low": 346.8465,
-          "close": 350.9311
+          "low": 346.8466,
+          "close": 350.9312
         },
         {
           "date": "2026-06-17",
@@ -64678,9 +64566,9 @@
         },
         {
           "date": "2026-06-19",
-          "open": 349.6024,
+          "open": 349.6025,
           "high": 352.3091,
-          "low": 347.2402,
+          "low": 347.2403,
           "close": 349.7501
         },
         {
@@ -64688,13 +64576,13 @@
           "open": 349.7501,
           "high": 364.9074,
           "low": 349.7501,
-          "close": 364.0216
+          "close": 364.0215
         },
         {
           "date": "2026-06-23",
           "open": 365.1534,
           "high": 365.4487,
-          "low": 355.4587,
+          "low": 355.4586,
           "close": 356.1968
         },
         {
@@ -64721,7 +64609,7 @@
         {
           "date": "2026-06-30",
           "open": 359.1988,
-          "high": 362.0038,
+          "high": 362.0039,
           "low": 356.7874,
           "close": 358.0669
         },
@@ -64742,7 +64630,7 @@
         {
           "date": "2026-07-03",
           "open": 366.1377,
-          "high": 366.4822,
+          "high": 366.4821,
           "low": 358.1161,
           "close": 359.3956
         },
@@ -64777,13 +64665,13 @@
         {
           "date": "2026-07-10",
           "open": 348.4213,
-          "high": 351.0295,
-          "low": 345.2225,
-          "close": 346.4036
+          "high": 351.0296,
+          "low": 345.2226,
+          "close": 346.4037
         },
         {
           "date": "2026-07-13",
-          "open": 343.5985,
+          "open": 343.5986,
           "high": 347.0434,
           "low": 341.8269,
           "close": 345.5178
@@ -64804,7 +64692,7 @@
         },
         {
           "date": "2026-07-16",
-          "open": 347.6339,
+          "open": 347.634,
           "high": 350.0453,
           "low": 343.5493,
           "close": 344.0907
@@ -64812,8 +64700,8 @@
         {
           "date": "2026-07-17",
           "open": 344.4844,
-          "high": 351.3741,
-          "low": 341.9254,
+          "high": 351.374,
+          "low": 341.9253,
           "close": 349.504
         },
         {
@@ -64827,7 +64715,7 @@
           "date": "2026-07-21",
           "open": 356.7874,
           "high": 358.1653,
-          "low": 351.4232,
+          "low": 351.4233,
           "close": 356.3445
         },
         {
@@ -64840,7 +64728,7 @@
         {
           "date": "2026-07-23",
           "open": 352.4075,
-          "high": 356.6398,
+          "high": 356.6397,
           "low": 350.7835,
           "close": 352.8012
         },
@@ -64862,7 +64750,7 @@
           "date": "2026-07-28",
           "open": 362.2007,
           "high": 366.2361,
-          "low": 359.4941,
+          "low": 359.494,
           "close": 362.6436
         },
         {
@@ -65261,17 +65149,17 @@
           "date": "2026-10-19",
           "open": 307.0,
           "high": 309.75,
-          "low": 306.05,
-          "close": 306.3
+          "low": 302.0,
+          "close": 302.35
         }
       ]
     },
     {
       "ticker": "RELIANCE.NS",
-      "avg_range_pct": 1.7733102270696643,
+      "avg_range_pct": 1.7774093815130956,
       "tier": "low",
-      "last_close": 1208.199951171875,
-      "last_change_pct": -0.24768825304999417,
+      "last_close": 1202.0,
+      "last_change_pct": -0.7595732779689885,
       "trades": 20,
       "win_rate": 30.0,
       "total_return_pct": 0.801862624855098,
@@ -66155,17 +66043,17 @@
           "date": "2026-10-19",
           "open": 1212.0,
           "high": 1228.2,
-          "low": 1207.1,
-          "close": 1208.2
+          "low": 1201.0,
+          "close": 1202.0
         }
       ]
     },
     {
       "ticker": "SBILIFE.NS",
-      "avg_range_pct": 2.1295601935188126,
+      "avg_range_pct": 2.1350617468557758,
       "tier": "low",
-      "last_close": 1643.699951171875,
-      "last_change_pct": -0.7906867014831306,
+      "last_close": 1656.800048828125,
+      "last_change_pct": -0.30087855657038404,
       "trades": 17,
       "win_rate": 11.76470588235294,
       "total_return_pct": -18.25436674255143,
@@ -67044,22 +66932,15 @@
           "high": 1678.7,
           "low": 1637.3,
           "close": 1656.8
-        },
-        {
-          "date": "2026-10-19",
-          "open": 1656.0,
-          "high": 1659.0,
-          "low": 1635.3,
-          "close": 1643.7
         }
       ]
     },
     {
       "ticker": "SBIN.NS",
-      "avg_range_pct": 1.8611017353375394,
+      "avg_range_pct": 1.8610279668241372,
       "tier": "low",
-      "last_close": 969.9000244140625,
-      "last_change_pct": 0.7583678592638067,
+      "last_close": 973.7000122070312,
+      "last_change_pct": 1.1531307814896967,
       "trades": 11,
       "win_rate": 36.36363636363637,
       "total_return_pct": -2.4220113423093643,
@@ -67944,16 +67825,16 @@
           "open": 962.6,
           "high": 983.8,
           "low": 960.7,
-          "close": 969.9
+          "close": 973.7
         }
       ]
     },
     {
       "ticker": "SHREECEM.NS",
-      "avg_range_pct": 2.193194744090209,
+      "avg_range_pct": 2.193128560882157,
       "tier": "low",
-      "last_close": 22485.0,
-      "last_change_pct": 0.11130899376669634,
+      "last_close": 22460.0,
+      "last_change_pct": 0.6497871386959444,
       "trades": 13,
       "win_rate": 38.46153846153847,
       "total_return_pct": -1.5589839825339247,
@@ -68832,25 +68713,18 @@
           "high": 22715.0,
           "low": 22210.0,
           "close": 22460.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 22455.0,
-          "high": 22920.0,
-          "low": 22425.0,
-          "close": 22485.0
         }
       ]
     },
     {
       "ticker": "SHRIRAMFIN.NS",
-      "avg_range_pct": 2.628837362715685,
+      "avg_range_pct": 2.6288854269795183,
       "tier": "medium",
-      "last_close": 930.0499877929688,
-      "last_change_pct": -1.0532500968659961,
+      "last_close": 926.5,
+      "last_change_pct": -1.4309284570836072,
       "trades": 14,
       "win_rate": 28.57142857142857,
-      "total_return_pct": -9.088518043383079,
+      "total_return_pct": -9.447828548744289,
       "history": [
         {
           "date": "2026-04-20",
@@ -69732,16 +69606,16 @@
           "open": 937.0,
           "high": 938.7,
           "low": 924.0,
-          "close": 930.05
+          "close": 926.5
         }
       ]
     },
     {
       "ticker": "SIEMENS.NS",
-      "avg_range_pct": 2.805827351977561,
+      "avg_range_pct": 2.8152766123447917,
       "tier": "medium",
-      "last_close": 3619.199951171875,
-      "last_change_pct": -0.13245167848027042,
+      "last_close": 3624.0,
+      "last_change_pct": -1.1995637949836424,
       "trades": 21,
       "win_rate": 33.33333333333333,
       "total_return_pct": -14.49089854000362,
@@ -70620,24 +70494,17 @@
           "high": 3678.8999,
           "low": 3605.6001,
           "close": 3624.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 3615.0,
-          "high": 3650.0,
-          "low": 3591.2,
-          "close": 3619.2
         }
       ]
     },
     {
       "ticker": "SOLARINDS.NS",
-      "avg_range_pct": 3.041008485373424,
+      "avg_range_pct": 3.0446196343030625,
       "tier": "medium",
-      "last_close": 19810.0,
-      "last_change_pct": -1.004447553845385,
-      "trades": 23,
-      "win_rate": 47.82608695652174,
+      "last_close": 19803.0,
+      "last_change_pct": -1.039428314427065,
+      "trades": 24,
+      "win_rate": 45.83333333333333,
       "total_return_pct": -0.011469827065676341,
       "history": [
         {
@@ -71519,17 +71386,17 @@
           "date": "2026-10-19",
           "open": 20048.0,
           "high": 20086.0,
-          "low": 19790.0,
-          "close": 19810.0
+          "low": 19700.0,
+          "close": 19803.0
         }
       ]
     },
     {
       "ticker": "SUNPHARMA.NS",
-      "avg_range_pct": 1.8212364009584296,
+      "avg_range_pct": 1.8239964623101999,
       "tier": "low",
-      "last_close": 1747.699951171875,
-      "last_change_pct": -0.6311176568164135,
+      "last_close": 1758.800048828125,
+      "last_change_pct": -0.2947818124645692,
       "trades": 13,
       "win_rate": 30.76923076923077,
       "total_return_pct": -2.58546805751435,
@@ -72408,22 +72275,15 @@
           "high": 1764.9,
           "low": 1743.5,
           "close": 1758.8
-        },
-        {
-          "date": "2026-10-19",
-          "open": 1758.8,
-          "high": 1768.9,
-          "low": 1743.1,
-          "close": 1747.7
         }
       ]
     },
     {
       "ticker": "TATACAP.NS",
-      "avg_range_pct": 2.585459340711252,
+      "avg_range_pct": 2.5873916658839384,
       "tier": "medium",
-      "last_close": 314.95001220703125,
-      "last_change_pct": -2.43183887323198,
+      "last_close": 314.25,
+      "last_change_pct": -2.648695203313445,
       "trades": 16,
       "win_rate": 37.5,
       "total_return_pct": 0.11122846708555645,
@@ -73307,17 +73167,17 @@
           "date": "2026-10-19",
           "open": 320.05,
           "high": 321.2,
-          "low": 314.4,
-          "close": 314.95
+          "low": 313.65,
+          "close": 314.25
         }
       ]
     },
     {
       "ticker": "TATACONSUM.NS",
-      "avg_range_pct": 2.0929158718263645,
+      "avg_range_pct": 2.09287810687345,
       "tier": "low",
-      "last_close": 963.9000244140625,
-      "last_change_pct": -1.532332171406218,
+      "last_close": 966.5,
+      "last_change_pct": -1.2667304223927003,
       "trades": 21,
       "win_rate": 28.57142857142857,
       "total_return_pct": -9.945484792534456,
@@ -74202,16 +74062,16 @@
           "open": 978.8,
           "high": 978.85,
           "low": 961.8,
-          "close": 963.9
+          "close": 966.5
         }
       ]
     },
     {
       "ticker": "TATAPOWER.NS",
-      "avg_range_pct": 1.9713450379652613,
+      "avg_range_pct": 1.9734682148664837,
       "tier": "low",
-      "last_close": 351.6000061035156,
-      "last_change_pct": -0.6358626426988905,
+      "last_close": 352.25,
+      "last_change_pct": -0.4521707152514666,
       "trades": 9,
       "win_rate": 33.33333333333333,
       "total_return_pct": 2.9989273255297784,
@@ -75095,17 +74955,17 @@
           "date": "2026-10-19",
           "open": 352.6,
           "high": 355.35,
-          "low": 351.2,
-          "close": 351.6
+          "low": 350.25,
+          "close": 352.25
         }
       ]
     },
     {
       "ticker": "TATASTEEL.NS",
-      "avg_range_pct": 2.11026593735782,
+      "avg_range_pct": 2.1104743395157475,
       "tier": "low",
-      "last_close": 175.13999938964844,
-      "last_change_pct": -0.20512855290687323,
+      "last_close": 174.0399932861328,
+      "last_change_pct": -0.831912657474181,
       "trades": 13,
       "win_rate": 46.15384615384615,
       "total_return_pct": 2.0598984242716467,
@@ -75989,17 +75849,17 @@
           "date": "2026-10-19",
           "open": 175.5,
           "high": 176.4,
-          "low": 173.9,
-          "close": 175.14
+          "low": 173.87,
+          "close": 174.04
         }
       ]
     },
     {
       "ticker": "TCS.NS",
-      "avg_range_pct": 2.572623561125928,
+      "avg_range_pct": 2.57257838783068,
       "tier": "medium",
-      "last_close": 2455.60009765625,
-      "last_change_pct": -0.3813347806795132,
+      "last_close": 2460.89990234375,
+      "last_change_pct": -0.16633256211967545,
       "trades": 7,
       "win_rate": 28.57142857142857,
       "total_return_pct": -2.5906008216786294,
@@ -76013,31 +75873,31 @@
         },
         {
           "date": "2026-04-21",
-          "open": 2498.6968,
-          "high": 2551.4037,
-          "low": 2498.6968,
-          "close": 2547.9875
+          "open": 2498.6971,
+          "high": 2551.404,
+          "low": 2498.6971,
+          "close": 2547.9878
         },
         {
           "date": "2026-04-22",
-          "open": 2518.2179,
-          "high": 2518.2179,
-          "low": 2443.6475,
-          "close": 2477.7117
+          "open": 2518.2181,
+          "high": 2518.2181,
+          "low": 2443.6477,
+          "close": 2477.7119
         },
         {
           "date": "2026-04-23",
-          "open": 2468.4392,
-          "high": 2498.2088,
-          "low": 2456.0433,
-          "close": 2461.4116
+          "open": 2468.4394,
+          "high": 2498.209,
+          "low": 2456.0436,
+          "close": 2461.4119
         },
         {
           "date": "2026-04-24",
-          "open": 2428.4213,
-          "high": 2445.0142,
-          "low": 2331.5968,
-          "close": 2339.5027
+          "open": 2428.421,
+          "high": 2445.0139,
+          "low": 2331.5966,
+          "close": 2339.5024
         },
         {
           "date": "2026-04-27",
@@ -76048,17 +75908,17 @@
         },
         {
           "date": "2026-04-28",
-          "open": 2385.4748,
-          "high": 2427.4451,
-          "low": 2369.2722,
-          "close": 2386.158
+          "open": 2385.4745,
+          "high": 2427.4448,
+          "low": 2369.2719,
+          "close": 2386.1577
         },
         {
           "date": "2026-04-29",
-          "open": 2392.3073,
-          "high": 2428.3236,
-          "low": 2388.9888,
-          "close": 2415.4397
+          "open": 2392.307,
+          "high": 2428.3233,
+          "low": 2388.9885,
+          "close": 2415.4395
         },
         {
           "date": "2026-04-30",
@@ -76097,17 +75957,17 @@
         },
         {
           "date": "2026-05-08",
-          "open": 2340.5761,
-          "high": 2349.3606,
-          "low": 2318.2246,
-          "close": 2337.0623
+          "open": 2340.5759,
+          "high": 2349.3604,
+          "low": 2318.2244,
+          "close": 2337.062
         },
         {
           "date": "2026-05-11",
-          "open": 2314.2229,
-          "high": 2357.1693,
-          "low": 2314.2229,
-          "close": 2335.5984
+          "open": 2314.2227,
+          "high": 2357.169,
+          "low": 2314.2227,
+          "close": 2335.5981
         },
         {
           "date": "2026-05-12",
@@ -76132,10 +75992,10 @@
         },
         {
           "date": "2026-05-15",
-          "open": 2198.0723,
-          "high": 2249.7054,
-          "low": 2198.0723,
-          "close": 2209.7849
+          "open": 2198.0725,
+          "high": 2249.7056,
+          "low": 2198.0725,
+          "close": 2209.7852
         },
         {
           "date": "2026-05-18",
@@ -76160,10 +76020,10 @@
         },
         {
           "date": "2026-05-21",
-          "open": 2275.1805,
-          "high": 2279.9631,
-          "low": 2258.5876,
-          "close": 2271.4714
+          "open": 2275.1807,
+          "high": 2279.9633,
+          "low": 2258.5878,
+          "close": 2271.4717
         },
         {
           "date": "2026-05-22",
@@ -76884,16 +76744,16 @@
           "open": 2458.0,
           "high": 2497.0,
           "low": 2432.1001,
-          "close": 2455.6001
+          "close": 2460.8999
         }
       ]
     },
     {
       "ticker": "TECHM.NS",
-      "avg_range_pct": 2.692446414279684,
+      "avg_range_pct": 2.692333934907875,
       "tier": "medium",
-      "last_close": 1768.800048828125,
-      "last_change_pct": -1.184354814071229,
+      "last_close": 1779.0999755859375,
+      "last_change_pct": -0.6089399114001397,
       "trades": 16,
       "win_rate": 43.75,
       "total_return_pct": 7.208131459993282,
@@ -77778,16 +77638,16 @@
           "open": 1760.0,
           "high": 1796.0,
           "low": 1752.7,
-          "close": 1768.8
+          "close": 1779.1
         }
       ]
     },
     {
       "ticker": "TITAN.NS",
-      "avg_range_pct": 1.9644761559577524,
+      "avg_range_pct": 1.9663817528546976,
       "tier": "low",
-      "last_close": 4420.0,
-      "last_change_pct": -0.5579509939085681,
+      "last_close": 4424.2001953125,
+      "last_change_pct": -0.4634541549717399,
       "trades": 17,
       "win_rate": 23.52941176470588,
       "total_return_pct": -11.432213057169063,
@@ -78671,17 +78531,17 @@
           "date": "2026-10-19",
           "open": 4452.0,
           "high": 4494.3999,
-          "low": 4413.3999,
-          "close": 4420.0
+          "low": 4402.7002,
+          "close": 4424.2002
         }
       ]
     },
     {
       "ticker": "TMCV.NS",
-      "avg_range_pct": 3.1401813675524997,
+      "avg_range_pct": 3.140164506264251,
       "tier": "medium",
-      "last_close": 418.1499938964844,
-      "last_change_pct": -0.6887528750886246,
+      "last_close": 418.75,
+      "last_change_pct": -0.5462505307326263,
       "trades": 7,
       "win_rate": 28.57142857142857,
       "total_return_pct": -3.9701513470665746,
@@ -79566,16 +79426,16 @@
           "open": 418.0,
           "high": 421.2,
           "low": 415.0,
-          "close": 418.15
+          "close": 418.75
         }
       ]
     },
     {
       "ticker": "TMPV.NS",
-      "avg_range_pct": 2.4810986832760915,
+      "avg_range_pct": 2.486223155500568,
       "tier": "low",
-      "last_close": 280.0,
-      "last_change_pct": -2.3880097464748395,
+      "last_close": 278.0,
+      "last_change_pct": -3.0852382482857337,
       "trades": 15,
       "win_rate": 46.666666666666664,
       "total_return_pct": -2.060344592723093,
@@ -80459,20 +80319,20 @@
           "date": "2026-10-19",
           "open": 284.0,
           "high": 285.85,
-          "low": 279.55,
-          "close": 280.0
+          "low": 277.8,
+          "close": 278.0
         }
       ]
     },
     {
       "ticker": "TORNTPHARM.NS",
-      "avg_range_pct": 2.362002376805453,
+      "avg_range_pct": 2.3657669535993606,
       "tier": "low",
-      "last_close": 4562.7001953125,
-      "last_change_pct": 0.08335986861208014,
-      "trades": 12,
-      "win_rate": 25.0,
-      "total_return_pct": -1.2015989390813202,
+      "last_close": 4558.89990234375,
+      "last_change_pct": -0.549730476552733,
+      "trades": 11,
+      "win_rate": 27.27272727272727,
+      "total_return_pct": -1.0151504497071597,
       "history": [
         {
           "date": "2026-04-20",
@@ -81348,22 +81208,15 @@
           "high": 4618.8999,
           "low": 4550.3999,
           "close": 4558.8999
-        },
-        {
-          "date": "2026-10-19",
-          "open": 4551.2002,
-          "high": 4618.7002,
-          "low": 4532.3999,
-          "close": 4562.7002
         }
       ]
     },
     {
       "ticker": "TRENT.NS",
-      "avg_range_pct": 2.4397421947927547,
+      "avg_range_pct": 2.439710088001841,
       "tier": "low",
-      "last_close": 2889.0,
-      "last_change_pct": -2.3557627445212352,
+      "last_close": 2958.699951171875,
+      "last_change_pct": 0.3051157795363025,
       "trades": 19,
       "win_rate": 36.84210526315789,
       "total_return_pct": -3.228379287190364,
@@ -82242,25 +82095,18 @@
           "high": 2969.8999,
           "low": 2916.2,
           "close": 2958.7
-        },
-        {
-          "date": "2026-10-19",
-          "open": 2958.0,
-          "high": 2958.0,
-          "low": 2887.3999,
-          "close": 2889.0
         }
       ]
     },
     {
       "ticker": "TVSMOTOR.NS",
-      "avg_range_pct": 2.5277566500680733,
+      "avg_range_pct": 2.535130212629716,
       "tier": "medium",
-      "last_close": 4078.300048828125,
-      "last_change_pct": -0.4102475746011722,
+      "last_close": 4095.10009765625,
+      "last_change_pct": 1.8681616332400497,
       "trades": 11,
       "win_rate": 45.45454545454545,
-      "total_return_pct": 2.869415002016087,
+      "total_return_pct": 3.279662576617259,
       "history": [
         {
           "date": "2026-04-20",
@@ -83136,22 +82982,15 @@
           "high": 4110.0,
           "low": 4012.2,
           "close": 4095.1001
-        },
-        {
-          "date": "2026-10-19",
-          "open": 4094.1001,
-          "high": 4138.0,
-          "low": 4072.5,
-          "close": 4078.3
         }
       ]
     },
     {
       "ticker": "ULTRACEMCO.NS",
-      "avg_range_pct": 1.8485750942108707,
+      "avg_range_pct": 1.8737267248773384,
       "tier": "low",
-      "last_close": 10892.0,
-      "last_change_pct": -0.13752635921885026,
+      "last_close": 10650.0,
+      "last_change_pct": -2.3562849546163016,
       "trades": 19,
       "win_rate": 36.84210526315789,
       "total_return_pct": -7.552488828807042,
@@ -84035,17 +83874,17 @@
           "date": "2026-10-19",
           "open": 10925.0,
           "high": 11219.0,
-          "low": 10881.0,
-          "close": 10892.0
+          "low": 10551.0,
+          "close": 10650.0
         }
       ]
     },
     {
       "ticker": "UNIONBANK.NS",
-      "avg_range_pct": 2.677765104247868,
+      "avg_range_pct": 2.685302026212117,
       "tier": "medium",
-      "last_close": 179.19000244140625,
-      "last_change_pct": 4.374423395862849,
+      "last_close": 180.6999969482422,
+      "last_change_pct": 5.253963570172834,
       "trades": 14,
       "win_rate": 35.714285714285715,
       "total_return_pct": -4.561884314623478,
@@ -84928,18 +84767,18 @@
         {
           "date": "2026-10-19",
           "open": 172.9,
-          "high": 181.2,
+          "high": 182.99,
           "low": 172.42,
-          "close": 179.19
+          "close": 180.7
         }
       ]
     },
     {
       "ticker": "UNITDSPR.NS",
-      "avg_range_pct": 2.1574084213244027,
+      "avg_range_pct": 2.1641106178414393,
       "tier": "low",
-      "last_close": 1371.5999755859375,
-      "last_change_pct": -0.6086974213088768,
+      "last_close": 1380.0,
+      "last_change_pct": -0.10857763300760044,
       "trades": 12,
       "win_rate": 33.33333333333333,
       "total_return_pct": -1.11412605512376,
@@ -85818,22 +85657,15 @@
           "high": 1397.4,
           "low": 1377.8,
           "close": 1380.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 1372.0,
-          "high": 1384.3,
-          "low": 1366.2,
-          "close": 1371.6
         }
       ]
     },
     {
       "ticker": "VBL.NS",
-      "avg_range_pct": 2.533359920531793,
+      "avg_range_pct": 2.5354625673560536,
       "tier": "medium",
-      "last_close": 421.1000061035156,
-      "last_change_pct": -2.1835061315875435,
+      "last_close": 420.54998779296875,
+      "last_change_pct": -2.311268805349884,
       "trades": 12,
       "win_rate": 41.66666666666667,
       "total_return_pct": 5.675068975536252,
@@ -85850,7 +85682,7 @@
           "open": 465.5877,
           "high": 486.0454,
           "low": 465.5877,
-          "close": 484.0995
+          "close": 484.0994
         },
         {
           "date": "2026-04-22",
@@ -86717,17 +86549,17 @@
           "date": "2026-10-19",
           "open": 430.0,
           "high": 430.45,
-          "low": 419.6,
-          "close": 421.1
+          "low": 418.5,
+          "close": 420.55
         }
       ]
     },
     {
       "ticker": "VEDL.NS",
-      "avg_range_pct": 3.0101512008428615,
+      "avg_range_pct": 3.016436248486098,
       "tier": "medium",
-      "last_close": 244.5500030517578,
-      "last_change_pct": -0.6298264987063201,
+      "last_close": 243.1999969482422,
+      "last_change_pct": -1.1783864621497098,
       "trades": 10,
       "win_rate": 20.0,
       "total_return_pct": -15.976907237855844,
@@ -87611,17 +87443,17 @@
           "date": "2026-10-19",
           "open": 248.0,
           "high": 249.1,
-          "low": 244.4,
-          "close": 244.55
+          "low": 242.5,
+          "close": 243.2
         }
       ]
     },
     {
       "ticker": "WIPRO.NS",
-      "avg_range_pct": 2.074834270922818,
+      "avg_range_pct": 2.080576261465467,
       "tier": "low",
-      "last_close": 183.1999969482422,
-      "last_change_pct": -0.6507575856622985,
+      "last_close": 182.13999938964844,
+      "last_change_pct": -1.2255935909111897,
       "trades": 16,
       "win_rate": 18.75,
       "total_return_pct": -17.83145352398075,
@@ -88505,17 +88337,17 @@
           "date": "2026-10-19",
           "open": 184.0,
           "high": 185.85,
-          "low": 182.78,
-          "close": 183.2
+          "low": 181.48,
+          "close": 182.14
         }
       ]
     },
     {
       "ticker": "ZYDUSLIFE.NS",
-      "avg_range_pct": 2.4801234827713263,
+      "avg_range_pct": 2.4869094134839314,
       "tier": "low",
-      "last_close": 1121.4000244140625,
-      "last_change_pct": -0.14247333801758683,
+      "last_close": 1123.0,
+      "last_change_pct": -1.508503061607504,
       "trades": 12,
       "win_rate": 50.0,
       "total_return_pct": 4.886523713173917,
@@ -89394,13 +89226,6 @@
           "high": 1146.5,
           "low": 1123.0,
           "close": 1123.0
-        },
-        {
-          "date": "2026-10-19",
-          "open": 1116.4,
-          "high": 1134.2,
-          "low": 1115.9,
-          "close": 1121.4
         }
       ]
     }

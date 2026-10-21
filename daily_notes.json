@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-10-21",
+      "generated_at": "2026-10-21T13:18:39Z",
+      "author": "claude",
+      "summary": "NVDA remains the top backtested setup at +18.98% over 15 trades (60% win rate), and today's trigger levels show a broad cluster of five high-tier breakout setups (CRM, PLTR, TSLA, INTC, AMD) all within 1.5% of triggering.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 15,
+        "win_rate": 60.0,
+        "total_return_pct": 18.982983161804142
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 34,
+        "win_rate": 44.11764705882353,
+        "total_return_pct": 15.19989255242391
+      },
+      "watch_highlights": [
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.5,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.54,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.72,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.77,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": 1.11,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 1.29,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.36,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA continues to hold the strongest backtested edge in the watchlist, up 18.98% over 15 trades with a 60% win rate, while runner-up ORCL shows a smaller +15.20% return over a larger 34-trade sample and a lower 44.12% win rate. Seven tickers sit within 1.5% of their trigger levels today, and five of them \u2014 CRM, PLTR, TSLA, INTC, and AMD \u2014 are high-tier breakout setups watching for a close above today's high, with GOOGL the lone low-tier name near its 10-day low and NFLX the lone medium-tier name near its 20-day average. This is a readout of the backtest and today's trigger levels only \u2014 not investment advice."
+    },
+    {
       "date": "2026-10-20",
       "generated_at": "2026-10-20T13:20:38Z",
       "author": "claude",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T07:51:27.000Z",
+  "updated_at": "2026-10-22T03:51:42.000Z",
   "starting_capital_inr": 80000,
   "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
   "strategies": {
@@ -60,6 +60,21 @@
           "closeDate": "2026-09-15T07:51:27.000Z",
           "exitPriceInr": 47720.0,
           "realizedPnlInr": -1116.9849030406622
+        },
+        {
+          "id": "835a8be8-f26b-4dcb-a3df-fb0ca24b547e",
+          "ticker": "HCLTECH.NS",
+          "tierRule": "medium",
+          "stopFrac": 0.52,
+          "targetMult": 2.6,
+          "status": "open",
+          "openDate": "2026-10-22T03:51:42.000Z",
+          "entryPriceInr": 1405.0999755859375,
+          "allocatedInr": 80154.16477157973,
+          "shares": 57.04516843234221,
+          "stopPriceInr": 1390.0,
+          "targetPriceInr": 1444.359912109375,
+          "reason": "Discovered-best (out-of-sample validated): HCLTECH.NS medium, stop 0.52/target 2.6x, train 23t +26.06%, test 11t +20.09%, found 2026-10-22. Prior discovered_in position (BOSCHLTD.NS medium, stop 0.49/target 3.0x) was already closed (stop hit, -INR1116.98) well before this combo change, so this is a fresh open, not a reopen. Entry price from results_in.json last_close (live_price_in.json was stale -- fetched 2026-10-21 for BOSCHLTD.NS, neither today's date nor this ticker). News check: WebSearch for 'HCL Technologies share news today' returned no results dated today, only stale live-blog price history from earlier 2026 dates; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found."
         }
       ]
     }

@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-10-22",
+      "generated_at": "2026-10-22T13:25:08Z",
+      "author": "claude",
+      "summary": "NVDA remains the top backtested setup at +23.05% over 14 trades (64.29% win rate), and today's trigger levels show four high-tier breakout setups (PLTR, AMD, TSLA, CRM) clustered within 1.5% of triggering alongside GOOGL near its low-tier support.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 64.28571428571429,
+        "total_return_pct": 23.04502116070855
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 32,
+        "win_rate": 43.75,
+        "total_return_pct": 13.7219990962583
+      },
+      "watch_highlights": [
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.16,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.24,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.4,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.9,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -1.22,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA continues to hold the strongest backtested edge in the watchlist, up 23.05% over 14 trades with a 64.29% win rate, while runner-up ORCL shows a smaller +13.72% return over a larger 32-trade sample and a lower 43.75% win rate. Five tickers sit within 1.5% of their trigger levels today, and four of them \u2014 PLTR, AMD, TSLA, and CRM \u2014 are high-tier breakout setups watching for a close above today's high, with GOOGL the lone low-tier name near its 10-day low. This is a readout of the backtest and today's trigger levels only \u2014 not investment advice."
+    },
+    {
       "date": "2026-10-21",
       "generated_at": "2026-10-21T13:18:39Z",
       "author": "claude",

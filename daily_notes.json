@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-10-27",
+      "generated_at": "2026-10-27T13:18:39Z",
+      "author": "claude",
+      "summary": "NVDA remains the top backtested setup at +23.05% over 14 trades (64.29% win rate), with 7 tickers within 1.5% of a trigger level tonight, split between four high-tier breakout setups and three low-tier dip setups.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 64.28571428571429,
+        "total_return_pct": 23.04502116070855
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 31,
+        "win_rate": 45.16129032258064,
+        "total_return_pct": 15.46359933107607
+      },
+      "watch_highlights": [
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.09,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.15,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.21,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.65,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "low",
+          "distance_pct": -0.96,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AAPL",
+          "tier": "low",
+          "distance_pct": -1.25,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA continues to hold the best backtested edge in the watchlist at +23.05% total return over 14 trades (64.29% win rate), with ORCL as runner-up at +15.46% over a larger 31-trade sample. Seven tickers are within 1.5% of their trigger level as of today's close: GOOGL sits just -0.09% below its 10-day low, and PLTR, AMD, and INTC are each within roughly 0.2% of a high-tier breakout above today's high. No medium-tier ticker is close to triggering tonight -- all seven watch highlights split between high-tier breakout setups (4) and low-tier dip setups (3). This is a readout of the backtest and mechanical trigger levels only, not investment advice or a price prediction."
+    },
+    {
       "date": "2026-10-26",
       "generated_at": "2026-10-26T13:29:36Z",
       "author": "claude",

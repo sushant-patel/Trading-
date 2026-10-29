@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-10-29",
+      "generated_at": "2026-10-29T13:24:16Z",
+      "author": "claude",
+      "summary": "NVDA keeps the top backtested edge at +23.05% over 14 trades (64.29% win rate), with 6 tickers within 1.5% of a trigger level tonight, 4 of them high-tier breakout setups.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 64.28571428571429,
+        "total_return_pct": 23.04502116070855
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 33,
+        "win_rate": 42.42424242424242,
+        "total_return_pct": 14.326696670918318
+      },
+      "watch_highlights": [
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.09,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -0.22,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": -0.52,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.59,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 1.11,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.47,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA continues to hold the best backtested edge in the watchlist at +23.05% total return over 14 trades (64.29% win rate), with ORCL as runner-up at +14.33% over a 33-trade sample (42.42% win rate). 6 tickers are within 1.5% of their trigger level tonight (ORCL, DIS, AVGO, AMD, INTC, CRM), and 4 of them are high-tier breakout setups needing a close above today's high, 1 medium-tier, 1 low-tier; ORCL is nearest at just 0.09% away. This is a readout of the backtest and mechanical trigger levels only, not investment advice or a price prediction."
+    },
+    {
       "date": "2026-10-28",
       "generated_at": "2026-10-28T13:34:47Z",
       "author": "claude",

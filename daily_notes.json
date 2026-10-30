@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-10-30",
+      "generated_at": "2026-10-30T13:17:59Z",
+      "author": "claude",
+      "summary": "NVDA holds the top backtested spot again today, and five tickers are clustered within 1.5% of their trigger levels across all three tiers.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 64.28571428571429,
+        "total_return_pct": 23.04502116070855
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 33,
+        "win_rate": 42.42424242424242,
+        "total_return_pct": 12.999729159050332
+      },
+      "watch_highlights": [
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.41,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.49,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": 0.91,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.04,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "low",
+          "distance_pct": -1.21,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA (medium tier) currently has the best backtested edge in the watchlist, at +23.0% total return across 14 trades with a 64.3% win rate, ahead of ORCL (high tier, +13.0% over 33 trades, 42.4% win rate). Five tickers are within 1.5% of their trigger levels tonight — GOOGL and AMZN sit just below their 10-day lows (low tier), TSLA and CRM are just under their today's-high breakout levels (high tier), and AVGO is close to its 20-day average (medium tier) — a fairly even spread across tiers rather than a concentration in one. This is a readout of the backtest and today's trigger levels only, not investment advice — it does not predict tomorrow's price action."
+    },
+    {
       "date": "2026-10-29",
       "generated_at": "2026-10-29T13:24:16Z",
       "author": "claude",

@@ -1,6 +1,47 @@
 {
   "entries": [
     {
+      "date": "2026-11-02",
+      "generated_at": "2026-11-02T13:30:22Z",
+      "author": "claude",
+      "summary": "NVDA's backtested edge ticked up to +24.13% over 14 trades (64.29% win rate), and tonight's trigger watch list narrowed to just three names — all low-tier, sitting within 1.2% of their 10-day lows.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 64.28571428571429,
+        "total_return_pct": 24.129987489395127
+      },
+      "runner_up": {
+        "ticker": "ORCL",
+        "tier": "high",
+        "trades": 33,
+        "win_rate": 42.42424242424242,
+        "total_return_pct": 12.999729330576901
+      },
+      "watch_highlights": [
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.08,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.2,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "MSFT",
+          "tier": "low",
+          "distance_pct": -1.17,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA (medium tier) continues to hold the best backtested edge in the watchlist, now at +24.13% total return over 14 trades with a 64.29% win rate, ahead of ORCL (high tier, +13.00% over 33 trades, 42.42% win rate). Only three tickers are within 1.5% of their trigger levels tonight — BAC, GOOGL, and MSFT — and all three are low-tier names sitting just below their 10-day lows (-0.08%, -0.20%, and -1.17% respectively), a notable concentration in one tier with no high- or medium-tier setups close to triggering. This is a readout of the backtest and today's trigger levels only, not investment advice — it does not predict tomorrow's price action."
+    },
+    {
       "date": "2026-10-30",
       "generated_at": "2026-10-30T13:17:59Z",
       "author": "claude",

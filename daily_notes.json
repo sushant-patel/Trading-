@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-11-03",
+      "generated_at": "2026-11-03T13:22:04Z",
+      "author": "claude",
+      "summary": "NVDA remains the top backtested setup at +17.28% over 12 trades (66.67% win rate), while tonight's trigger watch list is entirely low-tier names clustered near their 10-day lows.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 12,
+        "win_rate": 66.66666666666666,
+        "total_return_pct": 17.27801085283091
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 44,
+        "win_rate": 43.18181818181818,
+        "total_return_pct": 12.169204241545401
+      },
+      "watch_highlights": [
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.24,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "MSFT",
+          "tier": "low",
+          "distance_pct": -0.43,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.74,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AAPL",
+          "tier": "low",
+          "distance_pct": -1.17,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA (medium tier) continues to hold the best backtested edge in the watchlist, at +17.28% total return over 12 trades with a 66.67% win rate, followed by AMD (high tier, +12.17% over 44 trades, 43.18% win rate) in second. Four tickers are within 1.5% of their trigger levels tonight — BAC, MSFT, GOOGL, and AAPL — and all four are low-tier names sitting just below their 10-day lows (-0.24%, -0.43%, -0.74%, and -1.17% respectively), a notable concentration in one tier with no high- or medium-tier setups close to triggering. This is a readout of the backtest and today's trigger levels only, not investment advice — it does not predict tomorrow's price action."
+    },
+    {
       "date": "2026-11-02",
       "generated_at": "2026-11-02T13:30:22Z",
       "author": "claude",

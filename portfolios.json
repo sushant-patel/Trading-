@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-02T13:17:35.000Z",
+  "updated_at": "2026-11-03T13:19:00.000Z",
   "starting_capital_inr": 80000,
   "note": "This is a repo-published ledger (same pattern as results.json and daily_notes.json), not local browser state.",
   "strategies": {
     "featured": {
       "label": "Featured Setup Only",
-      "description": "Only the ticker currently ranked #1 by Featured Setup (highest backtested return among tickers with ≥5 trades) is allowed.",
+      "description": "Only the ticker currently ranked #1 by Featured Setup (highest backtested return among tickers with \u22655 trades) is allowed.",
       "positions": [
         {
           "id": "fb4f86ac-82c8-47a1-a2b2-c69d624c50ef",
@@ -29,7 +29,7 @@
     },
     "diversified": {
       "label": "Diversified",
-      "description": "One position per volatility tier (High/Medium/Low), each the best-backtested ticker in that tier among those with ≥5 trades, equal-weighted. Forced one-per-tier even when a tier's best is weak — that's the point of testing diversification as a discipline rather than cherry-picking.",
+      "description": "One position per volatility tier (High/Medium/Low), each the best-backtested ticker in that tier among those with \u22655 trades, equal-weighted. Forced one-per-tier even when a tier's best is weak \u2014 that's the point of testing diversification as a discipline rather than cherry-picking.",
       "positions": [
         {
           "id": "919d277a-e73a-4bc8-9a96-a2e5cbb6e089",
@@ -476,7 +476,7 @@
           "id": "0d327a25-6aeb-4210-8831-fe2169e0127a",
           "ticker": "ORCL",
           "tier": "medium",
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-10-29T13:25:09.602Z",
           "entryPriceUsd": 139.15499877929688,
           "fxRateAtOpen": 95.21,
@@ -485,6 +485,27 @@
           "reason": "Discover search best-ever (out-of-sample validated): ORCL medium, stop 0.44 / target 3x, train 8 trades +8.27%, test 5 trades +34.41%, found 2026-08-31.",
           "stopPriceUsd": 128.42,
           "targetPriceUsd": 171.35999511718754,
+          "tierRule": "medium",
+          "stopFrac": 0.44,
+          "targetMult": 3,
+          "closeDate": "2026-11-03T13:19:00.000Z",
+          "exitPriceUsd": 119.22000122070312,
+          "fxRateAtClose": 94.89,
+          "realizedPnlInr": -10942.039737921092
+        },
+        {
+          "id": "b1b507fa-1b96-4a73-b054-7db38bd7e3df",
+          "ticker": "ORCL",
+          "tier": "medium",
+          "status": "open",
+          "openDate": "2026-11-03T13:19:00.000Z",
+          "entryPriceUsd": 119.22000122070312,
+          "fxRateAtOpen": 94.89,
+          "allocatedInr": 63933.17493938147,
+          "shares": 5.6514085403053045,
+          "reason": "Discover search best-ever (out-of-sample validated): ORCL medium, stop 0.44 / target 3x, train 8 trades +8.27%, test 5 trades +34.41%, found 2026-08-31.",
+          "stopPriceUsd": 118.4301,
+          "targetPriceUsd": 121.58970488281251,
           "tierRule": "medium",
           "stopFrac": 0.44,
           "targetMult": 3

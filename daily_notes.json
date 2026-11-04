@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-11-04",
+      "generated_at": "2026-11-04T13:19:54Z",
+      "author": "claude",
+      "summary": "NVDA's backtested edge holds steady at +17.28% over 12 trades (66.67% win rate) with no new trade added since yesterday, while tonight's 5-ticker trigger watch list reshuffled to a mix of all three tiers, led by INFY (medium) and CRM (high) each within 0.5%.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 12,
+        "win_rate": 66.66666666666666,
+        "total_return_pct": 17.27801085283091
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 44,
+        "win_rate": 43.18181818181818,
+        "total_return_pct": 12.169204241545401
+      },
+      "watch_highlights": [
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 0.4,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.43,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "GOOGL",
+          "tier": "low",
+          "distance_pct": -0.77,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.95,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.33,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA (medium tier) continues to hold the best backtested edge in the watchlist, unchanged from yesterday at +17.28% total return over 12 trades with a 66.67% win rate, followed by AMD (high tier, +12.17% over 44 trades, 43.18% win rate) in second — both totals are identical to the prior entry, meaning no new backtested trade closed for either ticker since then. Five tickers are within 1.5% of their trigger levels tonight — INFY (medium, +0.40%) and CRM (high, +0.43%) are the closest, followed by GOOGL (low, -0.77%), BAC (low, -0.95%), and PLTR (high, +1.33%) — a fairly even spread across all three tiers rather than a concentration in one, a change from yesterday's all-low-tier watch list. This is a readout of the backtest and today's trigger levels only, not investment advice — it does not predict tomorrow's price action."
+    },
+    {
       "date": "2026-11-03",
       "generated_at": "2026-11-03T13:22:04Z",
       "author": "claude",

@@ -1,6 +1,41 @@
 {
   "entries": [
     {
+      "date": "2026-11-05",
+      "generated_at": "2026-11-05T13:20:49Z",
+      "author": "claude",
+      "summary": "NVDA's backtested edge holds steady at +17.28% over 12 trades (66.67% win rate) with no new trade added since yesterday, while tonight's trigger watch list narrowed to just two tickers — NFLX (medium) and TSLA (high) — both within 0.7%, with no low-tier tickers on the list at all.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 12,
+        "win_rate": 66.66666666666666,
+        "total_return_pct": 17.27801085283091
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 44,
+        "win_rate": 43.18181818181818,
+        "total_return_pct": 12.169204241545401
+      },
+      "watch_highlights": [
+        {
+          "ticker": "NFLX",
+          "tier": "medium",
+          "distance_pct": 0.63,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.68,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "NVDA (medium tier) still holds the best backtested edge in the watchlist, unchanged from yesterday at +17.28% total return over 12 trades with a 66.67% win rate, with AMD (high tier, +12.17% over 44 trades, 43.18% win rate) in second — both totals are identical to the prior entry, meaning no new backtested trade closed for either ticker since then. Only two tickers are within 1.5% of their trigger levels tonight, the smallest watch list in recent entries: NFLX (medium, +0.63%, needs a pullback to its 20-day average and a close back above it) and TSLA (high, +0.68%, needs a close above today's high) — notably no low-tier tickers made the cut this time. This is a readout of the backtest and today's trigger levels only, not investment advice — it does not predict tomorrow's price action."
+    },
+    {
       "date": "2026-11-04",
       "generated_at": "2026-11-04T13:19:54Z",
       "author": "claude",

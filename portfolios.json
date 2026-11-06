@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T13:15:41.000Z",
+  "updated_at": "2026-11-06T13:15:29.000Z",
   "starting_capital_inr": 80000,
   "note": "This is a repo-published ledger (same pattern as results.json and daily_notes.json), not local browser state.",
   "strategies": {
@@ -518,7 +518,7 @@
           "id": "6a5a50ba-f17f-4649-8f56-6b1fc1e1fb6f",
           "ticker": "ORCL",
           "tier": "medium",
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-11-04T13:16:23.000Z",
           "entryPriceUsd": 124.58000183105469,
           "fxRateAtOpen": 94.73,
@@ -527,6 +527,27 @@
           "reason": "Discover search best-ever (out-of-sample validated): ORCL medium, stop 0.44 / target 3x, train 8 trades +8.27%, test 5 trades +34.41%, found 2026-08-31.",
           "stopPriceUsd": 121.35,
           "targetPriceUsd": 134.27000732421877,
+          "tierRule": "medium",
+          "stopFrac": 0.44,
+          "targetMult": 3,
+          "closeDate": "2026-11-06T13:15:29.000Z",
+          "exitPriceUsd": 114.98,
+          "fxRateAtClose": 94.465,
+          "realizedPnlInr": -5311.633840892151
+        },
+        {
+          "id": "8d8e47c8-a4a8-419d-90c7-3b10831ee5c2",
+          "ticker": "ORCL",
+          "tier": "medium",
+          "status": "open",
+          "openDate": "2026-11-06T13:15:29.000Z",
+          "entryPriceUsd": 114.98,
+          "fxRateAtOpen": 94.465,
+          "allocatedInr": 61383.25818623798,
+          "shares": 5.651408540305305,
+          "reason": "Discover search best-ever (out-of-sample validated): ORCL medium, stop 0.44 / target 3x, train 8 trades +8.27%, test 5 trades +34.41%, found 2026-08-31.",
+          "stopPriceUsd": 111.66,
+          "targetPriceUsd": 124.94000000000003,
           "tierRule": "medium",
           "stopFrac": 0.44,
           "targetMult": 3

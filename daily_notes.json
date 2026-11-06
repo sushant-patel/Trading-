@@ -1,6 +1,35 @@
 {
   "entries": [
     {
+      "date": "2026-11-06",
+      "generated_at": "2026-11-06T13:20:44Z",
+      "author": "claude",
+      "summary": "NVDA remains the standout backtested performer (+18.52%, 14 trades) while only BAC (low tier) sits within 1.5% of its trigger level today.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 64.28571428571429,
+        "total_return_pct": 18.516429596557895
+      },
+      "runner_up": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 12,
+        "win_rate": 66.66666666666666,
+        "total_return_pct": 13.417650093893876
+      },
+      "watch_highlights": [
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.48,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA holds the best backtested edge in today's data, +18.52% over 14 trades (64.3% win rate, medium tier), with INFY close behind at +13.42% over 12 trades (66.7% win rate). Only one ticker is within 1.5% of its trigger level today: BAC (low tier), about 1.48% away from dipping below its 10-day low and closing back above it — the high- and medium-tier tickers are all further from their trigger levels right now. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-05",
       "generated_at": "2026-11-05T13:20:49Z",
       "author": "claude",

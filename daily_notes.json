@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-11-09",
+      "generated_at": "2026-11-09T13:24:32Z",
+      "author": "claude",
+      "summary": "NVDA remains the standout backtested performer (+20.38%, 16 trades) while TSLA and INTC (both high tier) sit closest to triggering today, within roughly 1.1% of their trigger levels.",
+      "featured": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 16,
+        "win_rate": 62.5,
+        "total_return_pct": 20.37721570230714
+      },
+      "runner_up": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 13,
+        "win_rate": 69.23076923076923,
+        "total_return_pct": 17.420883811752695
+      },
+      "watch_highlights": [
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.65,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 1.07,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -1.08,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.15,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "NVDA holds the best backtested edge in today's data, +20.38% over 16 trades (62.5% win rate, medium tier), with INFY close behind at +17.42% over 13 trades (69.2% win rate, also medium tier). Four tickers sit within 1.5% of their trigger levels today: TSLA and INTC (both high tier) are closest, about 0.65% and 1.07% away respectively from closing above today's high, while JPM and BAC (both low tier) are roughly 1.08-1.15% away from dipping below their 10-day low and closing back above it. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-06",
       "generated_at": "2026-11-06T13:20:44Z",
       "author": "claude",

@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-11-10",
+      "generated_at": "2026-11-10T13:22:24.999+00:00",
+      "author": "claude",
+      "summary": "INFY leads the backtest with a 25.08% return over 13 trades, and 7 tickers are within 1.5% of their trigger level today.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 13,
+        "win_rate": 76.92,
+        "total_return_pct": 25.08
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 12,
+        "win_rate": 66.67,
+        "total_return_pct": 17.28
+      },
+      "watch_highlights": [
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 0.39,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": -0.65,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.96,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 1.09,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.1,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.17,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.3,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "INFY (medium tier) remains the strongest backtested edge, up 25.08% over 13 trades with a 76.92% win rate, ahead of NVDA at 17.28% over 12 trades. 7 tickers are within 1.5% of their trigger level, led by ORCL (high tier, 0.39% away). 6 of those 7 watch highlights are high-tier breakout setups, a notable concentration in one tier today. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-09",
       "generated_at": "2026-11-09T13:24:32Z",
       "author": "claude",

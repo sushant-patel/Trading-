@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-11-11",
+      "generated_at": "2026-11-11T13:21:30.126+00:00",
+      "author": "claude",
+      "summary": "INFY continues to lead the backtest at 25.08% over 14 trades, and today's 4 watch highlights are dominated by medium-tier pullback setups rather than high-tier breakouts.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 71.43,
+        "total_return_pct": 25.08
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 12,
+        "win_rate": 66.67,
+        "total_return_pct": 17.28
+      },
+      "watch_highlights": [
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": -0.74,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": -0.92,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "META",
+          "tier": "medium",
+          "distance_pct": 1.38,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "INFY (medium tier) remains the strongest backtested edge, up 25.08% over 14 trades with a 71.43% win rate, ahead of NVDA at 17.28% over 12 trades. 4 tickers are within 1.5% of their trigger level today, led by TSLA (high tier, just 0.14% from today's high). Three of those four watch highlights are medium-tier pullback setups (INFY, AVGO, META), a notable concentration compared to the single high-tier breakout (TSLA). This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-10",
       "generated_at": "2026-11-10T13:22:24.999+00:00",
       "author": "claude",

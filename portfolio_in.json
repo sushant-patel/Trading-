@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T03:51:42.000Z",
+  "updated_at": "2026-11-12T09:52:15.000Z",
   "starting_capital_inr": 80000,
   "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
   "strategies": {
@@ -74,7 +74,25 @@
           "shares": 57.04516843234221,
           "stopPriceInr": 1390.0,
           "targetPriceInr": 1444.359912109375,
-          "reason": "Discovered-best (out-of-sample validated): HCLTECH.NS medium, stop 0.52/target 2.6x, train 23t +26.06%, test 11t +20.09%, found 2026-10-22. Prior discovered_in position (BOSCHLTD.NS medium, stop 0.49/target 3.0x) was already closed (stop hit, -INR1116.98) well before this combo change, so this is a fresh open, not a reopen. Entry price from results_in.json last_close (live_price_in.json was stale -- fetched 2026-10-21 for BOSCHLTD.NS, neither today's date nor this ticker). News check: WebSearch for 'HCL Technologies share news today' returned no results dated today, only stale live-blog price history from earlier 2026 dates; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found."
+          "reason": "Discovered-best (out-of-sample validated): HCLTECH.NS medium, stop 0.52/target 2.6x, train 23t +26.06%, test 11t +20.09%, found 2026-10-22. Prior discovered_in position (BOSCHLTD.NS medium, stop 0.49/target 3.0x) was already closed (stop hit, -INR1116.98) well before this combo change, so this is a fresh open, not a reopen. Entry price from results_in.json last_close (live_price_in.json was stale -- fetched 2026-10-21 for BOSCHLTD.NS, neither today's date nor this ticker). News check: WebSearch for 'HCL Technologies share news today' returned no results dated today, only stale live-blog price history from earlier 2026 dates; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found.",
+          "closeDate": "2026-11-12T09:52:15.000Z",
+          "exitPriceInr": 1375.0999755859375,
+          "realizedPnlInr": -1711.3550529702625
+        },
+        {
+          "id": "72dda47e-5708-4521-adc9-125f0bf99688",
+          "ticker": "HCLTECH.NS",
+          "tierRule": "high",
+          "stopFrac": 0.55,
+          "targetMult": 2.9,
+          "status": "open",
+          "openDate": "2026-11-12T09:52:15.000Z",
+          "entryPriceInr": 1375.0999755859375,
+          "allocatedInr": 78442.80971860947,
+          "shares": 57.04516843234221,
+          "stopPriceInr": 1351.9999755859376,
+          "targetPriceInr": 1442.0899755859373,
+          "reason": "Discovered-best (out-of-sample validated): HCLTECH.NS high, stop 0.55/target 2.9x, train 25t +27.59%, test 11t +28.74%, found 2026-11-09. Prior discovered_in position (HCLTECH.NS medium, stop 0.52/target 2.6x) hit its stop this run (-INR1711.36 realized) and best_ever moved to a different combo (tierRule medium->high, stopFrac/targetMult changed), so this is a fresh open on the new combo, not a reopen. Entry price from results_in.json last_close (live_price_in.json was stale -- fetched 2026-11-11, not today). News check: WebSearch for 'HCL Technologies share news today' returned no results dated today, only stale items from mid-2026; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found."
         }
       ]
     }

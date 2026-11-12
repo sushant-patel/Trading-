@@ -1,6 +1,65 @@
 {
   "entries": [
     {
+      "date": "2026-11-12",
+      "generated_at": "2026-11-12T13:20:20.139+00:00",
+      "author": "claude",
+      "summary": "INFY leads the backtest at 22.77% over 14 trades, and today's 6 watch highlights are mostly high-tier breakout setups within 1.5% of triggering.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 14,
+        "win_rate": 71.43,
+        "total_return_pct": 22.77
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 44,
+        "win_rate": 43.18,
+        "total_return_pct": 17.35
+      },
+      "watch_highlights": [
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.4,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.88,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 1.09,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "ORCL",
+          "tier": "high",
+          "distance_pct": 1.42,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 1.48,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.48,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "INFY (medium tier) has the strongest backtested edge, up 22.77% over 14 trades with a 71.43% win rate, ahead of AMD at 17.35% over 44 trades. 6 tickers are within 1.5% of their trigger level today, led by CRM (high tier, just 0.4% from its trigger). 5 of those 6 watch highlights are high-tier setups, a notable concentration. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-11",
       "generated_at": "2026-11-11T13:21:30.126+00:00",
       "author": "claude",

@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-11-13",
+      "generated_at": "2026-11-13T15:19:39.574Z",
+      "author": "claude",
+      "summary": "AMD remains the top backtested setup at 22.4% over 45 trades; 4 ticker(s) are within 1.5% of their trigger level.",
+      "featured": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 45,
+        "win_rate": 44.44444444444444,
+        "total_return_pct": 22.394840943009786
+      },
+      "runner_up": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 13,
+        "win_rate": 69.23076923076923,
+        "total_return_pct": 18.797971867366233
+      },
+      "watch_highlights": [
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.88,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 1.01,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.06,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.25,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "AMD (high tier) has the best backtested edge in the watchlist right now, at 22.4% total return over 45 trades (44.4% win rate). INFY (medium tier) is the runner-up at 18.8% over 13 trades. 4 ticker(s) are within 1.5% of their trigger level today, closest being TSLA at +0.88% (high tier): TSLA (+0.88%), INFY (+1.01%), PLTR (+1.06%), CRM (+1.25%). This is not investment advice — it's a readout of the backtest and today's trigger levels, nothing more."
+    },
+    {
       "date": "2026-11-12",
       "generated_at": "2026-11-12T13:20:20.139+00:00",
       "author": "claude",

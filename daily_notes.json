@@ -1,6 +1,47 @@
 {
   "entries": [
     {
+      "date": "2026-11-16",
+      "generated_at": "2026-11-16T13:23:13.548Z",
+      "author": "claude",
+      "summary": "INFY overtakes AMD as the top backtested setup at 22.8% over 12 trades; 3 ticker(s) are within 1.5% of their trigger level.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 12,
+        "win_rate": 75.0,
+        "total_return_pct": 22.848806766154947
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 45,
+        "win_rate": 44.44444444444444,
+        "total_return_pct": 19.703913157518176
+      },
+      "watch_highlights": [
+        {
+          "ticker": "META",
+          "tier": "medium",
+          "distance_pct": -0.52,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.72,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 0.87,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "INFY (medium tier) currently holds the best backtested edge in the watchlist, at 22.85% total return over 12 trades (75.0% win rate), ahead of AMD (high tier, 19.70% over 45 trades). Three tickers are within 1.5% of their trigger level today: META (medium, -0.52%), CRM (high, +0.72%), INFY (medium, +0.87%). Notably, INFY is both today's Featured Setup and on watch, needing only a modest pullback to its ~20-day average before closing back above it. This is not investment advice — it's a readout of the backtest and today's trigger levels, nothing more."
+    },
+    {
       "date": "2026-11-13",
       "generated_at": "2026-11-13T15:19:39.574Z",
       "author": "claude",

@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-11-17",
+      "generated_at": "2026-11-17T13:21:24.000Z",
+      "author": "claude",
+      "summary": "INFY holds the top backtested setup at 22.0% over 10 trades; the watch list today is entirely medium-tier, with 4 tickers within 1.5% of their 20-day average trigger.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 10,
+        "win_rate": 80.0,
+        "total_return_pct": 22.01013445130191
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 45,
+        "win_rate": 44.44444444444444,
+        "total_return_pct": 19.703913157518176
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AMZN",
+          "tier": "medium",
+          "distance_pct": -0.25,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "medium",
+          "distance_pct": -0.75,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 0.95,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "META",
+          "tier": "medium",
+          "distance_pct": 1.07,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "INFY (medium tier) remains the best backtested setup, now at 22.01% total return over 10 trades (80.0% win rate), ahead of AMD (high tier, 19.70% over 45 trades). All four tickers within 1.5% of their trigger level today are medium tier — AMZN (-0.25%), AVGO (-0.75%), INFY (+0.95%), and META (+1.07%) — each needing a pullback to, or a close back above, its ~20-day average, with no high- or low-tier tickers currently close to triggering. Notably, INFY is both today's Featured Setup and on the watch list itself. This is not investment advice — it's a readout of the backtest and today's trigger levels, nothing more."
+    },
+    {
       "date": "2026-11-16",
       "generated_at": "2026-11-16T13:23:13.548Z",
       "author": "claude",

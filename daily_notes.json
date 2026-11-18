@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-11-18",
+      "generated_at": "2026-11-18T13:21:11Z",
+      "author": "claude",
+      "summary": "INFY (medium tier) takes the Featured Setup spot with the strongest backtested edge, narrowly ahead of AMD, while five tickers sit within 1.5% of their trigger levels tonight.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 10,
+        "win_rate": 80.0,
+        "total_return_pct": 22.01013445130191
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 45,
+        "win_rate": 44.44444444444444,
+        "total_return_pct": 19.703913157518176
+      },
+      "watch_highlights": [
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.13,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.38,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "medium",
+          "distance_pct": -0.4,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.72,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.74,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "INFY (medium tier) currently has the best backtested edge in the watchlist: +22.0% total return over 10 trades with an 80% win rate, just ahead of AMD (high tier, +19.7% over 45 trades, 44.4% win rate). Five tickers are within 1.5% of their trigger level tonight: INTC (+0.13%) and TSLA (+0.72%) are the closest on the breakout side (high tier, need a close above today's high), AMZN sits 0.4% below its ~20-day average, and JPM (-0.38%) and BAC (-0.74%) are both just below their 10-day lows. Those five highlights split fairly evenly across tiers (2 high, 2 low, 1 medium), so there's no unusual tier concentration in tonight's watch list. This is a readout of the backtest and today's trigger-level math only, not investment advice."
+    },
+    {
       "date": "2026-11-17",
       "generated_at": "2026-11-17T13:21:24.000Z",
       "author": "claude",

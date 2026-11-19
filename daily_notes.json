@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-11-19",
+      "generated_at": "2026-11-19T13:20:05Z",
+      "author": "claude",
+      "summary": "INFY (medium tier) holds the Featured Setup spot with the strongest backtested edge, ahead of AMD, while 5 tickers sit within 1.5% of their trigger levels tonight.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 10,
+        "win_rate": 80.0,
+        "total_return_pct": 22.01013445130191
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 46,
+        "win_rate": 43.47826086956522,
+        "total_return_pct": 19.703913157518176
+      },
+      "watch_highlights": [
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.12,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.14,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.17,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.46,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "INFY (medium tier) currently has the best backtested edge in the watchlist: +22.0% total return over 10 trades with a 80.0% win rate, just ahead of AMD (high tier, +19.7% over 46 trades, 43.5% win rate). 5 tickers are within 1.5% of their trigger level tonight, closest being JPM (-0.12%, low tier); AMD (+0.14%, high tier). That splits across tiers as 2 low, 3 high, so there's no unusual tier concentration tonight. This is a readout of the backtest and today's trigger-level math only, not investment advice."
+    },
+    {
       "date": "2026-11-18",
       "generated_at": "2026-11-18T13:21:11Z",
       "author": "claude",

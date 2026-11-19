@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T09:51:53.000Z",
+  "updated_at": "2026-11-19T08:52:30.000Z",
   "starting_capital_inr": 80000,
   "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
   "strategies": {
@@ -85,7 +85,7 @@
           "tierRule": "high",
           "stopFrac": 0.55,
           "targetMult": 2.9,
-          "status": "open",
+          "status": "closed",
           "openDate": "2026-11-12T09:52:15.000Z",
           "entryPriceInr": 1375.0999755859375,
           "allocatedInr": 78442.80971860947,

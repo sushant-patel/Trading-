@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-11-20",
+      "generated_at": "2026-11-20T13:19:46Z",
+      "author": "claude",
+      "summary": "INFY (medium tier) holds the Featured Setup spot with the strongest backtested edge, ahead of AMD, while 4 tickers sit within 1.5% of their trigger levels tonight.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 10,
+        "win_rate": 80.0,
+        "total_return_pct": 22.01013445130191
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 46,
+        "win_rate": 43.47826086956522,
+        "total_return_pct": 17.616351761430266
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AMZN",
+          "tier": "medium",
+          "distance_pct": -0.15,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "MSFT",
+          "tier": "low",
+          "distance_pct": -0.67,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -1.04,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -1.16,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "INFY (medium tier) currently has the best backtested edge in the watchlist: +22.0% total return over 10 trades with a 80.0% win rate, just ahead of AMD (high tier, +17.6% over 46 trades, 43.5% win rate). 4 ticker(s) sit within 1.5% of their trigger level tonight, led by AMZN at -0.15%: AMZN (medium), MSFT (low), BAC (low), JPM (low). Notably, low-tier setups dominate tonight's watch list (3 of 4). This is not investment advice — it's a readout of the backtest and trigger levels, nothing more."
+    },
+    {
       "date": "2026-11-19",
       "generated_at": "2026-11-19T13:20:05Z",
       "author": "claude",

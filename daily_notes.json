@@ -1,6 +1,53 @@
 {
   "entries": [
     {
+      "date": "2026-11-23",
+      "generated_at": "2026-11-23T13:22:49Z",
+      "author": "claude",
+      "summary": "INFY (medium tier) holds the Featured Setup spot with the strongest backtested edge, ahead of AMD, while 4 tickers sit within 1.5% of their trigger levels today, all of them low-tier.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 10,
+        "win_rate": 80.0,
+        "total_return_pct": 22.01013445130191
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 45,
+        "win_rate": 44.44444444444444,
+        "total_return_pct": 20.383791213272964
+      },
+      "watch_highlights": [
+        {
+          "ticker": "BAC",
+          "tier": "low",
+          "distance_pct": -0.03,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "JPM",
+          "tier": "low",
+          "distance_pct": -0.05,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "AAPL",
+          "tier": "low",
+          "distance_pct": -0.07,
+          "desc": "dip below the 10-day low, then close back above it"
+        },
+        {
+          "ticker": "DIS",
+          "tier": "low",
+          "distance_pct": -1.47,
+          "desc": "dip below the 10-day low, then close back above it"
+        }
+      ],
+      "notes": "INFY (medium tier) currently has the best backtested edge in the watchlist at +22.0% total return over 10 trades (80% win rate), ahead of runner-up AMD at +20.4% over 45 trades. 4 ticker(s) are within 1.5% of their trigger level today (4 low), with BAC closest at -0.03% (dip below the 10-day low, then close back above it). Notably, every ticker on watch today is in the low tier. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-20",
       "generated_at": "2026-11-20T13:19:46Z",
       "author": "claude",

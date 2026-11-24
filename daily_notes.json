@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-11-24",
+      "generated_at": "2026-11-24T13:20:40Z",
+      "author": "claude",
+      "summary": "AMD (high tier) edges out NVDA (medium tier) for the Featured Setup spot by a narrow margin, while 5 tickers sit within 1.5% of their trigger levels today, split across high and medium tiers with no low-tier names on watch.",
+      "featured": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 42,
+        "win_rate": 42.857142857142854,
+        "total_return_pct": 15.840334881249712
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 13,
+        "win_rate": 61.53846153846154,
+        "total_return_pct": 15.686430815874724
+      },
+      "watch_highlights": [
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.17,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.2,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMZN",
+          "tier": "medium",
+          "distance_pct": 0.92,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INFY",
+          "tier": "medium",
+          "distance_pct": 1.14,
+          "desc": "pull back to ~20-day average, then close above it"
+        }
+      ],
+      "notes": "AMD (high tier) currently holds the best backtested edge in the watchlist at +15.84% total return over 42 trades (42.9% win rate), narrowly ahead of runner-up NVDA at +15.69% over 13 trades (61.5% win rate) — the two are within half a percentage point of each other despite AMD's much larger sample. 5 tickers are within 1.5% of their trigger level today, led by INTC at +0.17% and CRM at +0.20% (both high tier, need a close above today's high), with AMZN and INFY (medium tier, pull back to ~20-day average then close above it) and PLTR (high tier) also close. Unlike some recent days, today's watch list has no low-tier names — it's split 3 high / 2 medium. This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-23",
       "generated_at": "2026-11-23T13:22:49Z",
       "author": "claude",

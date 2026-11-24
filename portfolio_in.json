@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T03:51:20.000Z",
+  "updated_at": "2026-11-24T03:52:40.000Z",
   "starting_capital_inr": 80000,
   "note": "India (Nifty 100) paper-trading ledger. Same repo-published-JSON pattern as portfolios.json, but no FX conversion anywhere -- prices are already INR, real NSE data, tradeable via a normal Indian demat account (unlike the US watchlist's LRS-constrained situation). Checked hourly during NSE market hours (9:15 AM-3:30 PM IST) by a scheduled routine, not continuously -- see CLAUDE.md's India module section for why hourly is the achievable ceiling, not a design choice.",
   "strategies": {
@@ -114,6 +114,21 @@
           "closeDate": "2026-11-20T03:51:20.000Z",
           "exitPriceInr": 1327.0,
           "realizedPnlInr": -1306.3357498049445
+        },
+        {
+          "id": "1fec9f7f-2c2f-41d0-b2ed-0d77f9d8d103",
+          "ticker": "HCLTECH.NS",
+          "tierRule": "high",
+          "stopFrac": 0.49,
+          "targetMult": 2.9,
+          "status": "open",
+          "openDate": "2026-11-24T03:52:40.000Z",
+          "entryPriceInr": 1364.300048828125,
+          "allocatedInr": 75698.93850971811,
+          "shares": 55.4855499526957,
+          "stopPriceInr": 1349.649048828125,
+          "targetPriceInr": 1406.787948828125,
+          "reason": "Discovered-best (out-of-sample validated): HCLTECH.NS high, stop 0.49/target 2.9x, train 25t +18.37%, test 11t +32.11%, found 2026-11-24. Prior discovered_in position (HCLTECH.NS high, stop 0.55/target 3.0x) hit its stop on 2026-11-20 (-INR1306.34 realized) and best_ever moved to a different combo (stopFrac 0.55->0.49, targetMult 3.0x->2.9x), so this is a fresh open on the new combo, not a reopen. Entry price from results_in.json last_close (live_price_in.json showed HCLTECH.NS but was stale -- fetched 2026-11-23, not today). News check: WebSearch for 'HCL Technologies share news today' returned no results dated today, only stale live-blog/price-history items from 2025 and earlier 2026; no trading halt, fraud/regulatory investigation, auditor resignation, or delisting signal found."
         }
       ]
     }

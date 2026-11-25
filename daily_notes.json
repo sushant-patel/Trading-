@@ -1,6 +1,47 @@
 {
   "entries": [
     {
+      "date": "2026-11-25",
+      "generated_at": "2026-11-25T13:19:45Z",
+      "author": "claude",
+      "summary": "AMD (high tier) holds the Featured Setup spot ahead of NVDA (medium tier), with 3 tickers within 1.5% of their trigger level today.",
+      "featured": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 42,
+        "win_rate": 42.857142857142854,
+        "total_return_pct": 15.840334881249712
+      },
+      "runner_up": {
+        "ticker": "NVDA",
+        "tier": "medium",
+        "trades": 13,
+        "win_rate": 61.53846153846154,
+        "total_return_pct": 15.686430815874724
+      },
+      "watch_highlights": [
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 0.81,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 1.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 1.41,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "AMD (high tier) currently holds the best backtested edge in the watchlist at +15.84% total return over 42 trades (42.9% win rate), ahead of runner-up NVDA at +15.69% over 13 trades (61.5% win rate). CRM is the closest to triggering, 0.81% away from a high-tier signal (close above today's high). Today's watch list is entirely high tier. This is not investment advice — it's a readout of the backtest and trigger levels, nothing more."
+    },
+    {
       "date": "2026-11-24",
       "generated_at": "2026-11-24T13:20:40Z",
       "author": "claude",

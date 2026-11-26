@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-11-26",
+      "generated_at": "2026-11-26T13:16:25Z",
+      "author": "claude",
+      "summary": "INFY (medium tier) takes the Featured Setup spot from AMD on a small 9-trade sample, while 7 tickers — mostly high tier — sit within 1.5% of their trigger levels today.",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 9,
+        "win_rate": 77.77777777777779,
+        "total_return_pct": 16.14071965283098
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 42,
+        "win_rate": 42.857142857142854,
+        "total_return_pct": 15.840334881249712
+      },
+      "watch_highlights": [
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.07,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AVGO",
+          "tier": "high",
+          "distance_pct": 0.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.43,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.71,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "META",
+          "tier": "medium",
+          "distance_pct": 0.88,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.94,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.23,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "INFY (medium tier) now holds the best backtested edge in the watchlist at +16.14% total return, though that's on just 9 trades (77.8% win rate) — a much smaller sample than runner-up AMD's +15.84% over 42 trades (42.9% win rate), so the INFY edge should be read cautiously. INTC is closest to triggering, just 0.07% from a high-tier signal (close above today's high), followed closely by AVGO (0.14%) and AMD (0.43%). Of the 7 tickers within 1.5% of their trigger level today, 6 are high tier and only one (META) is medium, with no low-tier names on watch. This is not investment advice — it's a readout of the backtest and trigger levels, nothing more."
+    },
+    {
       "date": "2026-11-25",
       "generated_at": "2026-11-25T13:19:45Z",
       "author": "claude",

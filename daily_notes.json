@@ -1,6 +1,71 @@
 {
   "entries": [
     {
+      "date": "2026-11-27",
+      "generated_at": "2026-11-27T13:18:48Z",
+      "author": "claude",
+      "summary": "Featured setup: INFY; 7 ticker(s) near their trigger level. (data still as of 2026-11-25, unchanged from the prior note).",
+      "featured": {
+        "ticker": "INFY",
+        "tier": "medium",
+        "trades": 9,
+        "win_rate": 77.77777777777779,
+        "total_return_pct": 16.14071965283098
+      },
+      "runner_up": {
+        "ticker": "AMD",
+        "tier": "high",
+        "trades": 42,
+        "win_rate": 42.857142857142854,
+        "total_return_pct": 15.840334881249712
+      },
+      "watch_highlights": [
+        {
+          "ticker": "AVGO",
+          "tier": "high",
+          "distance_pct": 0.14,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "AMD",
+          "tier": "high",
+          "distance_pct": 0.43,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "PLTR",
+          "tier": "high",
+          "distance_pct": 0.71,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "META",
+          "tier": "medium",
+          "distance_pct": 0.88,
+          "desc": "pull back to ~20-day average, then close above it"
+        },
+        {
+          "ticker": "TSLA",
+          "tier": "high",
+          "distance_pct": 0.94,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "INTC",
+          "tier": "high",
+          "distance_pct": 0.97,
+          "desc": "close above today's high"
+        },
+        {
+          "ticker": "CRM",
+          "tier": "high",
+          "distance_pct": 1.23,
+          "desc": "close above today's high"
+        }
+      ],
+      "notes": "The published data still reflects the 2026-11-25 session (no newer daily bar has been published yet), so today's figures are unchanged from the prior note. INFY (medium tier) has the best backtested edge in the watchlist right now, with a +16.1% backtested return over 9 trades and a 77.8% win rate, followed by AMD (high tier, +15.8% over 42 trades). 7 tickers are within 1.5% of their trigger level today (AVGO, AMD, PLTR, META, TSLA, INTC, CRM), closest being AVGO (high tier) at 0.14% away. High-tier setups dominate today's watch list (6 of 7). This is a readout of the backtest and trigger levels only, not investment advice."
+    },
+    {
       "date": "2026-11-26",
       "generated_at": "2026-11-26T13:16:25Z",
       "author": "claude",
